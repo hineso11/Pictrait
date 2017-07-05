@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="pictrait-api:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="pictrait-api-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="pictrait-api:war exploded" />
+    </root>
+  </artifact>
+</component>
