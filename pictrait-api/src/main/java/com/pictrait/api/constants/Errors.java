@@ -24,7 +24,7 @@ public enum  Errors {
     TOKEN_INVALID(501, "This token is invalid"),
     TOKEN_EXPIRED(501, "This token has expired"),
     WRONG_TOKEN_TYPE(501, "Token must be refresh token"),
-    INCORRECT_PASSWORD(501, "Incorrect username or password");
+    INCORRECT_COMBINATION(501, "Incorrect username and password combination");
 
     // MARK: Variables
     private int code;

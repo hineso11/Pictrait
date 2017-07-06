@@ -1,4 +1,4 @@
-package com.pictrait.api.endpoints;
+package com.pictrait.api.endpoints.user;
 
 import com.pictrait.api.constants.Constants;
 import com.pictrait.api.constants.Errors;

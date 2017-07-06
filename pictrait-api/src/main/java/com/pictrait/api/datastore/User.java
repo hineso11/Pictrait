@@ -41,6 +41,12 @@ public class User {
         ObjectifyService.ofy().save().entity(this).now();
     }
 
+    // MARK: Getters and Setters
+    public String getHashedPassword () {
+
+        return hashedPassword;
+    }
+
     // MARK: Methods
     // Function to determine if a given username is unique
     public static boolean usernameIsUnique (String username) {
@@ -54,7 +60,7 @@ public class User {
     public static boolean emailIsUnique (String email) {
 
         // Attempt to find the user by querying their email
-        User user = ObjectifyService.ofy().load().type(User.class).filter(Constants.User.Datastore.EMAIL + " =", email).first().now();
+        User user = ObjectifyService.ofy().load().type(User.class).filter(Constants.User.Datastore.EMAIL, email).first().now();
         // If a user hasn't been found return false, else true
         return user == null;
     }
