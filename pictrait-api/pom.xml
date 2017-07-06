@@ -39,6 +39,14 @@
       <artifactId>guava</artifactId>
       <version>21.0</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.json/json -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20090211</version>
+    </dependency>
+
+
 
     <!-- Compile/runtime dependencies -->
     <dependency>

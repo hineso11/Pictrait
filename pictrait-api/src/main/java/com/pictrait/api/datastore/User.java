@@ -45,13 +45,17 @@ public class User {
     // Function to determine if a given username is unique
     public static boolean usernameIsUnique (String username) {
 
+        // Attempt to find the user by querying their username
         User user = ObjectifyService.ofy().load().type(User.class).filter(Constants.User.Datastore.USERNAME, username).first().now();
+        // If a user hasn't been found return false, else true
         return user == null;
     }
     // Function to determine if a given email is unique
     public static boolean emailIsUnique (String email) {
 
+        // Attempt to find the user by querying their email
         User user = ObjectifyService.ofy().load().type(User.class).filter(Constants.User.Datastore.EMAIL + " =", email).first().now();
+        // If a user hasn't been found return false, else true
         return user == null;
     }
 

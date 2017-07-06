@@ -1,13 +1,12 @@
 package com.pictrait.api.endpoints;
 
-
-
-import com.google.appengine.repackaged.com.google.gson.JsonObject;
 import com.pictrait.api.constants.Constants;
 import com.pictrait.api.constants.Errors;
 import com.pictrait.api.datastore.User;
 import com.pictrait.api.security.Auth;
 import com.pictrait.api.security.AuthenticationToken;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -106,9 +105,13 @@ public class SignUp extends HttpServlet {
         // Supply the user with a refresh and auth token
         AuthenticationToken token = new AuthenticationToken(user);
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty(Constants.AuthenticationToken.AUTH_TOKEN, token.getAuthToken());
-        jsonObject.addProperty(Constants.AuthenticationToken.REFRESH_TOKEN, token.getRefreshToken());
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put(Constants.AuthenticationToken.AUTH_TOKEN, token.getAuthToken());
+            jsonObject.put(Constants.AuthenticationToken.REFRESH_TOKEN, token.getRefreshToken());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         response.getWriter().write(jsonObject.toString());
     }
