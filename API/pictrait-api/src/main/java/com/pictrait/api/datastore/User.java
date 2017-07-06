@@ -14,15 +14,17 @@ import com.pictrait.api.security.Encrypter;
 public class User {
 
     // MARK: Variables
-    @Id private Long userId;
-    @Index protected String username;
-    protected String hashedPassword;
+    @Id
+    public Long userId;
+    @Index
+    public String username;
+    private String hashedPassword;
     protected String fullName;
-    @Index protected String email;
+    @Index private String email;
 
     // MARK: Constructors
 
-    // Blank constructor for ofy service
+    // Blank constructor for Objectify service
     public User () {
 
 

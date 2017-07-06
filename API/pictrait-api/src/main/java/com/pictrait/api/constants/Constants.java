@@ -31,4 +31,10 @@ public class Constants {
             public static final String EMAIL = "email";
         }
     }
+
+    public class AuthenticationToken {
+
+        public static final String AUTH_TOKEN = "auth_token";
+        public static final String REFRESH_TOKEN = "refresh_token";
+    }
 }

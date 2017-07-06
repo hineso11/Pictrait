@@ -1,9 +1,13 @@
 package com.pictrait.api.endpoints;
 
+
+
+import com.google.appengine.repackaged.com.google.gson.JsonObject;
 import com.pictrait.api.constants.Constants;
 import com.pictrait.api.constants.Errors;
 import com.pictrait.api.datastore.User;
 import com.pictrait.api.security.Auth;
+import com.pictrait.api.security.AuthenticationToken;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -96,7 +100,17 @@ public class SignUp extends HttpServlet {
         }
         // END: Validate Fields
 
+        // Sign up the new user
         User user = new User(username, password, fullName, email);
+
+        // Supply the user with a refresh and auth token
+        AuthenticationToken token = new AuthenticationToken(user);
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty(Constants.AuthenticationToken.AUTH_TOKEN, token.getAuthToken());
+        jsonObject.addProperty(Constants.AuthenticationToken.REFRESH_TOKEN, token.getRefreshToken());
+
+        response.getWriter().write(jsonObject.toString());
     }
 
 }
