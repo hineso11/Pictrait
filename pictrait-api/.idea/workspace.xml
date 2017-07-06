@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f062b011-62f8-4ba7-a6a4-268c22d632f0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/lib/gson-2.8.0.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/appengine-generated/local_db.bin" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/appengine-generated/local_db.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/datastore/User.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/datastore/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/SignUp.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/SignUp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/pictrait_api_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/pictrait_api_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pictrait-api.iml" afterPath="$PROJECT_DIR$/pictrait-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/SignUp.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/SignUp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/appengine-generated/datastore-indexes-auto.xml" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/appengine-generated/datastore-indexes-auto.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,8 +42,8 @@
       <file leaf-file-name="AuthenticationToken.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="131" column="0" lean-forward="true" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+            <state relative-caret-position="327">
+              <caret line="106" column="75" lean-forward="true" selection-start-line="106" selection-start-column="75" selection-end-line="106" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -457,7 +444,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Google App Engine Standard Local Server.AppEngine Dev 1.9.542 (migrated)">
+  <component name="RunManager" selected="Google App Engine Deployment.Deployment">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -955,12 +942,12 @@
       <workItem from="1499341516541" duration="483000" />
       <workItem from="1499342020383" duration="387000" />
       <workItem from="1499347061712" duration="6954000" />
-      <workItem from="1499354257855" duration="1981000" />
+      <workItem from="1499354257855" duration="2139000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21815000" />
+    <option name="totallyTimeSpent" value="21973000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -973,12 +960,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.50238097" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2835821" sideWeight="0.49761903" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2835821" sideWeight="0.49761903" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -995,7 +981,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33180252" sideWeight="0.49761903" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33180252" sideWeight="0.49761903" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.7697595" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.23024055" order="2" side_tool="true" content_ui="tabs" />
@@ -1299,8 +1285,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="131" column="0" lean-forward="true" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+        <state relative-caret-position="327">
+          <caret line="106" column="75" lean-forward="true" selection-start-line="106" selection-start-column="75" selection-end-line="106" selection-end-column="75" />
           <folding />
         </state>
       </provider>
