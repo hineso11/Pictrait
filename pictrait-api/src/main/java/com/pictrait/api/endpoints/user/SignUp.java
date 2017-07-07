@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,7 @@ import static com.pictrait.api.constants.Constants.User.*;
  * Created by oliver on 05/07/2017.
  */
 @WebServlet(name = "SignUp", value = "/user/signup")
+@MultipartConfig
 public class SignUp extends HttpServlet {
     protected void doPost (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

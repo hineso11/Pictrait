@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,7 @@ import java.io.IOException;
  */
 
 @WebServlet(name = "Login", value = "/user/login")
+@MultipartConfig
 public class Login extends HttpServlet {
 
     protected void doPost (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
