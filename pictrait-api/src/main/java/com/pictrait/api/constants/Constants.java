@@ -10,10 +10,13 @@ public class Constants {
     public class Parameters {
 
         public static final String CLIENT_ID = "client_id";
+
         public static final String USERNAME = "username";
         public static final String PASSWORD = "password";
         public static final String FULL_NAME = "full_name";
         public static final String EMAIL = "email";
+
+        public static final String REFRESH_TOKEN = "refresh_token";
     }
 
     public class User {

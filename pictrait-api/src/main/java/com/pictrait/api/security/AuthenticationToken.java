@@ -7,6 +7,8 @@ import com.pictrait.api.datastore.User;
 import com.sun.tools.internal.jxc.ap.Const;
 import io.jsonwebtoken.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -20,7 +22,7 @@ public class AuthenticationToken {
     private static final String ISSUER = "PictraitAPI";
     private static final String SIGNING_KEY = "oJArErxUc/A3S+r/Xv6c1jDu8IzU3/0xi3852wjVATyEHPz3n0XVzXMgc0QI2MQlwMa/sRpiQzwCAr2UKhVk8A==";
     private static final int REFRESH_TOKEN_DAYS = 3;
-    private static final int AUTH_TOKEN_HOURS = 1;
+    private static final int AUTH_TOKEN_HOURS = 2;
     private static final String TOKEN_TYPE = "type";
     private static final String REFRESH_TYPE = "refresh";
     private static final String AUTH_TYPE = "auth";
@@ -40,39 +42,52 @@ public class AuthenticationToken {
     }
 
     // Constructor for creating token object with just refresh token -- for auth
-    public AuthenticationToken (String refreshToken) throws SignatureException, MalformedJwtException, ExpiredJwtException, IncorrectClaimException {
+    public AuthenticationToken (String refreshToken, HttpServletResponse response) throws IOException {
 
-        // Check the refresh token is as expected
-        Jws<Claims> claims = Jwts.parser()
-                .requireAudience(AUDIENCE)
-                .requireIssuer(ISSUER)
-                .setSigningKey(SIGNING_KEY)
-                .parseClaimsJws(refreshToken);
+        try {
 
-        // Get id from the claims
-        long id = Integer.valueOf(claims.getBody().getSubject());
-        // Get the user object from the datastore
-        User user = ObjectifyService.ofy().load().type(User.class).id(id).now();
-        // Get token type from the header
-        String type = (String)claims.getHeader().get(TOKEN_TYPE);
+            // Check the refresh token is as expected
+            Jws<Claims> claims = Jwts.parser()
+                    .requireAudience(AUDIENCE)
+                    .requireIssuer(ISSUER)
+                    .setSigningKey(SIGNING_KEY)
+                    .parseClaimsJws(refreshToken);
 
-        // START Validation
-        // Check the token type is correct (refresh token)
-        if (!type.equals(REFRESH_TYPE)) {
-            // Throw the wrong token type exception if it's not a refresh token
-            throw new IncorrectClaimException(claims.getHeader(), claims.getBody(), Errors.WRONG_TOKEN_TYPE.getMessage());
+            // Get id from the claims
+            long id = Long.parseLong(claims.getBody().getSubject());
+            // Get the user object from the datastore
+            User user = ObjectifyService.ofy().load().type(User.class).id(id).now();
+            // Get token type from the header
+            String type = (String)claims.getHeader().get(TOKEN_TYPE);
+
+            // START Validation
+            // Check the token type is correct (refresh token)
+            if (!type.equals(REFRESH_TYPE)) {
+                // Throw the wrong token type exception if it's not a refresh token
+                response.sendError(Errors.WRONG_TOKEN_TYPE.getCode(), Errors.WRONG_TOKEN_TYPE.getMessage());
+                return;
+            }
+
+            // Check the user exists
+            if (user == null) {
+
+                response.sendError(Errors.USER_DOESNT_EXIST.getCode(), Errors.USER_DOESNT_EXIST.getMessage());
+                return;
+            }
+
+            // END Validation
+
+            // If no exception has been thrown then create new auth token
+            this.refreshToken = refreshToken;
+            authToken = generateAuthToken(user);
+        } catch (SignatureException | MalformedJwtException e) {
+            e.printStackTrace();
+            response.sendError(Errors.TOKEN_INVALID.getCode(), Errors.TOKEN_INVALID.getMessage());
+        } catch (ExpiredJwtException e) {
+            e.printStackTrace();
+            response.sendError(Errors.TOKEN_EXPIRED.getCode(), Errors.TOKEN_EXPIRED.getMessage());
         }
 
-        // Check the user exists
-        if (user == null) {
-
-            throw new IncorrectClaimException(claims.getHeader(), claims.getBody(), Errors.USER_DOESNT_EXIST.getMessage());
-        }
-
-        // END Validation
-
-        // If no exception has been thrown then create new auth token
-        authToken = generateAuthToken(user);
     }
 
     // MARK: Getters and Setters
@@ -114,9 +129,9 @@ public class AuthenticationToken {
 
         // get the current time
         Calendar c = Calendar.getInstance();
+        c.add(Calendar.HOUR, AUTH_TOKEN_HOURS);  // number of hours to add
         Date expiryDate = c.getTime();
         // add the extra days to the expiry time
-        c.add(Calendar.HOUR, AUTH_TOKEN_HOURS);  // number of days to add
 
         // create the token and store it
         String authToken = Jwts.builder()
