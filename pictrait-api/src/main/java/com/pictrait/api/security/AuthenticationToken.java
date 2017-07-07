@@ -1,10 +1,8 @@
 package com.pictrait.api.security;
 
 import com.googlecode.objectify.ObjectifyService;
-import com.pictrait.api.constants.Constants;
 import com.pictrait.api.constants.Errors;
 import com.pictrait.api.datastore.User;
-import com.sun.tools.internal.jxc.ap.Const;
 import io.jsonwebtoken.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -24,25 +22,53 @@ public class AuthenticationToken {
     private static final int REFRESH_TOKEN_DAYS = 3;
     private static final int AUTH_TOKEN_HOURS = 2;
     private static final String TOKEN_TYPE = "type";
-    private static final String REFRESH_TYPE = "refresh";
-    private static final String AUTH_TYPE = "auth";
+    private static final int REFRESH_TYPE = 0;
+    private static final int AUTH_TYPE = 1;
 
     // MARK: Variables
     private String authToken;
     private String refreshToken;
+    private User user;
+    private TokenType type;
+
+    // MARK: Enums
+    public enum TokenType {
+
+        REFRESH_TOKEN(REFRESH_TYPE),
+        AUTH_TOKEN(AUTH_TYPE);
+
+        // MARK: Variables
+        private int tokenType;
+
+        // MARK: Constructors
+        TokenType(int tokenType) {
+
+            this.tokenType = tokenType;
+        }
+
+        // MARK: Getters and Setters
+        public int getTokenType () {
+
+            return tokenType;
+        }
+    }
 
     // MARK: Constructors
 
     // Constructor for creating token object with both auth token and refresh token -- for sign up and login
     public AuthenticationToken (User user) {
 
-
+        this.user = user;
         this.authToken = generateAuthToken(user);
         this.refreshToken = generateRefreshToken(user);
     }
 
-    // Constructor for creating token object with just refresh token -- for auth
-    public AuthenticationToken (String refreshToken, HttpServletResponse response) throws IOException {
+    // Constructor to check the auth token and find the user associated with it
+
+
+    // Constructor for validating an auth or refresh token
+    // Gives a new auth token if refresh token given
+    public AuthenticationToken (String token, TokenType tokenType,HttpServletResponse response) throws IOException {
 
         try {
 
@@ -51,18 +77,24 @@ public class AuthenticationToken {
                     .requireAudience(AUDIENCE)
                     .requireIssuer(ISSUER)
                     .setSigningKey(SIGNING_KEY)
-                    .parseClaimsJws(refreshToken);
+                    .parseClaimsJws(token);
 
             // Get id from the claims
             long id = Long.parseLong(claims.getBody().getSubject());
             // Get the user object from the datastore
-            User user = ObjectifyService.ofy().load().type(User.class).id(id).now();
+            user = ObjectifyService.ofy().load().type(User.class).id(id).now();
             // Get token type from the header
-            String type = (String)claims.getHeader().get(TOKEN_TYPE);
+            switch ((int)claims.getHeader().get(TOKEN_TYPE)) {
+                case REFRESH_TYPE:
+                    type = TokenType.REFRESH_TOKEN;
+                    break;
+                case AUTH_TYPE:
+                    type = TokenType.AUTH_TOKEN;
+                    break;
+            }
 
-            // START Validation
-            // Check the token type is correct (refresh token)
-            if (!type.equals(REFRESH_TYPE)) {
+            // Check the token type is correct from one specified in the constructor
+            if (!type.equals(tokenType)) {
                 // Throw the wrong token type exception if it's not a refresh token
                 response.sendError(Errors.WRONG_TOKEN_TYPE.getCode(), Errors.WRONG_TOKEN_TYPE.getMessage());
                 return;
@@ -75,17 +107,23 @@ public class AuthenticationToken {
                 return;
             }
 
-            // END Validation
+            // A refresh token was supplied successfully, give them a new auth token
+            if (type == TokenType.REFRESH_TOKEN) {
 
-            // If no exception has been thrown then create new auth token
-            this.refreshToken = refreshToken;
-            authToken = generateAuthToken(user);
-        } catch (SignatureException | MalformedJwtException e) {
+                // If no exception has been thrown then create new auth token
+                this.refreshToken = refreshToken;
+                authToken = generateAuthToken(user);
+            }
+
+        } catch (SignatureException e) {
             e.printStackTrace();
             response.sendError(Errors.TOKEN_INVALID.getCode(), Errors.TOKEN_INVALID.getMessage());
         } catch (ExpiredJwtException e) {
             e.printStackTrace();
             response.sendError(Errors.TOKEN_EXPIRED.getCode(), Errors.TOKEN_EXPIRED.getMessage());
+        } catch (MalformedJwtException e) {
+            e.printStackTrace();
+            response.sendError(Errors.TOKEN_INVALID.getCode(), Errors.TOKEN_INVALID.getMessage());
         }
 
     }
@@ -98,6 +136,10 @@ public class AuthenticationToken {
     public String getRefreshToken () {
 
         return refreshToken;
+    }
+    public User getUser () {
+
+        return user;
     }
 
     // MARK: Methods
@@ -118,7 +160,7 @@ public class AuthenticationToken {
                 .setIssuer(ISSUER)
                 .setSubject(user.userId.toString())
                 .setExpiration(expiryDate)
-                .setHeaderParam(TOKEN_TYPE , REFRESH_TYPE)
+                .setHeaderParam(TOKEN_TYPE , TokenType.REFRESH_TOKEN.getTokenType())
                 .signWith(SignatureAlgorithm.HS256, SIGNING_KEY).compact();
 
         return refreshToken;
@@ -139,7 +181,7 @@ public class AuthenticationToken {
                 .setIssuer(ISSUER)
                 .setSubject(user.userId.toString())
                 .setExpiration(expiryDate)
-                .setHeaderParam(TOKEN_TYPE , AUTH_TYPE)
+                .setHeaderParam(TOKEN_TYPE , TokenType.AUTH_TOKEN.getTokenType())
                 .signWith(SignatureAlgorithm.HS256, SIGNING_KEY).compact();
 
         return authToken;

@@ -17,7 +17,7 @@ public class User {
     @Id
     public Long userId;
     @Index
-    public String username;
+    private String username;
     private String hashedPassword;
     protected String fullName;
     @Index private String email;
@@ -46,8 +46,52 @@ public class User {
 
         return hashedPassword;
     }
+    public String getUsername () {
+
+        return username;
+    }
+    public String getFullName () {
+
+        return fullName;
+    }
+    public String getEmail () {
+
+        return email;
+    }
 
     // MARK: Methods
+
+    // Function to change a user's username
+    public void changeUsername (String username) {
+
+        // Change the username
+        this.username = username;
+
+        // Save the entity
+        ObjectifyService.ofy().save().entity(this).now();
+    }
+
+    // Function to change a user's username
+    public void changeFullName (String fullName) {
+
+        // Change the username
+        this.fullName = fullName;
+
+        // Save the entity
+        ObjectifyService.ofy().save().entity(this).now();
+    }
+
+    // Function to change a user's username
+    public void changeEmail (String email) {
+
+        // Change the username
+        this.email = email;
+
+        // Save the entity
+        ObjectifyService.ofy().save().entity(this).now();
+    }
+
+
     // Function to determine if a given username is unique
     public static boolean usernameIsUnique (String username) {
 

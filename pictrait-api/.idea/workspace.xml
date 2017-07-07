@@ -2,16 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f062b011-62f8-4ba7-a6a4-268c22d632f0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/Login.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/SignUp.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/appengine-generated/local_db.bin" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/appengine-generated/local_db.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$AuthenticationToken.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$AuthenticationToken.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Parameters.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Parameters.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$User$Datastore.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$User$Datastore.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$User.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Errors.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Errors.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/datastore/User.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/datastore/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/user/Auth.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/user/Auth.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/security/Auth.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/security/Auth.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/security/AuthenticationToken.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/security/AuthenticationToken.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Errors.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Errors.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/appengine-generated/datastore-indexes-auto.xml" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/appengine-generated/datastore-indexes-auto.xml" />
     </list>
@@ -41,8 +47,8 @@
       <file leaf-file-name="SignUp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="29" column="70" lean-forward="false" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
+            <state relative-caret-position="163">
+              <caret line="98" column="9" lean-forward="true" selection-start-line="98" selection-start-column="9" selection-end-line="99" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,26 +56,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Auth.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java">
+      <file leaf-file-name="ProfileUpdate.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/ProfileUpdate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="60" column="1" lean-forward="true" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="233">
+              <caret line="119" column="75" lean-forward="true" selection-start-line="119" selection-start-column="75" selection-end-line="119" selection-end-column="75" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Login.java">
+      <file leaf-file-name="Errors.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Errors.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="66" column="8" lean-forward="false" selection-start-line="66" selection-start-column="8" selection-end-line="74" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="368">
+              <caret line="25" column="46" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,18 +79,8 @@
       <file leaf-file-name="AuthenticationToken.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="732">
-              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="51" lean-forward="false" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+            <state relative-caret-position="195">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,11 +89,21 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+            <state relative-caret-position="72">
+              <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="74" lean-forward="false" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="74" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,6 +127,21 @@
       <find>gson</find>
       <find>username</find>
       <find>refres</find>
+      <find>us</find>
+      <find>user.usern</find>
+      <find>user.userna</find>
+      <find>type</find>
+      <find>u</find>
+      <find>use</find>
+      <find>user.</find>
+      <find>user.us</find>
+      <find>user.user</find>
+      <find>user.usernam</find>
+      <find>user.username</find>
+      <find>use.username</find>
+      <find>us.username</find>
+      <find>u.username</find>
+      <find>.username</find>
     </findStrings>
     <replaceStrings>
       <replace>public</replace>
@@ -146,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/HelloAppEngine.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/errors/Errors.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/user/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/SQLHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/Miscellaneous.java" />
@@ -157,15 +173,18 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Encrypter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/OfyHelper.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Errors.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/Login.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Login.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/SignUp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Errors.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java" />
+        <option value="$MAVEN_REPOSITORY$/com/googlecode/objectify/objectify/5.0/objectify-5.0.jar!/com/googlecode/objectify/ObjectifyFilter.class" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/ProfileUpdate.java" />
       </list>
     </option>
   </component>
@@ -1019,12 +1038,12 @@
       <workItem from="1499359666627" duration="2076000" />
       <workItem from="1499364910742" duration="4356000" />
       <workItem from="1499370254850" duration="1612000" />
-      <workItem from="1499413490196" duration="519000" />
+      <workItem from="1499413490196" duration="10310000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30536000" />
+    <option name="totallyTimeSpent" value="40327000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1061,8 +1080,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33180252" sideWeight="0.49761903" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.7697595" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.23024055" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.52927667" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4707233" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1070,8 +1090,41 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.50238097" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2835821" sideWeight="0.49761903" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39954075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33180252" sideWeight="0.49761903" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.52927667" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.4707233" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1095,15 +1148,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/SQLHelper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/appengine-web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="167" lean-forward="false" selection-start-line="8" selection-start-column="167" selection-end-line="8" selection-end-column="167" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Miscellaneous.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1292,14 +1336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/OfyHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1316,62 +1352,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/objectify/objectify/5.0/objectify-5.0.jar!/com/googlecode/objectify/ObjectifyFilter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="46" column="30" lean-forward="false" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/OfyHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="29" column="70" lean-forward="false" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="195">
+          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Errors.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        <state relative-caret-position="368">
+          <caret line="25" column="46" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="51" lean-forward="false" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="732">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="66" column="8" lean-forward="false" selection-start-line="66" selection-start-column="8" selection-end-line="74" selection-end-column="58" />
+        <state relative-caret-position="345">
+          <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1380,11 +1396,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="60" column="1" lean-forward="true" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+        <state relative-caret-position="545">
+          <caret line="47" column="117" lean-forward="false" selection-start-line="47" selection-start-column="117" selection-end-line="47" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="74" lean-forward="false" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="98" column="9" lean-forward="true" selection-start-line="98" selection-start-column="9" selection-end-line="99" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/ProfileUpdate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="119" column="75" lean-forward="true" selection-start-line="119" selection-start-column="75" selection-end-line="119" selection-end-column="75" />
+          <folding />
         </state>
       </provider>
     </entry>

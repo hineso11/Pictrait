@@ -23,8 +23,9 @@ public enum  Errors {
     USER_DOESNT_EXIST(501, "This user doesn't exist"),
     TOKEN_INVALID(501, "This token is invalid"),
     TOKEN_EXPIRED(501, "This token has expired"),
-    WRONG_TOKEN_TYPE(501, "Token must be refresh token"),
-    INCORRECT_COMBINATION(501, "Incorrect username and password combination");
+    WRONG_TOKEN_TYPE(501, "Token is wrong type"),
+    INCORRECT_COMBINATION(501, "Incorrect username and password combination"),
+    NO_AUTH_TOKEN(501, "An auth token must be supplied");
 
     // MARK: Variables
     private int code;

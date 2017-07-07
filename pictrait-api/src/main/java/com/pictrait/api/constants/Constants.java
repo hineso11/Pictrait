@@ -16,6 +16,7 @@ public class Constants {
         public static final String FULL_NAME = "full_name";
         public static final String EMAIL = "email";
 
+        public static final String AUTH_TOKEN = "auth_token";
         public static final String REFRESH_TOKEN = "refresh_token";
     }
 
@@ -30,7 +31,10 @@ public class Constants {
 
         public class Datastore {
 
+            public static final String USER_ID = "ID/Name";
             public static final String USERNAME = "username";
+            public static final String HASHED_PASSWORD = "hashedPassword";
+            public static final String FULL_NAME = "fullName";
             public static final String EMAIL = "email";
         }
     }

@@ -45,7 +45,7 @@ public class Auth extends HttpServlet {
         }
 
         // Attempt to get the new auth token object
-        AuthenticationToken token = new AuthenticationToken(refreshToken, response);
+        AuthenticationToken token = new AuthenticationToken(refreshToken, AuthenticationToken.TokenType.REFRESH_TOKEN, response);
 
         JSONObject jsonObject = new JSONObject();
         try {
