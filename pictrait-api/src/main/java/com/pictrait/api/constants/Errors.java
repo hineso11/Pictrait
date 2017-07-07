@@ -7,8 +7,8 @@ package com.pictrait.api.constants;
 public enum  Errors {
 
     // List of all possible constants
-    CLIENT_ID_INCORRECT(401, "Client ID was not recognised"),
     GENERAL_ERROR(401, "Error, The request could not be completed"),
+    CLIENT_ID_INCORRECT(401, "Client ID was not recognised"),
     NULL_FIELDS(501, "Null fields were found"),
     USERNAME_LONG(501, "Username is too long"),
     USERNAME_SHORT(501, "Username is too short"),

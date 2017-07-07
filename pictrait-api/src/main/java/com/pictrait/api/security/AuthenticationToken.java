@@ -158,7 +158,7 @@ public class AuthenticationToken {
         String refreshToken = Jwts.builder()
                 .setAudience(AUDIENCE)
                 .setIssuer(ISSUER)
-                .setSubject(user.userId.toString())
+                .setSubject(user.getUserId().toString())
                 .setExpiration(expiryDate)
                 .setHeaderParam(TOKEN_TYPE , TokenType.REFRESH_TOKEN.getTokenType())
                 .signWith(SignatureAlgorithm.HS256, SIGNING_KEY).compact();
@@ -179,7 +179,7 @@ public class AuthenticationToken {
         String authToken = Jwts.builder()
                 .setAudience(AUDIENCE)
                 .setIssuer(ISSUER)
-                .setSubject(user.userId.toString())
+                .setSubject(user.getUserId().toString())
                 .setExpiration(expiryDate)
                 .setHeaderParam(TOKEN_TYPE , TokenType.AUTH_TOKEN.getTokenType())
                 .signWith(SignatureAlgorithm.HS256, SIGNING_KEY).compact();

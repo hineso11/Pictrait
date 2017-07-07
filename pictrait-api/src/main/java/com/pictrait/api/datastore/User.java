@@ -15,7 +15,7 @@ public class User {
 
     // MARK: Variables
     @Id
-    public Long userId;
+    private Long userId;
     @Index
     private String username;
     private String hashedPassword;
@@ -42,6 +42,10 @@ public class User {
     }
 
     // MARK: Getters and Setters
+    public Long getUserId () {
+
+        return userId;
+    }
     public String getHashedPassword () {
 
         return hashedPassword;

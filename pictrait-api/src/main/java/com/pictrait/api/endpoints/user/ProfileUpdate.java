@@ -42,6 +42,31 @@ public class ProfileUpdate extends HttpServlet {
         String fullName = request.getParameter(Constants.Parameters.FULL_NAME);
         String email = request.getParameter(Constants.Parameters.EMAIL);
 
+        if (validateFields(response, username, fullName, email)) {
+
+            // If the fields supplied have passed all necessary validation, update all the fields
+            user.changeUsername(username);
+            user.changeEmail(email);
+            user.changeFullName(fullName);
+
+
+            // Send the updated user object with fields updated in the response
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put(Constants.User.Datastore.USERNAME, user.getUsername());
+                jsonObject.put(Constants.User.Datastore.FULL_NAME, user.getFullName());
+                jsonObject.put(Constants.User.Datastore.EMAIL, user.getEmail());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            response.getWriter().write(jsonObject.toString());
+        }
+
+    }
+
+    private boolean validateFields (HttpServletResponse response, String username, String fullName, String email) throws IOException {
+
         // MARK: Validate Fields
         // For each field that can be changed by user, check if its blank or not
         // and edit it if it has been provided
@@ -52,24 +77,24 @@ public class ProfileUpdate extends HttpServlet {
             // Check length of username
             if (username.length() > MAX_USERNAME_LENGTH) {
                 response.sendError(Errors.USERNAME_LONG.getCode(), Errors.USERNAME_LONG.getMessage());
-                return;
+                return false;
             }
             if (username.length() < MIN_USERNAME_LENGTH) {
                 response.sendError(Errors.USERNAME_SHORT.getCode(), Errors.USERNAME_SHORT.getMessage());
-                return;
+                return false;
             }
 
             // Check the username uses only accepted characters
             if (!username.matches("^[a-zA-Z0-9._-]{3,}$")) {
                 response.sendError(Errors.USERNAME_FORMAT.getCode(), Errors.USERNAME_FORMAT.getMessage());
-                return;
+                return false;
             }
 
             // Check the username is unique
             if (!User.usernameIsUnique(username)) {
 
                 response.sendError(Errors.USERNAME_IN_USE.getCode(), Errors.USERNAME_IN_USE.getMessage());
-                return;
+                return false;
             }
 
         }
@@ -80,7 +105,7 @@ public class ProfileUpdate extends HttpServlet {
             // Check the length of the name
             if (fullName.length() > MAX_NAME_LENGTH) {
                 response.sendError(Errors.NAME_LONG.getCode(), Errors.NAME_LONG.getMessage());
-                return;
+                return false;
             }
 
         }
@@ -91,7 +116,7 @@ public class ProfileUpdate extends HttpServlet {
             // Check the length of the email
             if (email.length() > MAX_EMAIL_LENGTH) {
                 response.sendError(Errors.EMAIL_LONG.getCode(), Errors.EMAIL_LONG.getMessage());
-                return;
+                return false;
             }
             // Check that the email is the correct format
             String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
@@ -99,35 +124,18 @@ public class ProfileUpdate extends HttpServlet {
             java.util.regex.Matcher m = p.matcher(email);
             if (!m.matches()) {
                 response.sendError(Errors.EMAIL_FORMAT.getCode(), Errors.EMAIL_FORMAT.getMessage());
-                return;
+                return false;
             }
             // Check the email is unique
             if (!User.emailIsUnique(email)) {
 
                 response.sendError(Errors.EMAIL_IN_USE.getCode(), Errors.EMAIL_IN_USE.getMessage());
-                return;
+                return false;
             }
 
         }
         // END: Validate Fields
 
-        // If the fields supplied have passed all necessary validation, update all the fields
-        user.changeUsername(username);
-        user.changeEmail(email);
-        user.changeFullName(fullName);
-
-
-        // Send the updated user object with fields updated in the response
-        JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put(Constants.User.Datastore.USERNAME, user.getUsername());
-            jsonObject.put(Constants.User.Datastore.FULL_NAME, user.getFullName());
-            jsonObject.put(Constants.User.Datastore.EMAIL, user.getEmail());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        response.getWriter().write(jsonObject.toString());
+        return true;
     }
-
 }

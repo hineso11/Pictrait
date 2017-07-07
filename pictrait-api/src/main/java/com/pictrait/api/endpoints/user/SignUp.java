@@ -39,37 +39,62 @@ public class SignUp extends HttpServlet {
         String email = request.getParameter(Constants.Parameters.EMAIL);
         // END: Get parameters
 
+        // Check the data passes all validation
+        if (validateFields(response, username, password, fullName, email)) {
+
+            // Sign up the new user
+            User user = new User(username, password, fullName, email);
+
+            // Supply the user with a refresh and auth token
+            AuthenticationToken token = new AuthenticationToken(user);
+
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put(Constants.AuthenticationToken.AUTH_TOKEN, token.getAuthToken());
+                jsonObject.put(Constants.AuthenticationToken.REFRESH_TOKEN, token.getRefreshToken());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            response.getWriter().write(jsonObject.toString());
+        }
+
+
+    }
+
+    private boolean validateFields (HttpServletResponse response, String username, String password, String fullName, String email) throws IOException {
+
         // MARK: Validate Fields
         // Check for null fields
         if (username == null || password == null || fullName == null || email == null ||
                 username.isEmpty() || password.isEmpty() || fullName.isEmpty() || email.isEmpty()) {
             response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
-            return;
+            return false;
         }
         // Check the fields are the correct length
         if (username.length() > MAX_USERNAME_LENGTH) {
             response.sendError(Errors.USERNAME_LONG.getCode(), Errors.USERNAME_LONG.getMessage());
-            return;
+            return false;
         }
         if (username.length() < MIN_USERNAME_LENGTH) {
             response.sendError(Errors.USERNAME_SHORT.getCode(), Errors.USERNAME_SHORT.getMessage());
-            return;
+            return false;
         }
         if (password.length() > MAX_PASSWORD_LENGTH) {
             response.sendError(Errors.PASSWORD_LONG.getCode(), Errors.PASSWORD_LONG.getMessage());
-            return;
+            return false;
         }
         if (password.length() < MIN_PASSWORD_LENGTH) {
             response.sendError(Errors.PASSWORD_SHORT.getCode(), Errors.PASSWORD_SHORT.getMessage());
-            return;
+            return false;
         }
         if (email.length() > MAX_EMAIL_LENGTH) {
             response.sendError(Errors.EMAIL_LONG.getCode(), Errors.EMAIL_LONG.getMessage());
-            return;
+            return false;
         }
         if (fullName.length() > MAX_NAME_LENGTH) {
             response.sendError(Errors.NAME_LONG.getCode(), Errors.NAME_LONG.getMessage());
-            return;
+            return false;
         }
         // Check that the email is the correct format
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
@@ -77,43 +102,30 @@ public class SignUp extends HttpServlet {
         java.util.regex.Matcher m = p.matcher(email);
         if (!m.matches()) {
             response.sendError(Errors.EMAIL_FORMAT.getCode(), Errors.EMAIL_FORMAT.getMessage());
-            return;
+            return false;
         }
         // Check the username uses only accepted characters
         if (!username.matches("^[a-zA-Z0-9._-]{3,}$")) {
             response.sendError(Errors.USERNAME_FORMAT.getCode(), Errors.USERNAME_FORMAT.getMessage());
-            return;
+            return false;
         }
 
         // Check the username is unique
         if (!User.usernameIsUnique(username)) {
 
             response.sendError(Errors.USERNAME_IN_USE.getCode(), Errors.USERNAME_IN_USE.getMessage());
-            return;
+            return false;
         }
         // Check the email is unique
         if (!User.emailIsUnique(email)) {
 
             response.sendError(Errors.EMAIL_IN_USE.getCode(), Errors.EMAIL_IN_USE.getMessage());
-            return;
+            return false;
         }
         // END: Validate Fields
 
-        // Sign up the new user
-        User user = new User(username, password, fullName, email);
-
-        // Supply the user with a refresh and auth token
-        AuthenticationToken token = new AuthenticationToken(user);
-
-        JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put(Constants.AuthenticationToken.AUTH_TOKEN, token.getAuthToken());
-            jsonObject.put(Constants.AuthenticationToken.REFRESH_TOKEN, token.getRefreshToken());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        response.getWriter().write(jsonObject.toString());
+        // Return true if no problems with validation
+        return true;
     }
 
 }

@@ -37,25 +37,36 @@ public class Auth extends HttpServlet {
         // MARK: Get parameters
         String refreshToken = request.getParameter(Constants.Parameters.REFRESH_TOKEN);
 
+        // Check validation
+        if (validateFields(response, refreshToken)) {
+
+            // Attempt to get the new auth token object
+            AuthenticationToken token = new AuthenticationToken(refreshToken, AuthenticationToken.TokenType.REFRESH_TOKEN, response);
+
+
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put(Constants.AuthenticationToken.AUTH_TOKEN, token.getAuthToken());
+                jsonObject.put(Constants.AuthenticationToken.REFRESH_TOKEN, token.getRefreshToken());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            response.getWriter().write(jsonObject.toString());
+        }
+    }
+
+    private boolean validateFields (HttpServletResponse response, String refreshToken) throws IOException {
+
         // MARK: Validate Fields
         // Check for null fields
         if (refreshToken == null || refreshToken.isEmpty()) {
             response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
-            return;
+            return false;
         }
+        // END: Validate Fields
 
-        // Attempt to get the new auth token object
-        AuthenticationToken token = new AuthenticationToken(refreshToken, AuthenticationToken.TokenType.REFRESH_TOKEN, response);
-
-        JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put(Constants.AuthenticationToken.AUTH_TOKEN, token.getAuthToken());
-            jsonObject.put(Constants.AuthenticationToken.REFRESH_TOKEN, token.getRefreshToken());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        response.getWriter().write(jsonObject.toString());
+        return true;
     }
 
 }

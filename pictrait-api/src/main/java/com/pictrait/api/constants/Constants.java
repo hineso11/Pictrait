@@ -31,9 +31,7 @@ public class Constants {
 
         public class Datastore {
 
-            public static final String USER_ID = "ID/Name";
             public static final String USERNAME = "username";
-            public static final String HASHED_PASSWORD = "hashedPassword";
             public static final String FULL_NAME = "fullName";
             public static final String EMAIL = "email";
         }
