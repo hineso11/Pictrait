@@ -25,7 +25,11 @@ public enum  Errors {
     TOKEN_EXPIRED(501, "This token has expired"),
     WRONG_TOKEN_TYPE(501, "Token is wrong type"),
     INCORRECT_COMBINATION(501, "Incorrect username and password combination"),
-    NO_AUTH_TOKEN(501, "An auth token must be supplied");
+    NO_AUTH_TOKEN(501, "An auth token must be supplied"),
+    FILE_NOT_JPEG(501, "The image provided must be a JPEG"),
+    IMAGE_NOT_SQUARE(501, "The image must be a square"),
+    IMAGE_NOT_UPLOADED(501, "The image could not be uploaded"),
+    IMAGE_TOO_BIG(501, "The size of the image provided is too large");
 
     // MARK: Variables
     private int code;

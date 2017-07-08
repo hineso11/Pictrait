@@ -6,6 +6,7 @@ package com.pictrait.api.constants;
 public class Constants {
 
     public static final String[] clientIDs = {"clientID", "sfsffw34gtgwg121"};
+    public static final String BUCKET_NAME = "pictrait-app.appspot.com";
 
     public class Parameters {
 
@@ -18,6 +19,8 @@ public class Constants {
 
         public static final String AUTH_TOKEN = "auth_token";
         public static final String REFRESH_TOKEN = "refresh_token";
+
+        public static final String PHOTO = "photo";
     }
 
     public class User {
@@ -34,6 +37,19 @@ public class Constants {
             public static final String USERNAME = "username";
             public static final String FULL_NAME = "fullName";
             public static final String EMAIL = "email";
+        }
+    }
+
+    public class Photo {
+
+        public static final double MAX_PHOTO_SIZE = 2.0; // Megabytes
+        public static final String IMAGE_TYPE = "image/jpeg";
+        public static final String FILE_TYPE = "jpg";
+        public static final String FOLDER = "photos";
+
+        public class Datastore {
+
+            public static final String PHOTO_ID = "photoId";
         }
     }
 
