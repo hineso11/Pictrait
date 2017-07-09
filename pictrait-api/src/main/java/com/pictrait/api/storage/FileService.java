@@ -30,6 +30,7 @@ public class FileService {
     public boolean uploadFile (InputStream inputStream, String fileName, String folder, String fileType) {
 
         GcsFileOptions instance = GcsFileOptions.getDefaultInstance();
+
         GcsFilename name = new GcsFilename(Constants.BUCKET_NAME, folder + "/" + fileName + "." + fileType);
         GcsOutputChannel outputChannel;
 

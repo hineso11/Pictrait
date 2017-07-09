@@ -47,6 +47,10 @@ public class Constants {
         public static final String FILE_TYPE = "jpg";
         public static final String FOLDER = "photos";
 
+        public static final int PHOTO_ACCESS_DAYS = 1;
+
+        public static final String DOWNLOAD_URL = "download_url";
+
         public class Datastore {
 
             public static final String PHOTO_ID = "photoId";

@@ -69,6 +69,7 @@ public class Upload extends HttpServlet {
                 JSONObject jsonObject = new JSONObject();
                 try {
                     jsonObject.put(Constants.Photo.Datastore.PHOTO_ID, photo.getPhotoId());
+                    jsonObject.put(Constants.Photo.DOWNLOAD_URL, photo.getDownloadUrl());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

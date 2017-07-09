@@ -38,6 +38,7 @@
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
           <element id="library" level="project" name="Maven: javax.jdo:jdo2-api:2.3-eb" />
           <element id="library" level="project" name="Maven: javax.transaction:transaction-api:1.1" />
+          <element id="library" level="project" name="Maven: com.google.apis:google-api-services-sqladmin:v1beta4-rev25-1.22.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
