@@ -51,18 +51,8 @@ public class ProfileUpdate extends HttpServlet {
             user.changeEmail(email);
             user.changeFullName(fullName);
 
-
-            // Send the updated user object with fields updated in the response
-            JSONObject jsonObject = new JSONObject();
-            try {
-                jsonObject.put(Constants.User.Datastore.USERNAME, user.getUsername());
-                jsonObject.put(Constants.User.Datastore.FULL_NAME, user.getFullName());
-                jsonObject.put(Constants.User.Datastore.EMAIL, user.getEmail());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            response.getWriter().write(jsonObject.toString());
+            // Send the response
+            response.getWriter().write(user.toJson());
         }
 
     }

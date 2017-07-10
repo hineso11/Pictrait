@@ -9,6 +9,8 @@ import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 import com.pictrait.api.constants.Constants;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import javax.print.attribute.standard.Media;
 import java.io.UnsupportedEncodingException;
@@ -39,8 +41,8 @@ public class Photo {
     public Photo (User user) {
 
         userId = user.getUserId();
-        ObjectifyService.ofy().save().entity(this).now();
         photoAvailable = false;
+        ObjectifyService.ofy().save().entity(this).now();
     }
 
     // MARK: Getters and Setters
@@ -95,5 +97,22 @@ public class Photo {
 
 
         return url;
+    }
+
+    public String toJson () {
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put(Constants.Photo.Datastore.PHOTO_ID, photoId);
+            jsonObject.put(Constants.Photo.DOWNLOAD_URL, getDownloadUrl());
+            jsonObject.put(Constants.Photo.Datastore.USER_ID, userId);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+
+            e.printStackTrace();
+        }
+
+        return jsonObject.toString();
     }
 }

@@ -6,6 +6,8 @@ import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 import com.pictrait.api.constants.Constants;
 import com.pictrait.api.security.Encrypter;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by oliver on 06/07/2017.
@@ -113,4 +115,18 @@ public class User {
         return user == null;
     }
 
+    public String toJson () {
+
+        // Send the updated user object with fields updated in the response
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put(Constants.User.Datastore.USERNAME, username);
+            jsonObject.put(Constants.User.Datastore.FULL_NAME, fullName);
+            jsonObject.put(Constants.User.Datastore.EMAIL, email);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return jsonObject.toString();
+    }
 }

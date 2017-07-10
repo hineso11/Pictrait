@@ -29,7 +29,9 @@ public enum  Errors {
     FILE_NOT_JPEG(501, "The image provided must be a JPEG"),
     IMAGE_NOT_SQUARE(501, "The image must be a square"),
     IMAGE_NOT_UPLOADED(501, "The image could not be uploaded"),
-    IMAGE_TOO_BIG(501, "The size of the image provided is too large");
+    IMAGE_TOO_BIG(501, "The size of the image provided is too large"),
+    PHOTO_DOESNT_EXIST(501, "The photo does not exist"),
+    ALREADY_LIKED(501, "The photo has already been liked by the user");
 
     // MARK: Variables
     private int code;

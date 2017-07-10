@@ -1,9 +1,12 @@
 package com.pictrait.api.security;
 
 import com.googlecode.objectify.ObjectifyService;
+import com.pictrait.api.constants.Constants;
 import com.pictrait.api.constants.Errors;
 import com.pictrait.api.datastore.User;
 import io.jsonwebtoken.*;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -185,6 +188,19 @@ public class AuthenticationToken {
                 .signWith(SignatureAlgorithm.HS256, SIGNING_KEY).compact();
 
         return authToken;
+    }
+
+    public String toJson () {
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put(Constants.AuthenticationToken.AUTH_TOKEN, authToken);
+            jsonObject.put(Constants.AuthenticationToken.REFRESH_TOKEN, refreshToken);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return jsonObject.toString();
     }
 
 }

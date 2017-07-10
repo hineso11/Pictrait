@@ -28,8 +28,9 @@ public class Encrypter {
             byte[] salt = SecureRandom.getInstance("SHA1PRNG").generateSeed(saltLen);
             // store the salt with the password
             return BaseEncoding.base64().encode(salt) + "$" + hash(password, salt);
-        } catch (Exception e) {
-            return "password";
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

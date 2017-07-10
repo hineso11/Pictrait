@@ -45,16 +45,8 @@ public class Auth extends HttpServlet {
             // Attempt to get the new auth token object
             AuthenticationToken token = new AuthenticationToken(refreshToken, AuthenticationToken.TokenType.REFRESH_TOKEN, response);
 
-
-            JSONObject jsonObject = new JSONObject();
-            try {
-                jsonObject.put(Constants.AuthenticationToken.AUTH_TOKEN, token.getAuthToken());
-                jsonObject.put(Constants.AuthenticationToken.REFRESH_TOKEN, token.getRefreshToken());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            response.getWriter().write(jsonObject.toString());
+            // Send the response
+            response.getWriter().write(token.toJson());
         }
     }
 

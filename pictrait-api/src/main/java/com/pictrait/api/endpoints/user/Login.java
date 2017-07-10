@@ -51,15 +51,9 @@ public class Login extends HttpServlet {
             // Supply the user with a refresh and auth token
             AuthenticationToken token = new AuthenticationToken(user);
 
-            JSONObject jsonObject = new JSONObject();
-            try {
-                jsonObject.put(Constants.AuthenticationToken.AUTH_TOKEN, token.getAuthToken());
-                jsonObject.put(Constants.AuthenticationToken.REFRESH_TOKEN, token.getRefreshToken());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
 
-            response.getWriter().write(jsonObject.toString());
+            // Send the response
+            response.getWriter().write(token.toJson());
         }
 
     }

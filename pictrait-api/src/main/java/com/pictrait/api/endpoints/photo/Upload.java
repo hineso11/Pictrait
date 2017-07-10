@@ -4,6 +4,7 @@ import com.pictrait.api.constants.Constants;
 import com.pictrait.api.constants.Errors;
 import com.pictrait.api.datastore.Photo;
 import com.pictrait.api.datastore.User;
+import com.pictrait.api.security.Auth;
 import com.pictrait.api.storage.FileService;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,13 +31,13 @@ public class Upload extends HttpServlet {
 
         // MARK: Security
         // Check whether the client ID has been supplied
-        if (!com.pictrait.api.security.Auth.checkClientID(request, response)) {
+        if (!Auth.checkClientID(request, response)) {
             // If there is a problem with client ID, end servlet as error sent
             return;
         }
 
         // Check that the auth token for the user is valid
-        User user = com.pictrait.api.security.Auth.checkAuthToken(request, response);
+        User user = Auth.checkAuthToken(request, response);
         if (user == null) {
             // If there is a problem with client ID, end servlet as error sent
             return;
@@ -64,17 +65,8 @@ public class Upload extends HttpServlet {
                 // Make the photo available
                 photo.setPhotoAvailable(true);
 
-                // Send the response with the photo id included
-                // Send the updated user object with fields updated in the response
-                JSONObject jsonObject = new JSONObject();
-                try {
-                    jsonObject.put(Constants.Photo.Datastore.PHOTO_ID, photo.getPhotoId());
-                    jsonObject.put(Constants.Photo.DOWNLOAD_URL, photo.getDownloadUrl());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                response.getWriter().write(jsonObject.toString());
+                // Send the response
+                response.getWriter().write(photo.toJson());
             } else {
 
                 // Send error telling user, there's error in uploading file
@@ -89,7 +81,7 @@ public class Upload extends HttpServlet {
     private boolean validatePhoto (HttpServletResponse response, Part filePart) throws IOException {
 
         // Check that the file has actually been provided
-        if (filePart == null || filePart.getSize() < 100) {
+        if (filePart == null || filePart.getSize() == 0) {
 
             response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
             return false;
@@ -97,7 +89,7 @@ public class Upload extends HttpServlet {
 
 
         // Check that the size of the image uploaded is less than the max image size
-        double size = filePart.getSize() / (double)1000000; // size in MB
+        double size = filePart.getSize() / (double) 1000000; // size in MB
         if (size > Constants.Photo.MAX_PHOTO_SIZE) {
 
             response.sendError(Errors.IMAGE_TOO_BIG.getCode(), Errors.IMAGE_TOO_BIG.getMessage());

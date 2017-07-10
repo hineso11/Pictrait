@@ -21,6 +21,7 @@ public class Constants {
         public static final String REFRESH_TOKEN = "refresh_token";
 
         public static final String PHOTO = "photo";
+        public static final String PHOTO_ID = "photo_id";
     }
 
     public class User {
@@ -54,6 +55,16 @@ public class Constants {
         public class Datastore {
 
             public static final String PHOTO_ID = "photoId";
+            public static final String USER_ID = "userId";
+        }
+    }
+
+    public class Like {
+
+        public class Datastore {
+
+            public static final String PHOTO_ID = "photoId";
+            public static final String USER_ID = "userId";
         }
     }
 
