@@ -46,6 +46,7 @@ public class Auth extends HttpServlet {
             AuthenticationToken token = new AuthenticationToken(refreshToken, AuthenticationToken.TokenType.REFRESH_TOKEN, response);
 
             // Send the response
+            response.setContentType(Constants.JSON_TYPE);
             response.getWriter().write(token.toJson());
         }
     }

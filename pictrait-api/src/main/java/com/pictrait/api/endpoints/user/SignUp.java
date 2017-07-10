@@ -51,6 +51,7 @@ public class SignUp extends HttpServlet {
             AuthenticationToken token = new AuthenticationToken(user);
 
             // Send the response
+            response.setContentType(Constants.JSON_TYPE);
             response.getWriter().write(token.toJson());
         }
 

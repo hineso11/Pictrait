@@ -7,6 +7,7 @@ public class Constants {
 
     public static final String[] clientIDs = {"clientID", "sfsffw34gtgwg121"};
     public static final String BUCKET_NAME = "pictrait-app.appspot.com";
+    public static final String JSON_TYPE = "text/json";
 
     public class Parameters {
 

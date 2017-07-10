@@ -52,6 +52,7 @@ public class ProfileUpdate extends HttpServlet {
             user.changeFullName(fullName);
 
             // Send the response
+            response.setContentType(Constants.JSON_TYPE);
             response.getWriter().write(user.toJson());
         }
 

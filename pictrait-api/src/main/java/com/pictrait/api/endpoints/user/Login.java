@@ -53,6 +53,7 @@ public class Login extends HttpServlet {
 
 
             // Send the response
+            response.setContentType(Constants.JSON_TYPE);
             response.getWriter().write(token.toJson());
         }
 

@@ -55,6 +55,7 @@ public class LikePhoto extends HttpServlet {
 
             Like like = new Like(user, photoId);
 
+            response.setContentType(Constants.JSON_TYPE);
             response.getWriter().write(like.toJson());
         }
 
