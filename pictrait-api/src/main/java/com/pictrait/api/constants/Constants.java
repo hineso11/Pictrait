@@ -23,6 +23,8 @@ public class Constants {
 
         public static final String PHOTO = "photo";
         public static final String PHOTO_ID = "photo_id";
+
+        public static final String SEARCH_STRING = "search_string";
     }
 
     public class User {
@@ -36,6 +38,7 @@ public class Constants {
 
         public class Datastore {
 
+            public static final String USER_ID = "userId";
             public static final String USERNAME = "username";
             public static final String FULL_NAME = "fullName";
             public static final String EMAIL = "email";

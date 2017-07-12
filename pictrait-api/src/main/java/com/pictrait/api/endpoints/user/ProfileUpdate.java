@@ -53,7 +53,7 @@ public class ProfileUpdate extends HttpServlet {
 
             // Send the response
             response.setContentType(Constants.JSON_TYPE);
-            response.getWriter().write(user.toJson());
+            response.getWriter().write(user.toJson().toString());
         }
 
     }

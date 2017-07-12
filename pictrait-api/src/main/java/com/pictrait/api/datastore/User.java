@@ -21,7 +21,7 @@ public class User {
     @Index
     private String username;
     private String hashedPassword;
-    protected String fullName;
+    @Index protected String fullName;
     @Index private String email;
 
     // MARK: Constructors
@@ -115,18 +115,19 @@ public class User {
         return user == null;
     }
 
-    public String toJson () {
+    public JSONObject toJson () {
 
         // Send the updated user object with fields updated in the response
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put(Constants.User.Datastore.USERNAME, username);
-            jsonObject.put(Constants.User.Datastore.FULL_NAME, fullName);
-            jsonObject.put(Constants.User.Datastore.EMAIL, email);
+            jsonObject
+                    .put(Constants.User.Datastore.USER_ID, userId)
+                    .put(Constants.User.Datastore.USERNAME, username)
+                    .put(Constants.User.Datastore.FULL_NAME, fullName);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        return jsonObject.toString();
+        return jsonObject;
     }
 }
