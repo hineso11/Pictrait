@@ -25,6 +25,8 @@ public class Constants {
         public static final String PHOTO_ID = "photo_id";
 
         public static final String SEARCH_STRING = "search_string";
+
+        public static final String USER_ID = "user_id";
     }
 
     public class User {

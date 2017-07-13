@@ -9,6 +9,7 @@ public enum  Errors {
     // List of all possible constants
     GENERAL_ERROR(401, "Error, The request could not be completed"),
     CLIENT_ID_INCORRECT(401, "Client ID was not recognised"),
+    USER_DOESNT_EXIST(401, "This user doesn't exist"),
     NULL_FIELDS(501, "Null fields were found"),
     USERNAME_LONG(501, "Username is too long"),
     USERNAME_SHORT(501, "Username is too short"),
@@ -20,7 +21,6 @@ public enum  Errors {
     USERNAME_FORMAT(501, "Username format is invalid"),
     EMAIL_IN_USE(501, "Email is already in use"),
     USERNAME_IN_USE(501, "Username is already in use"),
-    USER_DOESNT_EXIST(501, "This user doesn't exist"),
     TOKEN_INVALID(501, "This token is invalid"),
     TOKEN_EXPIRED(501, "This token has expired"),
     WRONG_TOKEN_TYPE(501, "Token is wrong type"),
@@ -31,6 +31,7 @@ public enum  Errors {
     IMAGE_NOT_UPLOADED(501, "The image could not be uploaded"),
     IMAGE_TOO_BIG(501, "The size of the image provided is too large"),
     PHOTO_DOESNT_EXIST(501, "The photo does not exist"),
+    USER_NOT_FOUND(501, "The user requested does not exist"),
     ALREADY_LIKED(501, "The photo has already been liked by the user");
 
     // MARK: Variables
