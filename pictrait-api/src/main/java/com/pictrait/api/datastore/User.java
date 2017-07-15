@@ -106,6 +106,7 @@ public class User {
         // If a user hasn't been found return false, else true
         return user == null;
     }
+
     // Function to determine if a given email is unique
     public static boolean emailIsUnique (String email) {
 
@@ -113,6 +114,24 @@ public class User {
         User user = ObjectifyService.ofy().load().type(User.class).filter(Constants.User.Datastore.EMAIL, email).first().now();
         // If a user hasn't been found return false, else true
         return user == null;
+    }
+
+    // Function to determine how many followers they have
+    private int followerCount () {
+
+        // Find the entity count for follower relationships where they are the subject
+        return ObjectifyService.ofy().load().type(Follower.class)
+                .filter(Constants.Follower.Datastore.SUBJECT_ID, userId)
+                .count();
+    }
+
+    // Function to determine how many users they are following
+    private int followingCount () {
+
+        // Find the entity count for follower relationships where they are the follower
+        return ObjectifyService.ofy().load().type(Follower.class)
+                .filter(Constants.Follower.Datastore.FOLLOWER_ID, userId)
+                .count();
     }
 
     public JSONObject toJson () {
@@ -123,7 +142,9 @@ public class User {
             jsonObject
                     .put(Constants.User.Datastore.USER_ID, userId)
                     .put(Constants.User.Datastore.USERNAME, username)
-                    .put(Constants.User.Datastore.FULL_NAME, fullName);
+                    .put(Constants.User.Datastore.FULL_NAME, fullName)
+                    .put(Constants.User.FOLLOWER_COUNT, followerCount())
+                    .put(Constants.User.FOLLOWING_COUNT, followingCount());
         } catch (JSONException e) {
             e.printStackTrace();
         }

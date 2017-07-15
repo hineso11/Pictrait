@@ -40,6 +40,9 @@ public class Constants {
         public static final int MAX_EMAIL_LENGTH = 254;
         public static final int MAX_NAME_LENGTH = 25;
 
+        public static final String FOLLOWER_COUNT = "followers";
+        public static final String FOLLOWING_COUNT = "following";
+
         public class Datastore {
 
             public static final String USER_ID = "userId";
@@ -59,6 +62,7 @@ public class Constants {
         public static final int PHOTO_ACCESS_DAYS = 1;
 
         public static final String DOWNLOAD_URL = "download_url";
+        public static final String LIKES_COUNT = "likes";
 
         public class Datastore {
 

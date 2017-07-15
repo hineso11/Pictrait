@@ -67,7 +67,7 @@ public class Upload extends HttpServlet {
 
                 // Send the response
                 response.setContentType(Constants.JSON_TYPE);
-                response.getWriter().write(photo.toJson());
+                response.getWriter().write(photo.toJson().toString());
             } else {
 
                 // Send error telling user, there's error in uploading file

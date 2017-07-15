@@ -99,13 +99,22 @@ public class Photo {
         return url;
     }
 
-    public String toJson () {
+    // Function to get number of likes for photo
+    public int likesCount () {
+
+        return ObjectifyService.ofy().load().type(Like.class)
+                .filter(Constants.Like.Datastore.PHOTO_ID, photoId)
+                .count();
+    }
+
+    public JSONObject toJson () {
 
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put(Constants.Photo.Datastore.PHOTO_ID, photoId);
             jsonObject.put(Constants.Photo.DOWNLOAD_URL, getDownloadUrl());
             jsonObject.put(Constants.Photo.Datastore.USER_ID, userId);
+            jsonObject.put(Constants.Photo.LIKES_COUNT, likesCount());
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
@@ -113,6 +122,6 @@ public class Photo {
             e.printStackTrace();
         }
 
-        return jsonObject.toString();
+        return jsonObject;
     }
 }
