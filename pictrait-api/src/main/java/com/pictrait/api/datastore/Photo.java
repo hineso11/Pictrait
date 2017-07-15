@@ -65,6 +65,7 @@ public class Photo {
     // Function to get a signed download url for the image
     public String getDownloadUrl () throws UnsupportedEncodingException {
 
+        // TODO Clean up code, constants etc
         // Construct parameters for the signed url
         String httpVerb = "GET";
         Calendar expiryDate = Calendar.getInstance();
@@ -115,10 +116,7 @@ public class Photo {
             jsonObject.put(Constants.Photo.DOWNLOAD_URL, getDownloadUrl());
             jsonObject.put(Constants.Photo.Datastore.USER_ID, userId);
             jsonObject.put(Constants.Photo.LIKES_COUNT, likesCount());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-
+        } catch (JSONException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
 

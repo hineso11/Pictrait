@@ -40,6 +40,11 @@ public class Follower {
 
     // MARK: Methods
 
+    public Long getSubjectId () {
+
+        return subjectId;
+    }
+
     public JSONObject toJson () {
 
         JSONObject jsonObject = new JSONObject();

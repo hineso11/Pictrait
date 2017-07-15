@@ -29,6 +29,8 @@ public class Constants {
         public static final String USER_ID = "user_id";
 
         public static final String SUBJECT_ID = "subject_id";
+
+        public static final String FEED_TYPE = "feed_type";
     }
 
     public class User {
