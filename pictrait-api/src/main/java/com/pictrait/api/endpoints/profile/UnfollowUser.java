@@ -19,8 +19,9 @@ import java.io.IOException;
  * Created by oliver on 15/07/2017.
  */
 @MultipartConfig
-@WebServlet(name = "FollowUser", value = "/profile/follow")
-public class FollowUser extends HttpServlet {
+@WebServlet(name = "UnfollowUser", value = "/profile/unfollow")
+public class UnfollowUser extends HttpServlet {
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -53,12 +54,16 @@ public class FollowUser extends HttpServlet {
         // Check the user id passes all necessary validation
         if (validateFields(response, user.getUserId(), subjectId)) {
 
-            // Save the new follower relationship
-            Follower follower = new Follower(user.getUserId(), subjectId);
+            // Get the follower relationship
+            Follower follower = ObjectifyService.ofy().load().type(Follower.class)
+                    .filter(Constants.Follower.Datastore.FOLLOWER_ID, user.getUserId())
+                    .filter(Constants.Follower.Datastore.SUBJECT_ID, subjectId)
+                    .first().now();
+            // Delete the follower relationship
+            ObjectifyService.ofy().delete().entity(follower);
 
-            // Send the response
-            response.getWriter().write(follower.toJson().toString());
-            response.setContentType(Constants.JSON_TYPE);
+            // No response is needed because no object is to be returned
+            // Response code dictates success of operation
         }
     }
 
@@ -71,30 +76,15 @@ public class FollowUser extends HttpServlet {
             return false;
         }
 
-        // Check the user is not trying to follow themselves
-        if (subjectId.equals(followerId)) {
-
-            response.sendError(Errors.CANNOT_FOLLOW_SELF.getCode(), Errors.CANNOT_FOLLOW_SELF.getMessage());
-            return false;
-        }
-
-        // Check the user exists
-        User user = ObjectifyService.ofy().load().type(User.class).id(subjectId).now();
-        if (user == null) {
-
-            response.sendError(Errors.USER_NOT_FOUND.getCode(), Errors.USER_NOT_FOUND.getMessage());
-            return false;
-        }
-
-        // Check the user does not already follow this user
+        // Check the user is actually following this user
         // Attempt to find an existing follower relationship
         Follower follower = ObjectifyService.ofy().load().type(Follower.class)
                 .filter(Constants.Follower.Datastore.FOLLOWER_ID, followerId)
                 .filter(Constants.Follower.Datastore.SUBJECT_ID, subjectId)
                 .first().now();
-        if (follower != null) {
+        if (follower == null) {
 
-            response.sendError(Errors.ALREADY_FOLLOWING.getCode(), Errors.ALREADY_FOLLOWING.getMessage());
+            response.sendError(Errors.NO_FOLLOWING_EXISTS.getCode(), Errors.NO_FOLLOWING_EXISTS.getMessage());
             return false;
         }
 
