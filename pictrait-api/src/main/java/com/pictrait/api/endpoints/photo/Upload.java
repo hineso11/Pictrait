@@ -81,6 +81,7 @@ public class Upload extends HttpServlet {
 
     private boolean validatePhoto (HttpServletResponse response, Part filePart) throws IOException {
 
+        // TODO Fix errors here: no null field is detected, goes to invalid file type error
         // Check that the file has actually been provided
         if (filePart == null || filePart.getSize() == 0) {
 

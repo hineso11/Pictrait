@@ -32,7 +32,9 @@ public enum  Errors {
     IMAGE_TOO_BIG(501, "The size of the image provided is too large"),
     PHOTO_DOESNT_EXIST(501, "The photo does not exist"),
     USER_NOT_FOUND(501, "The user requested does not exist"),
-    ALREADY_LIKED(501, "The photo has already been liked by the user");
+    ALREADY_LIKED(501, "The photo has already been liked by the user"),
+    ALREADY_FOLLOWING(501, "The user is already following this user"),
+    CANNOT_FOLLOW_SELF(501, "User cannot follow themselves");
 
     // MARK: Variables
     private int code;

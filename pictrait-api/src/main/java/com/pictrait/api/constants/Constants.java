@@ -27,6 +27,8 @@ public class Constants {
         public static final String SEARCH_STRING = "search_string";
 
         public static final String USER_ID = "user_id";
+
+        public static final String SUBJECT_ID = "subject_id";
     }
 
     public class User {
@@ -71,6 +73,15 @@ public class Constants {
 
             public static final String PHOTO_ID = "photoId";
             public static final String USER_ID = "userId";
+        }
+    }
+
+    public class Follower {
+
+        public class Datastore {
+
+            public static final String FOLLOWER_ID = "followerId";
+            public static final String SUBJECT_ID = "subjectId";
         }
     }
 

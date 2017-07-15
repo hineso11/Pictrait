@@ -46,10 +46,12 @@ public class Search extends HttpServlet {
         // If the given parameters pass validation, execute query
         if (validateFields(response, searchString)) {
 
+            // TODO Exclude requesting user from query
             // Find all entities that start with the given substring
             List<User> users = ObjectifyService.ofy().load().type(User.class)
                     .filter(Constants.User.Datastore.FULL_NAME + " >=", searchString)
                     .filter(Constants.User.Datastore.FULL_NAME + " <", searchString + "\ufffd")
+                    .limit(20) // limit the number of results returned
                     .list();
 
             JSONArray usersArray = new JSONArray();
@@ -58,7 +60,7 @@ public class Search extends HttpServlet {
                 usersArray.put(user1.toJson());
             }
 
-            // Send the response
+            // Send the response in json
             JSONObject mainObject = new JSONObject();
             try {
                 mainObject.put("users", usersArray);
