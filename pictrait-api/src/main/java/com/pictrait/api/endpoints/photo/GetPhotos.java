@@ -97,7 +97,7 @@ public class GetPhotos extends HttpServlet {
         }
 
         // Get all photos for the user ids
-        List<Photo> photos = new ArrayList<Photo>();
+        List<Photo> photos;
         if (userIds.size() > 0) {
             photos = ObjectifyService.ofy().load().type(Photo.class)
                     .filter(Constants.Photo.Datastore.USER_ID + " in", userIds)
@@ -121,6 +121,9 @@ public class GetPhotos extends HttpServlet {
             }
             response.setContentType(Constants.JSON_TYPE);
             response.getWriter().write(mainObject.toString());
+        } else {
+
+            response.sendError(Errors.NOT_FOLLOWING_ANYONE.getCode(), Errors.NOT_FOLLOWING_ANYONE.getMessage());
         }
 
 

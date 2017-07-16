@@ -35,7 +35,8 @@ public enum  Errors {
     ALREADY_LIKED(501, "The photo has already been liked by the user"),
     ALREADY_FOLLOWING(501, "The user is already following this user"),
     CANNOT_FOLLOW_SELF(501, "User cannot follow themselves"),
-    NO_FOLLOWING_EXISTS(501, "User is not following this person");
+    NO_FOLLOWING_EXISTS(501, "User is not following this person"),
+    NOT_FOLLOWING_ANYONE(501, "User does not follow anyone");
 
     // MARK: Variables
     private int code;
