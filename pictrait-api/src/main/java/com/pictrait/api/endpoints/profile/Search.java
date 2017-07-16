@@ -46,7 +46,6 @@ public class Search extends HttpServlet {
         // If the given parameters pass validation, execute query
         if (validateFields(response, searchString)) {
 
-            // TODO Exclude requesting user from query
             // Find all entities that start with the given substring
             List<User> users = ObjectifyService.ofy().load().type(User.class)
                     .filter(Constants.User.Datastore.FULL_NAME + " >=", searchString)

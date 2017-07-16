@@ -17,6 +17,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by oliver on 08/07/2017.
@@ -28,7 +29,8 @@ public class Photo {
     @Id
     private Long photoId;
     @Index Long userId;
-    boolean photoAvailable;
+    @Index boolean photoAvailable;
+    @Index Date createdAt;
 
     // MARK: Constructors
     // Blank constructor for Objectify service
@@ -42,6 +44,7 @@ public class Photo {
 
         userId = user.getUserId();
         photoAvailable = false;
+        createdAt = new Date();
         ObjectifyService.ofy().save().entity(this).now();
     }
 
@@ -65,25 +68,25 @@ public class Photo {
     // Function to get a signed download url for the image
     public String getDownloadUrl () throws UnsupportedEncodingException {
 
-        // TODO Clean up code, constants etc
         // Construct parameters for the signed url
-        String httpVerb = "GET";
+        String httpVerb = "GET"; // http method
         Calendar expiryDate = Calendar.getInstance();
-        expiryDate.add(Calendar.DATE, Constants.Photo.PHOTO_ACCESS_DAYS);
-        long expiryTime = expiryDate.getTimeInMillis() / 1000L;
+        expiryDate.add(Calendar.DATE, Constants.Photo.PHOTO_ACCESS_DAYS); // make expiry date 1 day after current date
+        long expiryTime = expiryDate.getTimeInMillis() / 1000L; // get time since epoch (seconds)
         String path = "/" + Constants.BUCKET_NAME + "/" + Constants.Photo.FOLDER + "/" + String.valueOf(photoId) + "." + Constants.Photo.FILE_TYPE;
-        String unsignedString = httpVerb + "\n\n\n" + expiryTime + "\n" + path;
+        String unsignedString = httpVerb + "\n\n\n" + expiryTime + "\n" + path; // construct string
 
-        String baseUrl = "https://storage.googleapis.com/";
-
+        // Sign the usnigned string using App Engine identifying service
         final AppIdentityService identityService = AppIdentityServiceFactory.getAppIdentityService();
         final AppIdentityService.SigningResult signingResult = identityService
                 .signForApp(unsignedString.getBytes());
 
+        // Encode the signing result using base64
         final String encodedSignature = new String(Base64.encodeBase64(
                 signingResult.getSignature()), "UTF-8");
 
-        String url = baseUrl +
+        // Construct the download url
+        String url = Constants.BASE_FILE_URL +
                 Constants.BUCKET_NAME +
                 "/" +
                 Constants.Photo.FOLDER +
@@ -103,11 +106,13 @@ public class Photo {
     // Function to get number of likes for photo
     public int likesCount () {
 
+        // Get the count of likes for a corresponding photo id
         return ObjectifyService.ofy().load().type(Like.class)
                 .filter(Constants.Like.Datastore.PHOTO_ID, photoId)
                 .count();
     }
 
+    // Function to return a json representation of this object
     public JSONObject toJson () {
 
         JSONObject jsonObject = new JSONObject();
@@ -116,6 +121,7 @@ public class Photo {
             jsonObject.put(Constants.Photo.DOWNLOAD_URL, getDownloadUrl());
             jsonObject.put(Constants.Photo.Datastore.USER_ID, userId);
             jsonObject.put(Constants.Photo.LIKES_COUNT, likesCount());
+            jsonObject.put(Constants.Photo.Datastore.CREATED_AT, createdAt.toString());
         } catch (JSONException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }

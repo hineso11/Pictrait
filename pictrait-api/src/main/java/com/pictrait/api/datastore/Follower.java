@@ -45,6 +45,7 @@ public class Follower {
         return subjectId;
     }
 
+    // Function to return a json representation of this object
     public JSONObject toJson () {
 
         JSONObject jsonObject = new JSONObject();

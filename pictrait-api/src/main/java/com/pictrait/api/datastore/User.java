@@ -134,6 +134,7 @@ public class User {
                 .count();
     }
 
+    // Function to return a json representation of this object
     public JSONObject toJson () {
 
         // Send the updated user object with fields updated in the response

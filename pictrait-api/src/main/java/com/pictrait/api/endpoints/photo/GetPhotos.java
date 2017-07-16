@@ -30,8 +30,8 @@ public class GetPhotos extends HttpServlet {
     // Enum for the type of the request
     private enum FeedType {
 
-        NEWSFEED("newsfeed"),
-        PROFILE("profile");
+        NEWSFEED(Constants.Photo.NEWSFEED),
+        PROFILE(Constants.Photo.PROFILE);
 
         // MARK: Variables
         private String type;
@@ -81,6 +81,7 @@ public class GetPhotos extends HttpServlet {
         }
     }
 
+    // Procedure to return a newsfeed of photos to the user
     private void getNewsfeed (HttpServletResponse response, User user) throws IOException {
 
         // Get all the followings for the user
@@ -98,30 +99,34 @@ public class GetPhotos extends HttpServlet {
         // Get all photos for the user ids
         List<Photo> photos = new ArrayList<Photo>();
         if (userIds.size() > 0) {
-            // TODO Order by newest first
             photos = ObjectifyService.ofy().load().type(Photo.class)
-                .filter(Constants.Photo.Datastore.USER_ID + " in", userIds)
-                .limit(25).list();
+                    .filter(Constants.Photo.Datastore.USER_ID + " in", userIds)
+                    .filter(Constants.Photo.Datastore.PHOTO_AVAILABLE, true)
+                    .order("-" + Constants.Photo.Datastore.CREATED_AT) // order by newest
+                    .limit(25).list();
+
+            // Parse to JSON
+            JSONArray photosArray = new JSONArray();
+            for (Photo photo: photos) {
+
+                photosArray.put(photo.toJson());
+            }
+
+            // Send the response in json
+            JSONObject mainObject = new JSONObject();
+            try {
+                mainObject.put("photos", photosArray);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            response.setContentType(Constants.JSON_TYPE);
+            response.getWriter().write(mainObject.toString());
         }
 
-        // Parse to JSON
-        JSONArray photosArray = new JSONArray();
-        for (Photo photo: photos) {
 
-            photosArray.put(photo.toJson());
-        }
-
-        // Send the response in json
-        JSONObject mainObject = new JSONObject();
-        try {
-            mainObject.put("photos", photosArray);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        response.setContentType(Constants.JSON_TYPE);
-        response.getWriter().write(mainObject.toString());
     }
 
+    // Procedure to return the photos associated with a profile to the user
     private void getProfile (HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         // Get the user id of the profile
@@ -136,12 +141,22 @@ public class GetPhotos extends HttpServlet {
         }
 
         // Check that the user id is not null
-        // TODO Check that the user exists
         if (userId != null) {
-            // User id supplied, find all photos
-            // TODO Order by newest first
+            // User id supplied, check that the user exists
+            User user = ObjectifyService.ofy().load().type(User.class).id(userId).now();
+            // If the user does not exist, end servlet request, else carry on
+            if (user == null) {
+
+                response.sendError(Errors.USER_NOT_FOUND.getCode(), Errors.USER_NOT_FOUND.getMessage());
+                return;
+            }
+
+            // Get all photos for a specific user
             List<Photo> photos = ObjectifyService.ofy().load().type(Photo.class)
                     .filter(Constants.Photo.Datastore.USER_ID, userId)
+                    .filter(Constants.Photo.Datastore.PHOTO_AVAILABLE, true)
+                    .order("-" + Constants.Photo.Datastore.CREATED_AT) // Order by newest first
+                    .limit(25)
                     .list();
 
             // Parse all objects into json array

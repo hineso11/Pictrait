@@ -38,6 +38,7 @@ public class Like {
 
     // MARK: Methods
 
+    // Function to return a json representation of this object
     public String toJson () {
 
         JSONObject jsonObject = new JSONObject();

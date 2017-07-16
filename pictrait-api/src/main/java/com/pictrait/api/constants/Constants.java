@@ -5,8 +5,10 @@ package com.pictrait.api.constants;
  */
 public class Constants {
 
+    // TODO Change to production client ids
     public static final String[] clientIDs = {"clientID", "sfsffw34gtgwg121"};
     public static final String BUCKET_NAME = "pictrait-app.appspot.com";
+    public static final String BASE_FILE_URL = "https://storage.googleapis.com/";
     public static final String JSON_TYPE = "text/json";
 
     public class Parameters {
@@ -66,10 +68,15 @@ public class Constants {
         public static final String DOWNLOAD_URL = "download_url";
         public static final String LIKES_COUNT = "likes";
 
+        public static final String NEWSFEED = "newsfeed";
+        public static final String PROFILE ="profile";
+
         public class Datastore {
 
             public static final String PHOTO_ID = "photoId";
             public static final String USER_ID = "userId";
+            public static final String PHOTO_AVAILABLE = "photoAvailable";
+            public static final String CREATED_AT = "createdAt";
         }
     }
 
