@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3505EF5602EA411F7A5891B6 /* Pods_PictraitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CDE57313D2067F5611693 /* Pods_PictraitUITests.framework */; };
+		64A9FA066470F94327008C9D /* Pods_PictraitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FA8EE8B4C65C8A327F0AD3 /* Pods_PictraitTests.framework */; };
 		A78C2B541F31CF1100A16F3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B531F31CF1100A16F3F /* AppDelegate.swift */; };
 		A78C2B561F31CF1100A16F3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B551F31CF1100A16F3F /* ViewController.swift */; };
 		A78C2B591F31CF1100A16F3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78C2B571F31CF1100A16F3F /* Main.storyboard */; };
@@ -15,6 +17,10 @@
 		A78C2B611F31CF1100A16F3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78C2B5F1F31CF1100A16F3F /* LaunchScreen.storyboard */; };
 		A78C2B6C1F31CF1100A16F3F /* PictraitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B6B1F31CF1100A16F3F /* PictraitTests.swift */; };
 		A78C2B771F31CF1100A16F3F /* PictraitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B761F31CF1100A16F3F /* PictraitUITests.swift */; };
+		A796449F1F31D2EB004DFBFF /* UserFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796449E1F31D2EB004DFBFF /* UserFunctions.swift */; };
+		A7CFC7E31F31DD40007C22DA /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CFC7E21F31DD40007C22DA /* APIRequest.swift */; };
+		A7F547E41F31E2210077AF36 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F547E31F31E2210077AF36 /* AppError.swift */; };
+		C9C2006CDCA04334D8F5B252 /* Pods_Pictrait.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264DC1EFB5266125BE8A91DE /* Pods_Pictrait.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D69B5934B3F47A804A57E97 /* Pods-PictraitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictraitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictraitTests/Pods-PictraitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0DB984784BE86D863940E012 /* Pods-PictraitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictraitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictraitUITests/Pods-PictraitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		22FA8EE8B4C65C8A327F0AD3 /* Pods_PictraitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictraitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		264DC1EFB5266125BE8A91DE /* Pods_Pictrait.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pictrait.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9CDE57313D2067F5611693 /* Pods_PictraitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictraitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DA16648AE8E3464E9B33FB4 /* Pods-PictraitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictraitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictraitUITests/Pods-PictraitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A78C2B501F31CF1100A16F3F /* Pictrait.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pictrait.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78C2B531F31CF1100A16F3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A78C2B551F31CF1100A16F3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +61,12 @@
 		A78C2B721F31CF1100A16F3F /* PictraitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictraitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78C2B761F31CF1100A16F3F /* PictraitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictraitUITests.swift; sourceTree = "<group>"; };
 		A78C2B781F31CF1100A16F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A796449E1F31D2EB004DFBFF /* UserFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFunctions.swift; sourceTree = "<group>"; };
+		A7CFC7E21F31DD40007C22DA /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		A7F547E31F31E2210077AF36 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		B4C68447B22D0B9A91770E4D /* Pods-Pictrait.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pictrait.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait.release.xcconfig"; sourceTree = "<group>"; };
+		E1118823C9300DB3E7CDD0AA /* Pods-PictraitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictraitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictraitTests/Pods-PictraitTests.release.xcconfig"; sourceTree = "<group>"; };
+		E6A5FB51BD220E9D597F06F6 /* Pods-Pictrait.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pictrait.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C2006CDCA04334D8F5B252 /* Pods_Pictrait.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A9FA066470F94327008C9D /* Pods_PictraitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +90,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3505EF5602EA411F7A5891B6 /* Pods_PictraitUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22AF4D73219C4EBA93704E91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6A5FB51BD220E9D597F06F6 /* Pods-Pictrait.debug.xcconfig */,
+				B4C68447B22D0B9A91770E4D /* Pods-Pictrait.release.xcconfig */,
+				0D69B5934B3F47A804A57E97 /* Pods-PictraitTests.debug.xcconfig */,
+				E1118823C9300DB3E7CDD0AA /* Pods-PictraitTests.release.xcconfig */,
+				5DA16648AE8E3464E9B33FB4 /* Pods-PictraitUITests.debug.xcconfig */,
+				0DB984784BE86D863940E012 /* Pods-PictraitUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		840788268DF486AF92CD71A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				264DC1EFB5266125BE8A91DE /* Pods_Pictrait.framework */,
+				22FA8EE8B4C65C8A327F0AD3 /* Pods_PictraitTests.framework */,
+				5B9CDE57313D2067F5611693 /* Pods_PictraitUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A78C2B471F31CF1100A16F3F = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +127,8 @@
 				A78C2B6A1F31CF1100A16F3F /* PictraitTests */,
 				A78C2B751F31CF1100A16F3F /* PictraitUITests */,
 				A78C2B511F31CF1100A16F3F /* Products */,
+				22AF4D73219C4EBA93704E91 /* Pods */,
+				840788268DF486AF92CD71A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +145,10 @@
 		A78C2B521F31CF1100A16F3F /* Pictrait */ = {
 			isa = PBXGroup;
 			children = (
-				A78C2B531F31CF1100A16F3F /* AppDelegate.swift */,
+				A79644981F31D1ED004DFBFF /* API */,
+				A79644961F31D1C8004DFBFF /* General */,
 				A78C2B551F31CF1100A16F3F /* ViewController.swift */,
-				A78C2B571F31CF1100A16F3F /* Main.storyboard */,
-				A78C2B5D1F31CF1100A16F3F /* Assets.xcassets */,
-				A78C2B5F1F31CF1100A16F3F /* LaunchScreen.storyboard */,
-				A78C2B621F31CF1100A16F3F /* Info.plist */,
-				A78C2B5A1F31CF1100A16F3F /* Pictrait.xcdatamodeld */,
+				A79644971F31D1D2004DFBFF /* UI */,
 			);
 			path = Pictrait;
 			sourceTree = "<group>";
@@ -128,6 +171,36 @@
 			path = PictraitUITests;
 			sourceTree = "<group>";
 		};
+		A79644961F31D1C8004DFBFF /* General */ = {
+			isa = PBXGroup;
+			children = (
+				A78C2B531F31CF1100A16F3F /* AppDelegate.swift */,
+				A78C2B621F31CF1100A16F3F /* Info.plist */,
+				A78C2B5A1F31CF1100A16F3F /* Pictrait.xcdatamodeld */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		A79644971F31D1D2004DFBFF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A78C2B5D1F31CF1100A16F3F /* Assets.xcassets */,
+				A78C2B571F31CF1100A16F3F /* Main.storyboard */,
+				A78C2B5F1F31CF1100A16F3F /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		A79644981F31D1ED004DFBFF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A796449E1F31D2EB004DFBFF /* UserFunctions.swift */,
+				A7CFC7E21F31DD40007C22DA /* APIRequest.swift */,
+				A7F547E31F31E2210077AF36 /* AppError.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A78C2B7B1F31CF1100A16F3F /* Build configuration list for PBXNativeTarget "Pictrait" */;
 			buildPhases = (
+				8479504F0CBED5E02BF20E4D /* [CP] Check Pods Manifest.lock */,
 				A78C2B4C1F31CF1100A16F3F /* Sources */,
 				A78C2B4D1F31CF1100A16F3F /* Frameworks */,
 				A78C2B4E1F31CF1100A16F3F /* Resources */,
+				875B2ACF9E1DBD932C3F3900 /* [CP] Embed Pods Frameworks */,
+				D310C07853D2A3EDB05A15D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A78C2B7E1F31CF1100A16F3F /* Build configuration list for PBXNativeTarget "PictraitTests" */;
 			buildPhases = (
+				2251D9E0CDA6241F76E3DDF8 /* [CP] Check Pods Manifest.lock */,
 				A78C2B631F31CF1100A16F3F /* Sources */,
 				A78C2B641F31CF1100A16F3F /* Frameworks */,
 				A78C2B651F31CF1100A16F3F /* Resources */,
+				3566B7B440593071B77DE5F7 /* [CP] Embed Pods Frameworks */,
+				353928F760D6D67653561ACD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +249,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A78C2B811F31CF1100A16F3F /* Build configuration list for PBXNativeTarget "PictraitUITests" */;
 			buildPhases = (
+				E6335F353772E79BE2373844 /* [CP] Check Pods Manifest.lock */,
 				A78C2B6E1F31CF1100A16F3F /* Sources */,
 				A78C2B6F1F31CF1100A16F3F /* Frameworks */,
 				A78C2B701F31CF1100A16F3F /* Resources */,
+				54F3ADC96E088010DF2B6129 /* [CP] Embed Pods Frameworks */,
+				F5D87D0EAB29A6B6606D90B4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,6 +342,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2251D9E0CDA6241F76E3DDF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		353928F760D6D67653561ACD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PictraitTests/Pods-PictraitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3566B7B440593071B77DE5F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PictraitTests/Pods-PictraitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54F3ADC96E088010DF2B6129 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PictraitUITests/Pods-PictraitUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8479504F0CBED5E02BF20E4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		875B2ACF9E1DBD932C3F3900 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D310C07853D2A3EDB05A15D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6335F353772E79BE2373844 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5D87D0EAB29A6B6606D90B4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PictraitUITests/Pods-PictraitUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A78C2B4C1F31CF1100A16F3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -267,6 +487,9 @@
 			files = (
 				A78C2B561F31CF1100A16F3F /* ViewController.swift in Sources */,
 				A78C2B5C1F31CF1100A16F3F /* Pictrait.xcdatamodeld in Sources */,
+				A796449F1F31D2EB004DFBFF /* UserFunctions.swift in Sources */,
+				A7CFC7E31F31DD40007C22DA /* APIRequest.swift in Sources */,
+				A7F547E41F31E2210077AF36 /* AppError.swift in Sources */,
 				A78C2B541F31CF1100A16F3F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,10 +640,12 @@
 		};
 		A78C2B7C1F31CF1100A16F3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6A5FB51BD220E9D597F06F6 /* Pods-Pictrait.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4393GT4D4K;
 				INFOPLIST_FILE = Pictrait/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pictrait.Pictrait;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,10 +655,12 @@
 		};
 		A78C2B7D1F31CF1100A16F3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4C68447B22D0B9A91770E4D /* Pods-Pictrait.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4393GT4D4K;
 				INFOPLIST_FILE = Pictrait/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pictrait.Pictrait;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +670,7 @@
 		};
 		A78C2B7F1F31CF1100A16F3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D69B5934B3F47A804A57E97 /* Pods-PictraitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,6 +686,7 @@
 		};
 		A78C2B801F31CF1100A16F3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1118823C9300DB3E7CDD0AA /* Pods-PictraitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -473,6 +702,7 @@
 		};
 		A78C2B821F31CF1100A16F3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DA16648AE8E3464E9B33FB4 /* Pods-PictraitUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4393GT4D4K;
@@ -487,6 +717,7 @@
 		};
 		A78C2B831F31CF1100A16F3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DB984784BE86D863940E012 /* Pods-PictraitUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4393GT4D4K;

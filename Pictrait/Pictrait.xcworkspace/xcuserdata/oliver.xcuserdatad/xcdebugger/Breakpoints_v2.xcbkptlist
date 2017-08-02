@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pictrait/AppError.swift"
+            timestampString = "523369671.946149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "init(statusCode:errorReason:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pictrait/AppError.swift"
+            timestampString = "523369671.946149"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "determineErrorType(errorReason:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pictrait/APIRequest.swift"
+            timestampString = "523378475.219152"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "makePostReqeust(urlEnding:params:callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pictrait.APIRequest.makePostReqeust (urlEnding : Swift.String, params : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, callback : (Swift.Optional&lt;Swift.Array&lt;Any&gt;&gt;, Swift.Optional&lt;Pictrait.AppError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Pictrait"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/OneDrive/Documents/School/Sixth%20Form/Computer%20Science/NEA/Pictrait/Pictrait/Pictrait/APIRequest.swift"
+                  timestampString = "523378548.993438"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "324">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pictrait.APIRequest.(makePostReqeust (urlEnding : Swift.String, params : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, callback : (Swift.Optional&lt;Swift.Array&lt;Any&gt;&gt;, Swift.Optional&lt;Pictrait.AppError&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Pictrait"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/OneDrive/Documents/School/Sixth%20Form/Computer%20Science/NEA/Pictrait/Pictrait/Pictrait/APIRequest.swift"
+                  timestampString = "523378548.995243"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
