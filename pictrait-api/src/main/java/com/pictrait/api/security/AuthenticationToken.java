@@ -123,7 +123,18 @@ public class AuthenticationToken {
             response.sendError(Errors.TOKEN_INVALID.getCode(), Errors.TOKEN_INVALID.getMessage());
         } catch (ExpiredJwtException e) {
             e.printStackTrace();
-            response.sendError(Errors.TOKEN_EXPIRED.getCode(), Errors.TOKEN_EXPIRED.getMessage());
+
+            switch (tokenType) {
+
+                case AUTH_TOKEN:
+                    // Throw the auth expired error
+                    response.sendError(Errors.AUTH_EXPIRED.getCode(), Errors.AUTH_EXPIRED.getMessage());
+                    break;
+                case REFRESH_TOKEN:
+                    // Throw the refresh expired error
+                    response.sendError(Errors.REFRESH_EXPIRED.getCode(), Errors.REFRESH_EXPIRED.getMessage());
+                    break;
+            }
         } catch (MalformedJwtException e) {
             e.printStackTrace();
             response.sendError(Errors.TOKEN_INVALID.getCode(), Errors.TOKEN_INVALID.getMessage());

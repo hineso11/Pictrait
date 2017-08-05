@@ -1,5 +1,6 @@
 com/pictrait/api/endpoints/profile/UnfollowUser.class
 com/pictrait/api/endpoints/user/ProfileUpdate.class
+com/pictrait/api/security/AuthenticationToken$1.class
 com/pictrait/api/security/AuthenticationToken$TokenType.class
 com/pictrait/api/constants/Constants$User.class
 com/pictrait/api/constants/Constants$Follower.class

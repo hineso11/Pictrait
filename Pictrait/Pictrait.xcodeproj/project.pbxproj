@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		3505EF5602EA411F7A5891B6 /* Pods_PictraitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CDE57313D2067F5611693 /* Pods_PictraitUITests.framework */; };
 		64A9FA066470F94327008C9D /* Pods_PictraitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FA8EE8B4C65C8A327F0AD3 /* Pods_PictraitTests.framework */; };
+		A7734BCB1F35F6A300ADB389 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7734BCA1F35F6A300ADB389 /* HTTPRequest.swift */; };
+		A7734BCD1F361D5600ADB389 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7734BCC1F361D5600ADB389 /* Auth.swift */; };
 		A78C2B541F31CF1100A16F3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B531F31CF1100A16F3F /* AppDelegate.swift */; };
-		A78C2B561F31CF1100A16F3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B551F31CF1100A16F3F /* ViewController.swift */; };
 		A78C2B591F31CF1100A16F3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78C2B571F31CF1100A16F3F /* Main.storyboard */; };
 		A78C2B5C1F31CF1100A16F3F /* Pictrait.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B5A1F31CF1100A16F3F /* Pictrait.xcdatamodeld */; };
 		A78C2B5E1F31CF1100A16F3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A78C2B5D1F31CF1100A16F3F /* Assets.xcassets */; };
 		A78C2B611F31CF1100A16F3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78C2B5F1F31CF1100A16F3F /* LaunchScreen.storyboard */; };
 		A78C2B6C1F31CF1100A16F3F /* PictraitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B6B1F31CF1100A16F3F /* PictraitTests.swift */; };
 		A78C2B771F31CF1100A16F3F /* PictraitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B761F31CF1100A16F3F /* PictraitUITests.swift */; };
-		A796449F1F31D2EB004DFBFF /* UserFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796449E1F31D2EB004DFBFF /* UserFunctions.swift */; };
 		A7CFC7E31F31DD40007C22DA /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CFC7E21F31DD40007C22DA /* APIRequest.swift */; };
 		A7F547E41F31E2210077AF36 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F547E31F31E2210077AF36 /* AppError.swift */; };
 		C9C2006CDCA04334D8F5B252 /* Pods_Pictrait.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264DC1EFB5266125BE8A91DE /* Pods_Pictrait.framework */; };
@@ -47,9 +47,10 @@
 		264DC1EFB5266125BE8A91DE /* Pods_Pictrait.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pictrait.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9CDE57313D2067F5611693 /* Pods_PictraitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictraitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA16648AE8E3464E9B33FB4 /* Pods-PictraitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictraitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictraitUITests/Pods-PictraitUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A7734BCA1F35F6A300ADB389 /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		A7734BCC1F361D5600ADB389 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		A78C2B501F31CF1100A16F3F /* Pictrait.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pictrait.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78C2B531F31CF1100A16F3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A78C2B551F31CF1100A16F3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A78C2B581F31CF1100A16F3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A78C2B5B1F31CF1100A16F3F /* Pictrait.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pictrait.xcdatamodel; sourceTree = "<group>"; };
 		A78C2B5D1F31CF1100A16F3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		A78C2B721F31CF1100A16F3F /* PictraitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictraitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78C2B761F31CF1100A16F3F /* PictraitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictraitUITests.swift; sourceTree = "<group>"; };
 		A78C2B781F31CF1100A16F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A796449E1F31D2EB004DFBFF /* UserFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFunctions.swift; sourceTree = "<group>"; };
 		A7CFC7E21F31DD40007C22DA /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		A7F547E31F31E2210077AF36 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		B4C68447B22D0B9A91770E4D /* Pods-Pictrait.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pictrait.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,8 +147,8 @@
 			children = (
 				A79644981F31D1ED004DFBFF /* API */,
 				A79644961F31D1C8004DFBFF /* General */,
-				A78C2B551F31CF1100A16F3F /* ViewController.swift */,
 				A79644971F31D1D2004DFBFF /* UI */,
+				A7734BCC1F361D5600ADB389 /* Auth.swift */,
 			);
 			path = Pictrait;
 			sourceTree = "<group>";
@@ -194,9 +194,9 @@
 		A79644981F31D1ED004DFBFF /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A796449E1F31D2EB004DFBFF /* UserFunctions.swift */,
 				A7CFC7E21F31DD40007C22DA /* APIRequest.swift */,
 				A7F547E31F31E2210077AF36 /* AppError.swift */,
+				A7734BCA1F35F6A300ADB389 /* HTTPRequest.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -485,12 +485,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A78C2B561F31CF1100A16F3F /* ViewController.swift in Sources */,
 				A78C2B5C1F31CF1100A16F3F /* Pictrait.xcdatamodeld in Sources */,
-				A796449F1F31D2EB004DFBFF /* UserFunctions.swift in Sources */,
 				A7CFC7E31F31DD40007C22DA /* APIRequest.swift in Sources */,
+				A7734BCB1F35F6A300ADB389 /* HTTPRequest.swift in Sources */,
 				A7F547E41F31E2210077AF36 /* AppError.swift in Sources */,
 				A78C2B541F31CF1100A16F3F /* AppDelegate.swift in Sources */,
+				A7734BCD1F361D5600ADB389 /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

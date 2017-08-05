@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pictrait/AppError.swift"
-            timestampString = "523369671.946149"
+            timestampString = "523633349.408112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "determineErrorType(errorReason:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -41,46 +41,78 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pictrait/APIRequest.swift"
-            timestampString = "523378475.219152"
+            filePath = "Pictrait/HTTPRequest.swift"
+            timestampString = "523638812.239677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "makePostReqeust(urlEnding:params:callback:)"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "constructUrl(items:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Pictrait.APIRequest.makePostReqeust (urlEnding : Swift.String, params : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, callback : (Swift.Optional&lt;Swift.Array&lt;Any&gt;&gt;, Swift.Optional&lt;Pictrait.AppError&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "Pictrait.HTTPRequest.(makeRequest in _18A0EFE60D1F499AEE15CE6885C1D48F) () -&gt; ()"
                   moduleName = "Pictrait"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/oliver/OneDrive/Documents/School/Sixth%20Form/Computer%20Science/NEA/Pictrait/Pictrait/Pictrait/APIRequest.swift"
-                  timestampString = "523378548.993438"
+                  urlString = "file:///Users/oliver/OneDrive/Documents/School/Sixth%20Form/Computer%20Science/NEA/Pictrait/Pictrait/Pictrait/HTTPRequest.swift"
+                  timestampString = "523635657.604736"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "324">
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Pictrait.APIRequest.(makePostReqeust (urlEnding : Swift.String, params : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, callback : (Swift.Optional&lt;Swift.Array&lt;Any&gt;&gt;, Swift.Optional&lt;Pictrait.AppError&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "Pictrait.HTTPRequest.((makeRequest in _18A0EFE60D1F499AEE15CE6885C1D48F) () -&gt; ()).(closure #1)"
                   moduleName = "Pictrait"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/oliver/OneDrive/Documents/School/Sixth%20Form/Computer%20Science/NEA/Pictrait/Pictrait/Pictrait/APIRequest.swift"
-                  timestampString = "523378548.995243"
+                  urlString = "file:///Users/oliver/OneDrive/Documents/School/Sixth%20Form/Computer%20Science/NEA/Pictrait/Pictrait/Pictrait/HTTPRequest.swift"
+                  timestampString = "523635657.607413"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "19">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pictrait/HTTPRequest.swift"
+            timestampString = "523638812.239677"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "makeRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pictrait/APIRequest.swift"
+            timestampString = "523640022.762415"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "mainCallback(response:error:code:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

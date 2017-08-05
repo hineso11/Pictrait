@@ -11,7 +11,7 @@ import Foundation
 class AppError {
     
     // MARK: Variables
-    private var statusCode: Int
+    var statusCode: Int
     var errorType: ErrorType
     
     
@@ -29,7 +29,6 @@ class AppError {
     // Function used to determine error type from the given string of error
     private static func determineErrorType (errorReason: String) -> ErrorType {
         
-    
         for error in iterateEnum(ErrorType) {
             
             if (errorReason == error.rawValue) {
@@ -76,7 +75,8 @@ enum ErrorType: String {
     case EMAIL_IN_USE = "Email is already in use"
     case USERNAME_IN_USE = "Username is already in use"
     case TOKEN_INVALID = "This token is invalid"
-    case TOKEN_EXPIRED = "This token has expired"
+    case AUTH_EXPIRED = "The auth token has expired"
+    case REFRESH_EXPIRED = "The refresh token has expired"
     case WRONG_TOKEN_TYPE = "Token is wrong type"
     case INCORRECT_COMBINATION = "Incorrect username and password combination"
     case NO_AUTH_TOKEN = "An auth token must be supplied"

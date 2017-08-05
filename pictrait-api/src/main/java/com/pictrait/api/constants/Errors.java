@@ -7,10 +7,17 @@ package com.pictrait.api.constants;
 public enum  Errors {
 
     // List of all possible constants
+    // TODO Change error codes to more accurate ones
     GENERAL_ERROR(401, "Error, The request could not be completed"),
     CLIENT_ID_INCORRECT(401, "Client ID was not recognised"),
     USER_DOESNT_EXIST(401, "This user doesn't exist"),
+    TOKEN_INVALID(401, "This token is invalid"),
+    AUTH_EXPIRED(401, "The auth token has expired"),
+    REFRESH_EXPIRED(401, "The refresh token has expired"),
+    WRONG_TOKEN_TYPE(401, "Token is wrong type"),
+    NO_AUTH_TOKEN(401, "An auth token must be supplied"),
     NULL_FIELDS(501, "Null fields were found"),
+    INCORRECT_COMBINATION(501, "Incorrect username and password combination"),
     USERNAME_LONG(501, "Username is too long"),
     USERNAME_SHORT(501, "Username is too short"),
     PASSWORD_LONG(501, "Password is too long"),
@@ -21,11 +28,6 @@ public enum  Errors {
     USERNAME_FORMAT(501, "Username format is invalid"),
     EMAIL_IN_USE(501, "Email is already in use"),
     USERNAME_IN_USE(501, "Username is already in use"),
-    TOKEN_INVALID(501, "This token is invalid"),
-    TOKEN_EXPIRED(501, "This token has expired"),
-    WRONG_TOKEN_TYPE(501, "Token is wrong type"),
-    INCORRECT_COMBINATION(501, "Incorrect username and password combination"),
-    NO_AUTH_TOKEN(501, "An auth token must be supplied"),
     FILE_NOT_JPEG(501, "The image provided must be a JPEG"),
     IMAGE_NOT_SQUARE(501, "The image must be a square"),
     IMAGE_NOT_UPLOADED(501, "The image could not be uploaded"),

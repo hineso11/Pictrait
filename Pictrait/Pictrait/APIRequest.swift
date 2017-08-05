@@ -11,75 +11,82 @@ import SwiftHTTP
 
 class APIRequest {
     
-    // Base url of the API
-    static let BASE_URL = "https://pictrait-app.appspot.com/"
-    // HTTP Request OK code
-    static let HTTP_OK = 200
+    // MARK: Constants
+    private static let BASE_URL = "pictrait-app.appspot.com" // Base url of the API
+    static let GENERAL_ERROR = "There was a problem making this request" // general message for unhandled error
+    private static let CLIENT_ID_PARAM = "client_id"
+    private static let CLIENT_ID_VAL = "clientID"
     
-    // Wrapper to make post request
-    func makePostReqeust (urlEnding: String, params: [String: AnyObject], callback: @escaping ([String: Any]?, AppError?) -> Void) {
-
-        // Try to create and start operation
-        do {
-            // operation uses BASE_URL + function provided ending and params
-            let operation = try HTTP.POST(APIRequest.BASE_URL + urlEnding, parameters: params)
-            // start the operation
-            doOperation(operation: operation, callback: <#T##(Response) -> Void#>)
-        } catch {
-            // If an error was found creating or starting request
-            // Trigger callback
-            
-            // Create error object with generic error
-            callback(nil, AppError(statusCode: 000, errorReason: "Could not contact server at this time"))
-        }
+    // HTTP Codes
+    static let HTTP_OK = 200 // request ok
+    private static let SECURITY_ERROR = 401 // security error in app
+    private static let APP_ERROR = 501 // app error
+    
+    // MARK: Variables
+    private var parameters: [String: Any]
+    private var urlEnding: String
+    private var operation: HTTP?
+    private var callback: ([String: Any]?, AppError?) -> Void
+    private var mainRequest: HTTPRequest?
+    
+    // MARK: Constructors
+    init(parameters: [String: Any], urlEnding: String, shouldRefresh: Bool, callback: @escaping ([String: Any]?, AppError?) -> Void) {
+        
+        self.parameters = parameters
+        self.urlEnding = urlEnding
+        self.callback = callback
+        
+        // Add security to request 
+        addSecurity()
     }
     
-    private func doOperation (operation: HTTP, callback: @escaping (Response) -> Void) {
+    // MARK: Methods
+    
+    // Method to add security data to the request
+    private func addSecurity () {
         
-        operation.start { response in
-            
-            // If success code found
-            if (response.statusCode == APIRequest.HTTP_OK) {
-                
-                // Read in the response from raw data
-                var jsonArray: [String: Any]?
-                do {
-                    // to json
-                    jsonArray = try JSONSerialization.jsonObject(with: response.data) as? [String: Any]
-                    
-                    // return data to callback
-                    callback(jsonArray, nil)
-                } catch {
-                    
-                    // error trying to parse json, send general error
-                    callback(nil, AppError(statusCode: response.statusCode!, errorReason: "There was an error completing this request"))
-                }
-            } else {
-                
-                
-                // Create the error object using error from response
-                let error = AppError(statusCode: response.statusCode!, errorReason: self.findError(data: response.data))
-                callback(nil, error)
-            }
-
-        }
+        // Add the client ID
+        parameters[APIRequest.CLIENT_ID_PARAM] = APIRequest.CLIENT_ID_VAL
     }
     
-    private func findError (data: Data) -> String {
-
-        // Get string
-        let htmlString = String(bytes: data, encoding: .ascii)
+    // Method to make a request to the API
+    func doPost () {
         
-        // Scrape html for error
-        if let match = htmlString?.range(of: "(?<=<h1>Error: )[^</h1>]+", options: .regularExpression) {
+        self.mainRequest = HTTPRequest(host: APIRequest.BASE_URL, path: urlEnding, parameters: parameters, callback: {
+            response, error, code in
             
-            return (htmlString?.substring(with: match))!
-        } else {
-            
-            // Give a default error if none could be found
-            return "There was an error completing this request"
-        }
+            self.mainCallback(response: response, error: error, code: code)
+        })
         
+        mainRequest?.doPost()
+    }
+    func doGet () {
+        
+        self.mainRequest = HTTPRequest(host: APIRequest.BASE_URL, path: urlEnding, parameters: parameters, callback: {
+            response, error, code in
+            
+            self.mainCallback(response: response, error: error, code: code)
+        })
+        mainRequest?.doGet()
     }
     
+    // Callback for the main request
+    private func mainCallback (response: [String: Any]?, error: AppError?, code: Int?) {
+        
+        // Coordinate response based on the status code
+        switch code {
+        case APIRequest.HTTP_OK?:
+            // If the request is ok, then just return response in callback
+            callback(response, nil)
+        case APIRequest.APP_ERROR?:
+            // If the error is app related then just return error
+            callback(nil, error)
+        case APIRequest.SECURITY_ERROR?:
+            // The error is security related, eg: the auth token or refresh token has expired
+            print("Security error")
+            callback(nil, error)
+        default:
+            callback(nil, error)
+        }
+    }
 }
