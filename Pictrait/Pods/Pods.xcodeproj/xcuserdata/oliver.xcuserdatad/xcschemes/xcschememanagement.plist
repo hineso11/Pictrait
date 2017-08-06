@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Pictrait.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,15 +29,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>98AA81EB759B1EC1C70E56868A4A75F2</key>
+		<key>109D10314735D0BC8340E5CE11668252</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9FD3F18977A9DC4515E5C46AE4EAEF43</key>
+		<key>10CD820DAF589CE1C6A4068D2AEE07CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41FA54D12162DAD51D02FC58A2CD5034</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -43,6 +58,11 @@
 			<true/>
 		</dict>
 		<key>B749706A685A23B2CD1AB6B8E83F51FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E1A7D8B52877B022D6CD9865BDF839CB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

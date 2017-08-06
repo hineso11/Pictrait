@@ -11,6 +11,8 @@
 		64A9FA066470F94327008C9D /* Pods_PictraitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FA8EE8B4C65C8A327F0AD3 /* Pods_PictraitTests.framework */; };
 		A7734BCB1F35F6A300ADB389 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7734BCA1F35F6A300ADB389 /* HTTPRequest.swift */; };
 		A7734BCD1F361D5600ADB389 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7734BCC1F361D5600ADB389 /* Auth.swift */; };
+		A7734BCF1F3650CD00ADB389 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7734BCE1F3650CD00ADB389 /* LoginViewController.swift */; };
+		A7734BD11F3702C100ADB389 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7734BD01F3702C100ADB389 /* Constants.swift */; };
 		A78C2B541F31CF1100A16F3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B531F31CF1100A16F3F /* AppDelegate.swift */; };
 		A78C2B591F31CF1100A16F3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78C2B571F31CF1100A16F3F /* Main.storyboard */; };
 		A78C2B5C1F31CF1100A16F3F /* Pictrait.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B5A1F31CF1100A16F3F /* Pictrait.xcdatamodeld */; };
@@ -49,6 +51,8 @@
 		5DA16648AE8E3464E9B33FB4 /* Pods-PictraitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictraitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictraitUITests/Pods-PictraitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7734BCA1F35F6A300ADB389 /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		A7734BCC1F361D5600ADB389 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		A7734BCE1F3650CD00ADB389 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A7734BD01F3702C100ADB389 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A78C2B501F31CF1100A16F3F /* Pictrait.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pictrait.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78C2B531F31CF1100A16F3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A78C2B581F31CF1100A16F3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				A78C2B531F31CF1100A16F3F /* AppDelegate.swift */,
 				A78C2B621F31CF1100A16F3F /* Info.plist */,
 				A78C2B5A1F31CF1100A16F3F /* Pictrait.xcdatamodeld */,
+				A7734BD01F3702C100ADB389 /* Constants.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				A78C2B5D1F31CF1100A16F3F /* Assets.xcassets */,
 				A78C2B571F31CF1100A16F3F /* Main.storyboard */,
 				A78C2B5F1F31CF1100A16F3F /* LaunchScreen.storyboard */,
+				A7734BCE1F3650CD00ADB389 /* LoginViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -485,12 +491,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7734BCF1F3650CD00ADB389 /* LoginViewController.swift in Sources */,
 				A78C2B5C1F31CF1100A16F3F /* Pictrait.xcdatamodeld in Sources */,
 				A7CFC7E31F31DD40007C22DA /* APIRequest.swift in Sources */,
 				A7734BCB1F35F6A300ADB389 /* HTTPRequest.swift in Sources */,
 				A7F547E41F31E2210077AF36 /* AppError.swift in Sources */,
 				A78C2B541F31CF1100A16F3F /* AppDelegate.swift in Sources */,
 				A7734BCD1F361D5600ADB389 /* Auth.swift in Sources */,
+				A7734BD11F3702C100ADB389 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -85,7 +85,6 @@ class HTTPRequest {
         urlConstructor.path = path
         urlConstructor.queryItems = items
         
-        print (urlConstructor.url)
         return (urlConstructor.url?.absoluteString)!
     }
     

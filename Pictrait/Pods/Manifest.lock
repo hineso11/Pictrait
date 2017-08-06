@@ -1,12 +1,18 @@
 PODS:
+  - MBProgressHUD (1.0.0)
   - SwiftHTTP (2.0.2)
+  - SwiftSpinner (1.3.0)
 
 DEPENDENCIES:
+  - MBProgressHUD (~> 1.0.0)
   - SwiftHTTP (~> 2.0.0)
+  - SwiftSpinner
 
 SPEC CHECKSUMS:
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SwiftHTTP: faa1a5f7670568ffc9361898229dbe84a6088468
+  SwiftSpinner: c249fffed3e74b5f3e6492dcc05d6bc1525a8220
 
-PODFILE CHECKSUM: 68fe26d40379f12a7507a221d42ca1ecd231f79b
+PODFILE CHECKSUM: 8c65dab3a03ae76c6995571f6414a93a78dabfbd
 
 COCOAPODS: 1.2.1
