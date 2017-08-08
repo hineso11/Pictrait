@@ -15,6 +15,8 @@ class Auth {
     // Parameters
     private static let USERNAME_PARAM = "username"
     private static let PASSWORD_PARAM = "password"
+    private static let EMAIL_PARAM = "email"
+    private static let FULL_NAME_PARAM = "full_name"
     
     // Json Parameters (also used in persistent data store)
     private static let AUTH_TOKEN = "auth_token"
@@ -25,13 +27,42 @@ class Auth {
     
     static let sharedInstance = Auth()
     
+    // API Url Paths
+    private static let LOGIN_PATH = "/user/login"
+    private static let SIGN_UP_PATH = "/user/signup"
+    
     // MARK: Methods
     
     // Method to log into the app using username and password
     func login (username: String, password: String, callback: @escaping (Bool, AppError?) -> Void) {
         
         let params = [Auth.USERNAME_PARAM: username as AnyObject, Auth.PASSWORD_PARAM: password as AnyObject]
-        let request = APIRequest(parameters: params, urlEnding: "/user/login", shouldRefresh: true, callback: { response, error in
+        let request = APIRequest(parameters: params, urlEnding: Auth.LOGIN_PATH, shouldRefresh: true, callback: { response, error in
+            
+            if (error != nil) {
+                
+                callback(false, error!)
+            } else {
+                
+                // Store the returned auth information
+                let authToken = response?[Auth.AUTH_TOKEN] as! String
+                let refreshToken = response?[Auth.REFRESH_TOKEN] as! String
+                self.storeAuth(authToken: authToken, refreshToken: refreshToken)
+                
+                // Trigger callback
+                callback(true, nil)
+            }
+        })
+        request.doPost()
+    }
+    
+    // Method to sign up using username, password, email and full name
+    func signUp (username: String, password: String, email: String, fullName: String, callback: @escaping (Bool, AppError?) -> Void) {
+        
+        let params = [Auth.USERNAME_PARAM: username as AnyObject, Auth.PASSWORD_PARAM: password as AnyObject,
+                      Auth.EMAIL_PARAM: email as AnyObject, Auth.FULL_NAME_PARAM: fullName as AnyObject]
+        let request = APIRequest(parameters: params, urlEnding: Auth.SIGN_UP_PATH, shouldRefresh: true, callback: {
+            response, error in
             
             if (error != nil) {
                 

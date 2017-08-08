@@ -1,26 +1,29 @@
 //
-//  LoginViewController.swift
+//  SignUpViewController.swift
 //  Pictrait
 //
-//  Created by Oliver Hines on 05/08/2017.
+//  Created by Oliver Hines on 08/08/2017.
 //  Copyright © 2017 Pictrait. All rights reserved.
 //
 
 import UIKit
 import SwiftSpinner
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Properties
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var fullNameField: UITextField!
     
     // MARK: Actions
-    @IBAction func loginButtonPressed(_ sender: Any) {
+    @IBAction func signUpButtonPressed(_ sender: Any) {
         
-        passwordField.becomeFirstResponder()
-        passwordField.resignFirstResponder()
-        attemptLogin()
+        // Close text fields
+        fullNameField.becomeFirstResponder()
+        fullNameField.resignFirstResponder()
+        attemptSignUp()
     }
     
     // MARK: View Controller Methods
@@ -30,13 +33,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Setup views in controller
         usernameField.delegate = self
         passwordField.delegate = self
+        emailField.delegate = self
+        fullNameField.delegate = self
     }
     
     // MARK: Methods
-    private func attemptLogin () {
+    private func attemptSignUp () {
         
         SwiftSpinner.show("Please wait...", animated: false)
-        Auth.sharedInstance.login(username: usernameField.text!, password: passwordField.text!, callback: {
+        Auth.sharedInstance.signUp(username: usernameField.text!, password: passwordField.text!,
+                                   email: emailField.text!, fullName: fullNameField.text!, callback: {
             success, error in
             
             SwiftSpinner.hide()
@@ -52,6 +58,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 error?.showError(error: error, vc: self)
             }
         })
+
     }
     
     // MARK: Text Field Methods
@@ -61,12 +68,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         case usernameField:
             passwordField.becomeFirstResponder()
         case passwordField:
-            passwordField.resignFirstResponder()
-            attemptLogin()
+            emailField.becomeFirstResponder()
+        case emailField:
+            fullNameField.becomeFirstResponder()
+        case fullNameField:
+            fullNameField.resignFirstResponder()
+            attemptSignUp()
         default:
             break
         }
+        
         return true
     }
-    
+
 }

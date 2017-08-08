@@ -64,7 +64,7 @@ public class Login extends HttpServlet {
         // MARK: Validate Fields
         // Check for null fields
         if (username == null || password == null  || username.isEmpty() || password.isEmpty()) {
-            response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
+            Errors.NULL_FIELDS.sendError(response);
             return false;
         }
 
@@ -72,13 +72,13 @@ public class Login extends HttpServlet {
         User user = ObjectifyService.ofy().load().type(User.class).filter(Constants.User.Datastore.USERNAME, username).first().now();
         if (user == null) {
             // If user could not be found, send error
-            response.sendError(Errors.INCORRECT_COMBINATION.getCode(), Errors.INCORRECT_COMBINATION.getMessage());
+            Errors.INCORRECT_COMBINATION.sendError(response);
             return false;
         }
         // Check the password matches with the stored password
         if (!Encrypter.check(password, user.getHashedPassword())) {
             // if password doesn't match the stored hash with salt, send error
-            response.sendError(Errors.INCORRECT_COMBINATION.getCode(), Errors.INCORRECT_COMBINATION.getMessage());
+            Errors.INCORRECT_COMBINATION.sendError(response);
             return false;
         }
 

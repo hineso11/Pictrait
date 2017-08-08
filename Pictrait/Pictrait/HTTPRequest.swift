@@ -14,6 +14,7 @@ class HTTPRequest {
     // MARK: Constants
     
     private static let SCHEME = "https"
+    private static let ERROR_PARAM = "errorReason"
     
     // MARK: Variables
     private var parameters: [String: Any]?
@@ -129,15 +130,14 @@ class HTTPRequest {
         // Get string
         let htmlString = String(bytes: data, encoding: .ascii)
         
-        // Scrape html for error
-        if let match = htmlString?.range(of: "(?<=<h1>Error: )[^</h1>]+", options: .regularExpression) {
-            
-            return (htmlString?.substring(with: match))!
-        } else {
-            
-            // Give a default error if none could be found
-            return APIRequest.GENERAL_ERROR
+        // Find the error in the json
+        do {
+            let jsonArray = try JSONSerialization.jsonObject(with: data) as? [String: Any]
+            return jsonArray?[HTTPRequest.ERROR_PARAM] as! String
+        } catch {
+            return "Error"
         }
+        
         
     }
 

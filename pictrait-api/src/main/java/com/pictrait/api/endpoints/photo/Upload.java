@@ -71,7 +71,7 @@ public class Upload extends HttpServlet {
             } else {
 
                 // Send error telling user, there's error in uploading file
-                response.sendError(Errors.IMAGE_NOT_UPLOADED.getCode(), Errors.IMAGE_NOT_UPLOADED.getMessage());
+                Errors.IMAGE_NOT_UPLOADED.sendError(response);
             }
 
         }
@@ -84,7 +84,7 @@ public class Upload extends HttpServlet {
         // Check that the file has actually been provided
         if (filePart == null || filePart.getSize() == 0) {
 
-            response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
+            Errors.NULL_FIELDS.sendError(response);
             return false;
         }
 
@@ -93,14 +93,14 @@ public class Upload extends HttpServlet {
         double size = filePart.getSize() / (double) 1000000; // size in MB
         if (size > Constants.Photo.MAX_PHOTO_SIZE) {
 
-            response.sendError(Errors.IMAGE_TOO_BIG.getCode(), Errors.IMAGE_TOO_BIG.getMessage());
+            Errors.IMAGE_TOO_BIG.sendError(response);
             return false;
         }
 
         // Check that the file provided is of the type required (JPEG)
         if (!filePart.getContentType().equals(Constants.Photo.IMAGE_TYPE)) {
 
-            response.sendError(Errors.FILE_NOT_JPEG.getCode(), Errors.FILE_NOT_JPEG.getMessage());
+            Errors.FILE_NOT_JPEG.sendError(response);
             return false;
         }
 
@@ -109,7 +109,7 @@ public class Upload extends HttpServlet {
         BufferedImage image = ImageIO.read(fileContent);
         if (image.getWidth() != image.getHeight()) {
 
-            response.sendError(Errors.IMAGE_NOT_SQUARE.getCode(), Errors.IMAGE_NOT_SQUARE.getMessage());
+            Errors.IMAGE_NOT_SQUARE.sendError(response);
             return false;
         }
 

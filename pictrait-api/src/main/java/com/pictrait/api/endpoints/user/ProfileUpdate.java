@@ -69,24 +69,24 @@ public class ProfileUpdate extends HttpServlet {
 
             // Check length of username
             if (username.length() > MAX_USERNAME_LENGTH) {
-                response.sendError(Errors.USERNAME_LONG.getCode(), Errors.USERNAME_LONG.getMessage());
+                Errors.USERNAME_LONG.sendError(response);
                 return false;
             }
             if (username.length() < MIN_USERNAME_LENGTH) {
-                response.sendError(Errors.USERNAME_SHORT.getCode(), Errors.USERNAME_SHORT.getMessage());
+                Errors.USERNAME_SHORT.sendError(response);
                 return false;
             }
 
             // Check the username uses only accepted characters
             if (!username.matches("^[a-zA-Z0-9._-]{3,}$")) {
-                response.sendError(Errors.USERNAME_FORMAT.getCode(), Errors.USERNAME_FORMAT.getMessage());
+                Errors.USERNAME_FORMAT.sendError(response);
                 return false;
             }
 
             // Check the username is unique
             if (!User.usernameIsUnique(username)) {
 
-                response.sendError(Errors.USERNAME_IN_USE.getCode(), Errors.USERNAME_IN_USE.getMessage());
+                Errors.USERNAME_IN_USE.sendError(response);
                 return false;
             }
 
@@ -97,7 +97,7 @@ public class ProfileUpdate extends HttpServlet {
 
             // Check the length of the name
             if (fullName.length() > MAX_NAME_LENGTH) {
-                response.sendError(Errors.NAME_LONG.getCode(), Errors.NAME_LONG.getMessage());
+                Errors.NAME_LONG.sendError(response);
                 return false;
             }
 
@@ -108,7 +108,7 @@ public class ProfileUpdate extends HttpServlet {
 
             // Check the length of the email
             if (email.length() > MAX_EMAIL_LENGTH) {
-                response.sendError(Errors.EMAIL_LONG.getCode(), Errors.EMAIL_LONG.getMessage());
+                Errors.EMAIL_LONG.sendError(response);
                 return false;
             }
             // Check that the email is the correct format
@@ -116,13 +116,13 @@ public class ProfileUpdate extends HttpServlet {
             java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
             java.util.regex.Matcher m = p.matcher(email);
             if (!m.matches()) {
-                response.sendError(Errors.EMAIL_FORMAT.getCode(), Errors.EMAIL_FORMAT.getMessage());
+                Errors.EMAIL_FORMAT.sendError(response);
                 return false;
             }
             // Check the email is unique
             if (!User.emailIsUnique(email)) {
 
-                response.sendError(Errors.EMAIL_IN_USE.getCode(), Errors.EMAIL_IN_USE.getMessage());
+                Errors.EMAIL_IN_USE.sendError(response);
                 return false;
             }
 

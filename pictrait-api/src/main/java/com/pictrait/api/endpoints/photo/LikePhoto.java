@@ -66,7 +66,7 @@ public class LikePhoto extends HttpServlet {
         // Check for null fields
         if (photoId == null) {
 
-            response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
+            Errors.NULL_FIELDS.sendError(response);
             return false;
         }
 
@@ -78,7 +78,7 @@ public class LikePhoto extends HttpServlet {
                 .first().now();
         if (existingLike != null) {
             // If an existing like was found, send error
-            response.sendError(Errors.ALREADY_LIKED.getCode(), Errors.ALREADY_LIKED.getMessage());
+            Errors.ALREADY_LIKED.sendError(response);
             return false;
         }
 
@@ -87,7 +87,7 @@ public class LikePhoto extends HttpServlet {
         Photo photo = ObjectifyService.ofy().load().type(Photo.class).id(photoId).now();
         if (photo == null) {
             // If a photo was not found for this id, then send error
-            response.sendError(Errors.PHOTO_DOESNT_EXIST.getCode(), Errors.PHOTO_DOESNT_EXIST.getMessage());
+            Errors.PHOTO_DOESNT_EXIST.sendError(response);
             return false;
         }
 

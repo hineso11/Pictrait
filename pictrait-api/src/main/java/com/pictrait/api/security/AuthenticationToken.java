@@ -99,14 +99,14 @@ public class AuthenticationToken {
             // Check the token type is correct from one specified in the constructor
             if (!type.equals(tokenType)) {
                 // Throw the wrong token type exception if it's not a refresh token
-                response.sendError(Errors.WRONG_TOKEN_TYPE.getCode(), Errors.WRONG_TOKEN_TYPE.getMessage());
+                Errors.WRONG_TOKEN_TYPE.sendError(response);
                 return;
             }
 
             // Check the user exists
             if (user == null) {
 
-                response.sendError(Errors.USER_DOESNT_EXIST.getCode(), Errors.USER_DOESNT_EXIST.getMessage());
+                Errors.USER_DOESNT_EXIST.sendError(response);
                 return;
             }
 
@@ -120,7 +120,7 @@ public class AuthenticationToken {
 
         } catch (SignatureException e) {
             e.printStackTrace();
-            response.sendError(Errors.TOKEN_INVALID.getCode(), Errors.TOKEN_INVALID.getMessage());
+            Errors.TOKEN_INVALID.sendError(response);
         } catch (ExpiredJwtException e) {
             e.printStackTrace();
 
@@ -128,16 +128,16 @@ public class AuthenticationToken {
 
                 case AUTH_TOKEN:
                     // Throw the auth expired error
-                    response.sendError(Errors.AUTH_EXPIRED.getCode(), Errors.AUTH_EXPIRED.getMessage());
+                    Errors.AUTH_EXPIRED.sendError(response);
                     break;
                 case REFRESH_TOKEN:
                     // Throw the refresh expired error
-                    response.sendError(Errors.REFRESH_EXPIRED.getCode(), Errors.REFRESH_EXPIRED.getMessage());
+                    Errors.REFRESH_EXPIRED.sendError(response);
                     break;
             }
         } catch (MalformedJwtException e) {
             e.printStackTrace();
-            response.sendError(Errors.TOKEN_INVALID.getCode(), Errors.TOKEN_INVALID.getMessage());
+            Errors.TOKEN_INVALID.sendError(response);
         }
 
     }

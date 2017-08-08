@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pictrait/HTTPRequest.swift"
-            timestampString = "523638812.239677"
+            timestampString = "523881929.259457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "constructUrl(items:)"
             landmarkType = "7">
             <Locations>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pictrait/HTTPRequest.swift"
-            timestampString = "523699758.607277"
+            timestampString = "523879305.039824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "makeRequest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -112,6 +112,22 @@
             startingLineNumber = "74"
             endingLineNumber = "74"
             landmarkName = "mainCallback(response:error:code:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pictrait/HTTPRequest.swift"
+            timestampString = "523879344.337825"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "handleError(response:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

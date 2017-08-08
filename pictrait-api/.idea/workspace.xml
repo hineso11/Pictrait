@@ -2,30 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f062b011-62f8-4ba7-a6a4-268c22d632f0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Pictrait/Pictrait/Constants.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Pictrait/Pictrait/LoginViewController.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Pictrait/Pictrait/SignUpViewController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pictrait.xcworkspace/xcuserdata/oliver.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/../Pictrait/Pictrait.xcworkspace/xcuserdata/oliver.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$AuthenticationToken.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$AuthenticationToken.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Follower$Datastore.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Follower$Datastore.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Follower.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Follower.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Like$Datastore.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Like$Datastore.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Like.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Like.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Parameters.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Parameters.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Photo$Datastore.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Photo$Datastore.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Photo.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$Photo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$User$Datastore.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$User$Datastore.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$User.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants$User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Constants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Errors.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/constants/Errors.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/photo/GetPhotos.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/photo/GetPhotos.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/photo/LikePhoto.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/photo/LikePhoto.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/photo/Upload.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/photo/Upload.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/profile/FollowUser.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/profile/FollowUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/profile/GetProfile.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/profile/GetProfile.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/profile/Search.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/profile/Search.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/profile/UnfollowUser.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/profile/UnfollowUser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/user/Auth.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/user/Auth.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/user/Login.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/user/Login.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/user/ProfileUpdate.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/user/ProfileUpdate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/user/SignUp.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/endpoints/user/SignUp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/security/Auth.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/security/Auth.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/security/AuthenticationToken.class" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/classes/com/pictrait/api/security/AuthenticationToken.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pictrait.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/../Pictrait/Pictrait.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pictrait.xcworkspace/xcuserdata/oliver.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/../Pictrait/Pictrait.xcworkspace/xcuserdata/oliver.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pictrait/Auth.swift" afterPath="$PROJECT_DIR$/../Pictrait/Pictrait/Auth.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pictrait/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/../Pictrait/Pictrait/Base.lproj/Main.storyboard" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pictrait/HTTPRequest.swift" afterPath="$PROJECT_DIR$/../Pictrait/Pictrait/HTTPRequest.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Podfile" afterPath="$PROJECT_DIR$/../Pictrait/Podfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Podfile.lock" afterPath="$PROJECT_DIR$/../Pictrait/Podfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Manifest.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Pods.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Pods.xcodeproj/xcuserdata/oliver.xcuserdatad/xcschemes/Pods-Pictrait.xcscheme" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Pods.xcodeproj/xcuserdata/oliver.xcuserdatad/xcschemes/Pods-Pictrait.xcscheme" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Pods.xcodeproj/xcuserdata/oliver.xcuserdatad/xcschemes/SwiftHTTP.xcscheme" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Pods.xcodeproj/xcuserdata/oliver.xcuserdatad/xcschemes/SwiftHTTP.xcscheme" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Pods.xcodeproj/xcuserdata/oliver.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Pods.xcodeproj/xcuserdata/oliver.xcuserdatad/xcschemes/xcschememanagement.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait-acknowledgements.markdown" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait-acknowledgements.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait-acknowledgements.plist" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait-acknowledgements.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait-frameworks.sh" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait-frameworks.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait.debug.xcconfig" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait.debug.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait.release.xcconfig" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait.release.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-PictraitTests/Pods-PictraitTests.debug.xcconfig" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-PictraitTests/Pods-PictraitTests.debug.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-PictraitTests/Pods-PictraitTests.release.xcconfig" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-PictraitTests/Pods-PictraitTests.release.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-PictraitUITests/Pods-PictraitUITests.debug.xcconfig" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-PictraitUITests/Pods-PictraitUITests.debug.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-PictraitUITests/Pods-PictraitUITests.release.xcconfig" afterPath="$PROJECT_DIR$/../Pictrait/Pods/Target Support Files/Pods-PictraitUITests/Pods-PictraitUITests.release.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Pictrait/Pictrait/LoginViewController.swift" afterPath="$PROJECT_DIR$/../Pictrait/Pictrait/LoginViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Errors.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Errors.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/GetPhotos.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/GetPhotos.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/LikePhoto.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/LikePhoto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/Upload.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/Upload.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/FollowUser.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/FollowUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/GetProfile.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/GetProfile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/Search.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/Search.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/UnfollowUser.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/UnfollowUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Login.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Login.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/ProfileUpdate.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/ProfileUpdate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java" afterPath="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/appengine-generated/datastore-indexes-auto.xml" afterPath="$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/appengine-generated/datastore-indexes-auto.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,31 +76,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Errors.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Errors.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignUp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="53" column="57" lean-forward="false" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="55" column="57" lean-forward="false" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
+            <state relative-caret-position="586">
+              <caret line="80" column="61" lean-forward="false" selection-start-line="80" selection-start-column="61" selection-end-line="80" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignUp.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Auth.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -83,8 +109,68 @@
       <file leaf-file-name="AuthenticationToken.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="130" column="89" lean-forward="false" selection-start-line="130" selection-start-column="89" selection-end-line="130" selection-end-column="89" />
+            <state relative-caret-position="257">
+              <caret line="139" column="53" lean-forward="false" selection-start-line="139" selection-start-column="53" selection-end-line="139" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Encrypter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Encrypter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/storage/FileService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="481">
+              <caret line="47" column="89" lean-forward="false" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfileUpdate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/ProfileUpdate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="556">
+              <caret line="124" column="56" lean-forward="false" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Search.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/Search.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnfollowUser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/UnfollowUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="601">
+              <caret line="86" column="59" lean-forward="false" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Auth.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="636">
+              <caret line="58" column="51" lean-forward="false" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -102,13 +188,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>private</find>
-      <find>mysql</find>
-      <find>Development</find>
-      <find>sql</find>
-      <find>gson</find>
-      <find>username</find>
-      <find>refres</find>
       <find>us</find>
       <find>user.usern</find>
       <find>user.userna</find>
@@ -129,10 +208,22 @@
       <find>obje</find>
       <find>TO</find>
       <find>EXPIRED</find>
+      <find>r</find>
+      <find>response,</find>
+      <find>response.</find>
+      <find>response.send</find>
+      <find>response.sendE</find>
+      <find>sendError</find>
+      <find>response.sendError(</find>
+      <find>.getCode()</find>
+      <find>s</find>
+      <find>response.sendError</find>
     </findStrings>
     <replaceStrings>
       <replace>public</replace>
       <replace>return false</replace>
+      <replace />
+      <replace>.sendError(response)</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -159,34 +250,34 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/Login.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/SignUp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java" />
         <option value="$MAVEN_REPOSITORY$/com/googlecode/objectify/objectify/5.0/objectify-5.0.jar!/com/googlecode/objectify/ObjectifyFilter.class" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/storage/FileUpload.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Miscellaneous.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/storage/FileService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Encrypter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/LikePhoto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Login.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/ProfileUpdate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/GetProfile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/FollowUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/UnfollowUser.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/OfyHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/Follower.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/Like.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/Photo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/Search.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/Upload.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.yaml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/datastore-indexes.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/GetPhotos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Errors.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/GetPhotos.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/LikePhoto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/Upload.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/FollowUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/GetProfile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/UnfollowUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Login.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/ProfileUpdate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/Search.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java" />
       </list>
     </option>
   </component>
@@ -226,7 +317,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -277,7 +368,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1099,12 +1190,13 @@
       <workItem from="1500211734153" duration="256000" />
       <workItem from="1500212367045" duration="5568000" />
       <workItem from="1501665149068" duration="3035000" />
-      <workItem from="1501753579348" duration="2153000" />
+      <workItem from="1501753579348" duration="2336000" />
+      <workItem from="1502185844786" duration="2055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120115000" />
+    <option name="totallyTimeSpent" value="122353000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1134,24 +1226,24 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39954075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33180252" sideWeight="0.49761903" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33180252" sideWeight="0.49761903" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.44202065" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.55797935" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.35246843" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1281,111 +1373,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Miscellaneous.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/storage/FileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/Like.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Encrypter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/ProfileSearch.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/GetProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="63" column="32" lean-forward="true" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="48" column="57" lean-forward="false" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/ProfileUpdate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="55" column="63" lean-forward="false" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/FollowUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="92" column="63" lean-forward="false" selection-start-line="92" selection-start-column="63" selection-end-line="92" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/UnfollowUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-423">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/LikePhoto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="50" column="9" lean-forward="false" selection-start-line="42" selection-start-column="8" selection-end-line="50" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/OfyHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/Follower.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="47" column="62" lean-forward="false" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/Like.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="40" column="62" lean-forward="false" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -1412,21 +1406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/Photo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/pictrait-api-1.0-SNAPSHOT/WEB-INF/appengine-generated/datastore-indexes-auto.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1441,65 +1420,188 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/GetPhotos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/Upload.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/Search.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="80" column="5" lean-forward="true" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="130" column="89" lean-forward="false" selection-start-line="130" selection-start-column="89" selection-end-line="130" selection-end-column="89" />
+        <state relative-caret-position="171">
+          <caret line="12" column="61" lean-forward="false" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Errors.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+        <state relative-caret-position="672">
+          <caret line="81" column="51" lean-forward="false" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/constants/Miscellaneous.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/Follower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="53" column="57" lean-forward="false" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
+        <state relative-caret-position="546">
+          <caret line="47" column="62" lean-forward="false" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/Like.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="40" column="62" lean-forward="false" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/OfyHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="87" column="15" lean-forward="false" selection-start-line="87" selection-start-column="15" selection-end-line="87" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/datastore/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/GetPhotos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="121" column="23" lean-forward="false" selection-start-line="121" selection-start-column="23" selection-end-line="121" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/LikePhoto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="89" column="58" lean-forward="false" selection-start-line="89" selection-start-column="58" selection-end-line="89" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/photo/Upload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="111" column="56" lean-forward="false" selection-start-line="111" selection-start-column="56" selection-end-line="111" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/FollowUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="84" column="54" lean-forward="false" selection-start-line="84" selection-start-column="54" selection-end-line="84" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/GetProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="74" column="54" lean-forward="false" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/UnfollowUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="86" column="59" lean-forward="false" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Auth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="58" column="51" lean-forward="false" selection-start-line="58" selection-start-column="51" selection-end-line="58" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="55" column="57" lean-forward="false" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
+        <state relative-caret-position="586">
+          <caret line="80" column="61" lean-forward="false" selection-start-line="80" selection-start-column="61" selection-end-line="80" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/ProfileUpdate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="124" column="56" lean-forward="false" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Auth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/storage/FileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="47" column="89" lean-forward="false" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/AuthenticationToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="139" column="53" lean-forward="false" selection-start-line="139" selection-start-column="53" selection-end-line="139" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/security/Encrypter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/profile/Search.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pictrait/api/endpoints/user/SignUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
           <folding />
         </state>
       </provider>

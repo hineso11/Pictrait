@@ -10,6 +10,7 @@ public class Constants {
     public static final String BUCKET_NAME = "pictrait-app.appspot.com";
     public static final String BASE_FILE_URL = "https://storage.googleapis.com/";
     public static final String JSON_TYPE = "text/json";
+    public static final String ERROR_REASON  = "errorReason";
 
     public class Parameters {
 

@@ -56,7 +56,7 @@ public class Auth extends HttpServlet {
         // MARK: Validate Fields
         // Check for null fields
         if (refreshToken == null || refreshToken.isEmpty()) {
-            response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
+            Errors.NULL_FIELDS.sendError(response);
             return false;
         }
         // END: Validate Fields

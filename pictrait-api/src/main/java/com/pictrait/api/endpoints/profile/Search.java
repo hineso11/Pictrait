@@ -80,7 +80,8 @@ public class Search extends HttpServlet {
         // If the username is provided
         if (searchString == null || searchString.isEmpty()) {
 
-            response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
+            Errors.NULL_FIELDS.sendError(response);
+
             return false;
         }
 

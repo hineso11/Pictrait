@@ -63,32 +63,32 @@ public class SignUp extends HttpServlet {
         // Check for null fields
         if (username == null || password == null || fullName == null || email == null ||
                 username.isEmpty() || password.isEmpty() || fullName.isEmpty() || email.isEmpty()) {
-            response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
+            Errors.NULL_FIELDS.sendError(response);
             return false;
         }
         // Check the fields are the correct length
         if (username.length() > MAX_USERNAME_LENGTH) {
-            response.sendError(Errors.USERNAME_LONG.getCode(), Errors.USERNAME_LONG.getMessage());
+            Errors.USERNAME_LONG.sendError(response);
             return false;
         }
         if (username.length() < MIN_USERNAME_LENGTH) {
-            response.sendError(Errors.USERNAME_SHORT.getCode(), Errors.USERNAME_SHORT.getMessage());
+            Errors.USERNAME_SHORT.sendError(response);
             return false;
         }
         if (password.length() > MAX_PASSWORD_LENGTH) {
-            response.sendError(Errors.PASSWORD_LONG.getCode(), Errors.PASSWORD_LONG.getMessage());
+            Errors.PASSWORD_LONG.sendError(response);
             return false;
         }
         if (password.length() < MIN_PASSWORD_LENGTH) {
-            response.sendError(Errors.PASSWORD_SHORT.getCode(), Errors.PASSWORD_SHORT.getMessage());
+            Errors.PASSWORD_SHORT.sendError(response);
             return false;
         }
         if (email.length() > MAX_EMAIL_LENGTH) {
-            response.sendError(Errors.EMAIL_LONG.getCode(), Errors.EMAIL_LONG.getMessage());
+            Errors.EMAIL_LONG.sendError(response);
             return false;
         }
         if (fullName.length() > MAX_NAME_LENGTH) {
-            response.sendError(Errors.NAME_LONG.getCode(), Errors.NAME_LONG.getMessage());
+            Errors.NAME_LONG.sendError(response);
             return false;
         }
         // Check that the email is the correct format
@@ -96,25 +96,25 @@ public class SignUp extends HttpServlet {
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
         java.util.regex.Matcher m = p.matcher(email);
         if (!m.matches()) {
-            response.sendError(Errors.EMAIL_FORMAT.getCode(), Errors.EMAIL_FORMAT.getMessage());
+            Errors.EMAIL_FORMAT.sendError(response);
             return false;
         }
         // Check the username uses only accepted characters
         if (!username.matches("^[a-zA-Z0-9._-]{3,}$")) {
-            response.sendError(Errors.USERNAME_FORMAT.getCode(), Errors.USERNAME_FORMAT.getMessage());
+            Errors.USERNAME_FORMAT.sendError(response);
             return false;
         }
 
         // Check the username is unique
         if (!User.usernameIsUnique(username)) {
 
-            response.sendError(Errors.USERNAME_IN_USE.getCode(), Errors.USERNAME_IN_USE.getMessage());
+            Errors.USERNAME_IN_USE.sendError(response);
             return false;
         }
         // Check the email is unique
         if (!User.emailIsUnique(email)) {
 
-            response.sendError(Errors.EMAIL_IN_USE.getCode(), Errors.EMAIL_IN_USE.getMessage());
+            Errors.EMAIL_IN_USE.sendError(response);
             return false;
         }
         // END: Validate Fields

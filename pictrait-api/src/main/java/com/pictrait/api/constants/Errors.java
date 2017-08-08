@@ -1,5 +1,11 @@
 package com.pictrait.api.constants;
 
+import com.sun.tools.internal.jxc.ap.Const;
+import org.json.JSONObject;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 /**
  * Created by oliver on 05/07/2017.
  */
@@ -60,6 +66,20 @@ public enum  Errors {
     public String getMessage () {
 
         return message;
+    }
+
+    // MARK: Methods
+    public void sendError (HttpServletResponse response) throws IOException {
+
+        response.setStatus(code);
+        JSONObject errorObject = new JSONObject();
+        try {
+            errorObject.put(Constants.ERROR_REASON, message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.getWriter().write(errorObject.toString());
+        response.setContentType(Constants.JSON_TYPE);
     }
 }
 

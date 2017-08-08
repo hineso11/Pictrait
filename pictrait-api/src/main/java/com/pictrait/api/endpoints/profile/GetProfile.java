@@ -64,7 +64,7 @@ public class GetProfile extends HttpServlet {
         // Check for null fields
         if (userId == null) {
 
-            response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
+            Errors.NULL_FIELDS.sendError(response);
             return false;
         }
 
@@ -72,7 +72,7 @@ public class GetProfile extends HttpServlet {
         User user = ObjectifyService.ofy().load().type(User.class).id(userId).now();
         if (user == null) {
 
-            response.sendError(Errors.USER_NOT_FOUND.getCode(), Errors.USER_NOT_FOUND.getMessage());
+            Errors.USER_NOT_FOUND.sendError(response);
             return false;
         }
 

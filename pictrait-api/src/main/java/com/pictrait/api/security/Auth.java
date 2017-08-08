@@ -23,7 +23,7 @@ public class Auth {
             return true;
         } else {
 
-            response.sendError(Errors.CLIENT_ID_INCORRECT.getCode(), Errors.CLIENT_ID_INCORRECT.getMessage());
+            Errors.CLIENT_ID_INCORRECT.sendError(response);
             return false;
         }
     }
@@ -34,7 +34,7 @@ public class Auth {
         String authToken = request.getParameter(Constants.Parameters.AUTH_TOKEN);
         if (authToken == null || authToken.isEmpty()) {
 
-            response.sendError(Errors.NO_AUTH_TOKEN.getCode(), Errors.NO_AUTH_TOKEN.getMessage());
+            Errors.NO_AUTH_TOKEN.sendError(response);
             return null;
         }
 

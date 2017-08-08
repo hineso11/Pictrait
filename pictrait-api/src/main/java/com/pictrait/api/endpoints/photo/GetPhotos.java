@@ -77,7 +77,7 @@ public class GetPhotos extends HttpServlet {
             }
         } else {
 
-            response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
+            Errors.NULL_FIELDS.sendError(response);
         }
     }
 
@@ -123,7 +123,7 @@ public class GetPhotos extends HttpServlet {
             response.getWriter().write(mainObject.toString());
         } else {
 
-            response.sendError(Errors.NOT_FOLLOWING_ANYONE.getCode(), Errors.NOT_FOLLOWING_ANYONE.getMessage());
+            Errors.NOT_FOLLOWING_ANYONE.sendError(response);
         }
 
 
@@ -150,7 +150,7 @@ public class GetPhotos extends HttpServlet {
             // If the user does not exist, end servlet request, else carry on
             if (user == null) {
 
-                response.sendError(Errors.USER_NOT_FOUND.getCode(), Errors.USER_NOT_FOUND.getMessage());
+                Errors.USER_NOT_FOUND.sendError(response);
                 return;
             }
 
@@ -180,7 +180,7 @@ public class GetPhotos extends HttpServlet {
 
         } else {
             // User id not supplied, send error
-            response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
+            Errors.NULL_FIELDS.sendError(response);
         }
     }
 

@@ -72,7 +72,7 @@ public class UnfollowUser extends HttpServlet {
         // Check for null fields
         if (subjectId == null || followerId == null) {
 
-            response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
+            Errors.NULL_FIELDS.sendError(response);
             return false;
         }
 
@@ -84,7 +84,7 @@ public class UnfollowUser extends HttpServlet {
                 .first().now();
         if (follower == null) {
 
-            response.sendError(Errors.NO_FOLLOWING_EXISTS.getCode(), Errors.NO_FOLLOWING_EXISTS.getMessage());
+            Errors.NO_FOLLOWING_EXISTS.sendError(response);
             return false;
         }
 

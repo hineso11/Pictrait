@@ -67,14 +67,14 @@ public class FollowUser extends HttpServlet {
         // Check for null fields
         if (subjectId == null || followerId == null) {
 
-            response.sendError(Errors.NULL_FIELDS.getCode(), Errors.NULL_FIELDS.getMessage());
+            Errors.NULL_FIELDS.sendError(response);
             return false;
         }
 
         // Check the user is not trying to follow themselves
         if (subjectId.equals(followerId)) {
 
-            response.sendError(Errors.CANNOT_FOLLOW_SELF.getCode(), Errors.CANNOT_FOLLOW_SELF.getMessage());
+            Errors.CANNOT_FOLLOW_SELF.sendError(response);
             return false;
         }
 
@@ -82,7 +82,7 @@ public class FollowUser extends HttpServlet {
         User user = ObjectifyService.ofy().load().type(User.class).id(subjectId).now();
         if (user == null) {
 
-            response.sendError(Errors.USER_NOT_FOUND.getCode(), Errors.USER_NOT_FOUND.getMessage());
+            Errors.USER_NOT_FOUND.sendError(response);
             return false;
         }
 
@@ -94,7 +94,7 @@ public class FollowUser extends HttpServlet {
                 .first().now();
         if (follower != null) {
 
-            response.sendError(Errors.ALREADY_FOLLOWING.getCode(), Errors.ALREADY_FOLLOWING.getMessage());
+            Errors.ALREADY_FOLLOWING.sendError(response);
             return false;
         }
 
