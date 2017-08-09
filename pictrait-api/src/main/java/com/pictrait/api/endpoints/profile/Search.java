@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Created by oliver on 12/07/2017.
@@ -52,6 +53,10 @@ public class Search extends HttpServlet {
                     .filter(Constants.User.Datastore.FULL_NAME + " <", searchString + "\ufffd")
                     .limit(20) // limit the number of results returned
                     .list();
+
+            // Remove the requesting user from results if exists
+            Predicate<User> predicate = searchedUser-> searchedUser.getUserId() == user.getUserId();
+            users.removeIf(predicate);
 
             JSONArray usersArray = new JSONArray();
             for (User user1: users) {
