@@ -17,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Determine whether the user is logged in and as a result the start vc
+        if (Auth.sharedInstance.isLoggedIn()) {
+            // The user is logged in, redirect to the main part of app
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainVC = storyboard.instantiateViewController(withIdentifier: Constants.StoryboardId.MAIN_TAB_CONTROLLER.rawValue)
+            self.window?.rootViewController = mainVC
+            self.window?.makeKeyAndVisible()
+        }
         return true
     }
 

@@ -21,6 +21,10 @@
 		A78C2B6C1F31CF1100A16F3F /* PictraitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B6B1F31CF1100A16F3F /* PictraitTests.swift */; };
 		A78C2B771F31CF1100A16F3F /* PictraitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C2B761F31CF1100A16F3F /* PictraitUITests.swift */; };
 		A7CFC7E31F31DD40007C22DA /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CFC7E21F31DD40007C22DA /* APIRequest.swift */; };
+		A7EB5DBB1F3AFEFE003DB259 /* ProfileFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB5DBA1F3AFEFE003DB259 /* ProfileFunctions.swift */; };
+		A7EB5DBE1F3AFFBD003DB259 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB5DBD1F3AFFBD003DB259 /* User.swift */; };
+		A7F43D1B1F3A19BD00188F1C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F43D1A1F3A19BD00188F1C /* SettingsTableViewController.swift */; };
+		A7F43D1D1F3A231A00188F1C /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F43D1C1F3A231A00188F1C /* SearchTableViewController.swift */; };
 		A7F547E41F31E2210077AF36 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F547E31F31E2210077AF36 /* AppError.swift */; };
 		A7F8D8261F39BDA100517A52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F8D8251F39BDA100517A52 /* SignUpViewController.swift */; };
 		C9C2006CDCA04334D8F5B252 /* Pods_Pictrait.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264DC1EFB5266125BE8A91DE /* Pods_Pictrait.framework */; };
@@ -68,6 +72,10 @@
 		A78C2B761F31CF1100A16F3F /* PictraitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictraitUITests.swift; sourceTree = "<group>"; };
 		A78C2B781F31CF1100A16F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7CFC7E21F31DD40007C22DA /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		A7EB5DBA1F3AFEFE003DB259 /* ProfileFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFunctions.swift; sourceTree = "<group>"; };
+		A7EB5DBD1F3AFFBD003DB259 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A7F43D1A1F3A19BD00188F1C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		A7F43D1C1F3A231A00188F1C /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		A7F547E31F31E2210077AF36 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		A7F8D8251F39BDA100517A52 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B4C68447B22D0B9A91770E4D /* Pods-Pictrait.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pictrait.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pictrait/Pods-Pictrait.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +204,8 @@
 				A78C2B5F1F31CF1100A16F3F /* LaunchScreen.storyboard */,
 				A7734BCE1F3650CD00ADB389 /* LoginViewController.swift */,
 				A7F8D8251F39BDA100517A52 /* SignUpViewController.swift */,
+				A7F43D1A1F3A19BD00188F1C /* SettingsTableViewController.swift */,
+				A7F43D1C1F3A231A00188F1C /* SearchTableViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -203,11 +213,21 @@
 		A79644981F31D1ED004DFBFF /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A7EB5DBC1F3AFF8F003DB259 /* Profile */,
 				A7CFC7E21F31DD40007C22DA /* APIRequest.swift */,
 				A7F547E31F31E2210077AF36 /* AppError.swift */,
 				A7734BCA1F35F6A300ADB389 /* HTTPRequest.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		A7EB5DBC1F3AFF8F003DB259 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A7EB5DBA1F3AFEFE003DB259 /* ProfileFunctions.swift */,
+				A7EB5DBD1F3AFFBD003DB259 /* User.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,13 +514,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7EB5DBE1F3AFFBD003DB259 /* User.swift in Sources */,
 				A7734BCF1F3650CD00ADB389 /* LoginViewController.swift in Sources */,
 				A78C2B5C1F31CF1100A16F3F /* Pictrait.xcdatamodeld in Sources */,
 				A7CFC7E31F31DD40007C22DA /* APIRequest.swift in Sources */,
+				A7EB5DBB1F3AFEFE003DB259 /* ProfileFunctions.swift in Sources */,
 				A7734BCB1F35F6A300ADB389 /* HTTPRequest.swift in Sources */,
 				A7F547E41F31E2210077AF36 /* AppError.swift in Sources */,
 				A78C2B541F31CF1100A16F3F /* AppDelegate.swift in Sources */,
+				A7F43D1B1F3A19BD00188F1C /* SettingsTableViewController.swift in Sources */,
 				A7F8D8261F39BDA100517A52 /* SignUpViewController.swift in Sources */,
+				A7F43D1D1F3A231A00188F1C /* SearchTableViewController.swift in Sources */,
 				A7734BCD1F361D5600ADB389 /* Auth.swift in Sources */,
 				A7734BD11F3702C100ADB389 /* Constants.swift in Sources */,
 			);

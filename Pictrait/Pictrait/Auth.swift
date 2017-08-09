@@ -18,9 +18,11 @@ class Auth {
     private static let EMAIL_PARAM = "email"
     private static let FULL_NAME_PARAM = "full_name"
     
-    // Json Parameters (also used in persistent data store)
+    // Json Parameters and persistent data store keys
     private static let AUTH_TOKEN = "auth_token"
     private static let REFRESH_TOKEN = "refresh_token"
+    private static let USERNAME = "username"
+    private static let PASSWORD = "password"
     
     // Persistent data params
     private static let IS_LOGGED_IN = "isLoggedIn"
@@ -30,14 +32,19 @@ class Auth {
     // API Url Paths
     private static let LOGIN_PATH = "/user/login"
     private static let SIGN_UP_PATH = "/user/signup"
+    private static let AUTH_PATH = "/user/auth"
     
     // MARK: Methods
     
     // Method to log into the app using username and password
     func login (username: String, password: String, callback: @escaping (Bool, AppError?) -> Void) {
         
+        // Store the username and password for later use
+        UserDefaults.standard.set(username, forKey: Auth.USERNAME)
+        UserDefaults.standard.set(password, forKey: Auth.PASSWORD)
+        
         let params = [Auth.USERNAME_PARAM: username as AnyObject, Auth.PASSWORD_PARAM: password as AnyObject]
-        let request = APIRequest(parameters: params, urlEnding: Auth.LOGIN_PATH, shouldRefresh: true, callback: { response, error in
+        let request = APIRequest(parameters: params, urlEnding: Auth.LOGIN_PATH, shouldRefresh: true, method: .POST, callback: { response, error in
             
             if (error != nil) {
                 
@@ -61,7 +68,7 @@ class Auth {
         
         let params = [Auth.USERNAME_PARAM: username as AnyObject, Auth.PASSWORD_PARAM: password as AnyObject,
                       Auth.EMAIL_PARAM: email as AnyObject, Auth.FULL_NAME_PARAM: fullName as AnyObject]
-        let request = APIRequest(parameters: params, urlEnding: Auth.SIGN_UP_PATH, shouldRefresh: true, callback: {
+        let request = APIRequest(parameters: params, urlEnding: Auth.SIGN_UP_PATH, shouldRefresh: true, method: .POST, callback: {
             response, error in
             
             if (error != nil) {
@@ -79,6 +86,42 @@ class Auth {
             }
         })
         request.doPost()
+    }
+    
+    // Method to reauth using the refresh token
+    func reauth (callback: @escaping (Bool) -> Void) {
+        
+        let refreshToken  = UserDefaults.standard.string(forKey: Auth.REFRESH_TOKEN)
+        let params = [Auth.REFRESH_TOKEN: refreshToken as AnyObject]
+        
+        let request = APIRequest(parameters: params, urlEnding: Auth.AUTH_PATH, shouldRefresh: false, method: .POST, callback: {
+            response, error in
+            
+            if (error == nil) {
+                
+                // Store the returned auth information and old refresh token
+                let authToken = response?[Auth.AUTH_TOKEN] as! String
+                self.storeAuth(authToken: authToken, refreshToken: refreshToken!)
+                callback(true)
+            } else {
+                
+                callback(false)
+            }
+        })
+        request.doPost()
+    }
+    
+    // Method to login again when refresh token has expired
+    func relogin (callback: @escaping (Bool) -> Void) {
+        
+        let username = UserDefaults.standard.string(forKey: Auth.USERNAME)
+        let password = UserDefaults.standard.string(forKey: Auth.PASSWORD)
+        
+        login(username: username!, password: password!, callback: {
+            success, error in
+            
+            callback(success)
+        })
     }
     
     // Method to store the auth information
@@ -108,6 +151,12 @@ class Auth {
         let loginVC = currentVC?.storyboard?.instantiateViewController(withIdentifier: Constants.StoryboardId.LOGIN_CONTROLLER.rawValue)
         UIApplication.shared.keyWindow?.rootViewController = loginVC
         
+    }
+    
+    // Function to get the current auth token 
+    func getAuthToken () -> String? {
+        
+        return UserDefaults.standard.string(forKey: Auth.AUTH_TOKEN)
     }
 }
 
