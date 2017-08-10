@@ -49,7 +49,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             } else {
                 // If the login attempt has not been successful
                 // Show the error
-                error?.showError(error: error, vc: self)
+                error?.showError(vc: self)
             }
         })
     }

@@ -55,7 +55,7 @@ class AppError {
     }
     
     // Function to display the error in an alertview
-    func showError (error: AppError?, vc: UIViewController) {
+    func showError (vc: UIViewController) {
         
         let alert = UIAlertController(title: "Error", message: errorType.rawValue, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))

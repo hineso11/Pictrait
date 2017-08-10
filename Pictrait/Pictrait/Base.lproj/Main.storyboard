@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -185,7 +186,7 @@
         <!--Upload-->
         <scene sceneID="Mjv-eJ-1RJ">
             <objects>
-                <viewController id="H8D-9a-Dyq" sceneMemberID="viewController">
+                <viewController id="H8D-9a-Dyq" customClass="UploadViewController" customModule="Pictrait" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GKs-GB-jN5"/>
                         <viewControllerLayoutGuide type="bottom" id="3d4-xu-krS"/>
@@ -193,13 +194,44 @@
                     <view key="view" contentMode="scaleToFill" id="6oy-hG-kZd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qc-NM-ttU">
+                                <rect key="frame" x="71.5" y="84" width="232" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5qc-NM-ttU" secondAttribute="height" multiplier="1:1" id="8HH-mu-wJQ"/>
+                                </constraints>
+                                <state key="normal" image="DefaultImage"/>
+                                <connections>
+                                    <action selector="photoButtonClicked:" destination="H8D-9a-Dyq" eventType="touchUpInside" id="nPr-7v-9LN"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wS6-Ze-Qz9">
+                                <rect key="frame" x="16" y="336" width="343" height="30"/>
+                                <state key="normal" title="Upload Photo"/>
+                                <connections>
+                                    <action selector="uploadButtonClicked:" destination="H8D-9a-Dyq" eventType="touchUpInside" id="BC5-qM-8Qw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5qc-NM-ttU" firstAttribute="centerY" secondItem="6oy-hG-kZd" secondAttribute="centerY" multiplier="0.6" id="5ed-x2-zn4"/>
+                            <constraint firstItem="5qc-NM-ttU" firstAttribute="top" secondItem="GKs-GB-jN5" secondAttribute="bottom" constant="20" id="AEL-yt-Q4f"/>
+                            <constraint firstItem="wS6-Ze-Qz9" firstAttribute="leading" secondItem="6oy-hG-kZd" secondAttribute="leadingMargin" id="HdF-hC-szW"/>
+                            <constraint firstItem="5qc-NM-ttU" firstAttribute="centerX" secondItem="6oy-hG-kZd" secondAttribute="centerX" id="Pr8-Zg-Hvd"/>
+                            <constraint firstItem="wS6-Ze-Qz9" firstAttribute="top" secondItem="5qc-NM-ttU" secondAttribute="bottom" constant="20" id="Z3M-ek-eg5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wS6-Ze-Qz9" secondAttribute="trailing" id="ak8-e7-eVF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Upload" id="Bgl-Ed-D1I"/>
+                    <connections>
+                        <outlet property="photoButton" destination="5qc-NM-ttU" id="rtq-eU-5hs"/>
+                        <outlet property="uploadButton" destination="wS6-Ze-Qz9" id="OoH-6P-0f8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1h-KD-oRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="446" y="2165"/>
+            <point key="canvasLocation" x="446" y="2164"/>
         </scene>
         <!--Search-->
         <scene sceneID="a5Z-ys-zH6">
@@ -440,6 +472,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DefaultImage" width="200" height="200"/>
         <image name="NewsfeedIcon" width="25" height="25"/>
         <image name="ProfileIcon" width="25" height="25"/>
         <image name="SettingsIcon" width="25" height="25"/>
