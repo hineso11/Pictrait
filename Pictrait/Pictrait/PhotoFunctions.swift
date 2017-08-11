@@ -17,14 +17,24 @@ class PhotoFunctions {
     
     // Request paths
     private static let UPLOAD_PATH = "/photo/upload"
+    private static let NEWSFEED_PATH = "/photo/feed"
     
     // Request Params
     private static let PHOTO_PARAM = "photo"
+    private static let FEED_TYPE_PARAM = "feed_type"
+    
+    private static let NEWSFEED_TYPE = "newsfeed"
     
     private static let IMAGE_TYPE = "image/jpeg" // content type for upload
     
     // Response Params
-
+    private static let PHOTOS_ARRAY = "photos"
+    private static let CREATED_AT = "createdAt"
+    private static let DOWNLOAD_URL = "download_url"
+    private static let PHOTO_ID = "photoId"
+    private static let USER_ID = "userId"
+    private static let LIKES = "likes"
+    private static let USER_HAS_LIKED = "userHasLiked"
     
     // MARK: Methods
     func uploadPhoto (photo: UIImage, callback: @escaping (Bool, AppError?) -> Void) {
@@ -43,5 +53,42 @@ class PhotoFunctions {
             }
         })
         request.doPost()
+    }
+    
+    func getNewsfeed (callback: @escaping ([Photo]?, AppError?) -> Void) {
+        
+        let params = [PhotoFunctions.FEED_TYPE_PARAM: PhotoFunctions.NEWSFEED_TYPE]
+        let request = APIRequest(parameters: params, urlEnding: PhotoFunctions.NEWSFEED_PATH, shouldRefresh: true, method: .GET, callback: {
+            response, error in
+            
+            if (error == nil) {
+                // There has been no error, parse response to photo objects
+                
+                let photosArray = response?[PhotoFunctions.PHOTOS_ARRAY] as! [Any]
+                var photoObjArray = [Photo]()
+                for photo in photosArray {
+                    
+                    let photoDictionary = photo as! [String: Any]
+                    // parse timestamp to date type
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "E MMM d HH:mm:ss zzz yyyy"
+                    let createdAt = formatter.date(from: photoDictionary[PhotoFunctions.CREATED_AT] as! String)
+                    let downloadUrl = URL(string: photoDictionary[PhotoFunctions.DOWNLOAD_URL] as! String)
+                    let photoId = photoDictionary[PhotoFunctions.PHOTO_ID] as! Int
+                    let userId = photoDictionary[PhotoFunctions.USER_ID] as! Int
+                    let likes = photoDictionary[PhotoFunctions.LIKES] as! Int
+                    let userHasLiked = photoDictionary[PhotoFunctions.USER_HAS_LIKED] as! Bool
+                    
+                    let photoObject = Photo(createdAt: createdAt!, downloadUrl: downloadUrl!, photoId: photoId, userId: userId, likes: likes, userHasLiked: userHasLiked)
+                    photoObjArray.append(photoObject)
+                }
+
+                callback(photoObjArray, nil)
+            } else {
+                // There was an error, display it to the user
+                callback(nil, error)
+            }
+        })
+        request.doGet()
     }
 }

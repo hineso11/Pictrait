@@ -109,7 +109,7 @@ public class GetPhotos extends HttpServlet {
             JSONArray photosArray = new JSONArray();
             for (Photo photo: photos) {
 
-                photosArray.put(photo.toJson());
+                photosArray.put(photo.toJson(user));
             }
 
             // Send the response in json
@@ -166,7 +166,7 @@ public class GetPhotos extends HttpServlet {
             JSONArray jsonArray = new JSONArray();
             for (Photo photo: photos) {
 
-                jsonArray.put(photo.toJson());
+                jsonArray.put(photo.toJson(user));
             }
             JSONObject mainObject = new JSONObject();
             try {

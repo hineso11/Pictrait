@@ -68,6 +68,7 @@ public class Constants {
 
         public static final String DOWNLOAD_URL = "download_url";
         public static final String LIKES_COUNT = "likes";
+        public static final String HAS_LIKED = "userHasLiked";
 
         public static final String NEWSFEED = "newsfeed";
         public static final String PROFILE ="profile";

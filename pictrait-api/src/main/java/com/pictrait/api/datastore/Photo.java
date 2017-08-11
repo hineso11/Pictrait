@@ -9,6 +9,7 @@ import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 import com.pictrait.api.constants.Constants;
+import com.sun.tools.internal.jxc.ap.Const;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -104,7 +105,7 @@ public class Photo {
     }
 
     // Function to get number of likes for photo
-    public int likesCount () {
+    private int likesCount () {
 
         // Get the count of likes for a corresponding photo id
         return ObjectifyService.ofy().load().type(Like.class)
@@ -112,8 +113,21 @@ public class Photo {
                 .count();
     }
 
+    private boolean userHasLiked (User currentUser) {
+
+        Like like = ObjectifyService.ofy().load().type(Like.class)
+                .filter(Constants.Like.Datastore.PHOTO_ID, photoId)
+                .filter(Constants.Like.Datastore.USER_ID, currentUser.getUserId())
+                .first().now();
+        if (like == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     // Function to return a json representation of this object
-    public JSONObject toJson () {
+    public JSONObject toJson (User currentUser) {
 
         JSONObject jsonObject = new JSONObject();
         try {
@@ -122,6 +136,7 @@ public class Photo {
             jsonObject.put(Constants.Photo.Datastore.USER_ID, userId);
             jsonObject.put(Constants.Photo.LIKES_COUNT, likesCount());
             jsonObject.put(Constants.Photo.Datastore.CREATED_AT, createdAt.toString());
+            jsonObject.put(Constants.Photo.HAS_LIKED, userHasLiked(currentUser));
         } catch (JSONException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }

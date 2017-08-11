@@ -167,7 +167,7 @@
         <!--Newsfeed-->
         <scene sceneID="hvZ-yE-evT">
             <objects>
-                <viewController id="eaP-yX-Os7" sceneMemberID="viewController">
+                <viewController id="eaP-yX-Os7" customClass="NewsfeedViewController" customModule="Pictrait" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g67-lu-o86"/>
                         <viewControllerLayoutGuide type="bottom" id="LG8-eL-hWM"/>
@@ -175,13 +175,52 @@
                     <view key="view" contentMode="scaleToFill" id="imN-lr-pnc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeK-Ma-y8W">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zeK-Ma-y8W" firstAttribute="leading" secondItem="imN-lr-pnc" secondAttribute="leading" id="9wi-Ce-05i"/>
+                            <constraint firstAttribute="trailing" secondItem="zeK-Ma-y8W" secondAttribute="trailing" id="AA2-qR-xUO"/>
+                            <constraint firstItem="zeK-Ma-y8W" firstAttribute="top" secondItem="g67-lu-o86" secondAttribute="bottom" id="IAj-81-Hfs"/>
+                            <constraint firstItem="LG8-eL-hWM" firstAttribute="top" secondItem="zeK-Ma-y8W" secondAttribute="bottom" id="vXx-io-RXG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Newsfeed" id="QmB-vP-1Ys"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uON-6s-Gz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-327" y="2165"/>
+            <point key="canvasLocation" x="-327.19999999999999" y="2164.7676161919044"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="rnn-f8-fsy">
+            <objects>
+                <tableViewController id="HT5-hZ-sGd" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rfp-MN-TjV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="euU-7O-6D1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="euU-7O-6D1" id="pJf-GY-nI1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HT5-hZ-sGd" id="EZ9-ZZ-vWx"/>
+                            <outlet property="delegate" destination="HT5-hZ-sGd" id="xJ3-gA-tE9"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BN2-Hp-I69" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-327" y="2990"/>
         </scene>
         <!--Upload-->
         <scene sceneID="Mjv-eJ-1RJ">

@@ -7,6 +7,7 @@ target 'Pictrait' do
 pod 'SwiftHTTP', '~> 2.0.0'
 pod ‘SwiftSpinner’
 pod 'MBProgressHUD', '~> 1.0.0'
+pod 'SDWebImage', '~> 4.0'
 
   # Pods for Pictrait
 
