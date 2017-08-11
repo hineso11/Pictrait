@@ -14,6 +14,7 @@ class Constants {
     enum StoryboardId: String {
         case MAIN_TAB_CONTROLLER = "mainTabController"
         case LOGIN_CONTROLLER = "loginController"
+        case FEED_CONTROLLER = "FeedController"
     }
     
 }

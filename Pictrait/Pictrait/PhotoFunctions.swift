@@ -32,7 +32,7 @@ class PhotoFunctions {
     private static let CREATED_AT = "createdAt"
     private static let DOWNLOAD_URL = "download_url"
     private static let PHOTO_ID = "photoId"
-    private static let USER_ID = "userId"
+    private static let USERNAME = "username"
     private static let LIKES = "likes"
     private static let USER_HAS_LIKED = "userHasLiked"
     
@@ -75,11 +75,11 @@ class PhotoFunctions {
                     let createdAt = formatter.date(from: photoDictionary[PhotoFunctions.CREATED_AT] as! String)
                     let downloadUrl = URL(string: photoDictionary[PhotoFunctions.DOWNLOAD_URL] as! String)
                     let photoId = photoDictionary[PhotoFunctions.PHOTO_ID] as! Int
-                    let userId = photoDictionary[PhotoFunctions.USER_ID] as! Int
+                    let username = photoDictionary[PhotoFunctions.USERNAME] as! String
                     let likes = photoDictionary[PhotoFunctions.LIKES] as! Int
                     let userHasLiked = photoDictionary[PhotoFunctions.USER_HAS_LIKED] as! Bool
                     
-                    let photoObject = Photo(createdAt: createdAt!, downloadUrl: downloadUrl!, photoId: photoId, userId: userId, likes: likes, userHasLiked: userHasLiked)
+                    let photoObject = Photo(createdAt: createdAt!, downloadUrl: downloadUrl!, photoId: photoId, username: username, likes: likes, userHasLiked: userHasLiked)
                     photoObjArray.append(photoObject)
                 }
 

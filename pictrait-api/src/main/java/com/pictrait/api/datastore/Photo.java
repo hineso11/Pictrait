@@ -1,7 +1,6 @@
 package com.pictrait.api.datastore;
 
 import com.google.api.client.util.Base64;
-import com.google.api.services.sqladmin.SQLAdminScopes;
 import com.google.appengine.api.appidentity.AppIdentityService;
 import com.google.appengine.api.appidentity.AppIdentityServiceFactory;
 import com.googlecode.objectify.ObjectifyService;
@@ -9,14 +8,11 @@ import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 import com.pictrait.api.constants.Constants;
-import com.sun.tools.internal.jxc.ap.Const;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import javax.print.attribute.standard.Media;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -126,6 +122,13 @@ public class Photo {
         }
     }
 
+    private String getUsername () {
+
+        User user = ObjectifyService.ofy().load().type(User.class)
+                .id(userId).now();
+        return user.getUsername();
+    }
+
     // Function to return a json representation of this object
     public JSONObject toJson (User currentUser) {
 
@@ -133,7 +136,7 @@ public class Photo {
         try {
             jsonObject.put(Constants.Photo.Datastore.PHOTO_ID, photoId);
             jsonObject.put(Constants.Photo.DOWNLOAD_URL, getDownloadUrl());
-            jsonObject.put(Constants.Photo.Datastore.USER_ID, userId);
+            jsonObject.put(Constants.User.Datastore.USERNAME, getUsername());
             jsonObject.put(Constants.Photo.LIKES_COUNT, likesCount());
             jsonObject.put(Constants.Photo.Datastore.CREATED_AT, createdAt.toString());
             jsonObject.put(Constants.Photo.HAS_LIKED, userHasLiked(currentUser));

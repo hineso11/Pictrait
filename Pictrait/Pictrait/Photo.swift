@@ -14,17 +14,17 @@ class Photo {
     var createdAt: Date
     var downloadUrl: URL
     var photoId: Int
-    var userId: Int
+    var username: String
     var likes: Int
     var userHasLiked: Bool
     
     // MARK: Constructors
-    init(createdAt: Date, downloadUrl: URL, photoId: Int, userId: Int, likes: Int, userHasLiked: Bool) {
+    init(createdAt: Date, downloadUrl: URL, photoId: Int, username: String, likes: Int, userHasLiked: Bool) {
         
         self.createdAt = createdAt
         self.downloadUrl = downloadUrl
         self.photoId = photoId
-        self.userId = userId
+        self.username = username
         self.likes = likes
         self.userHasLiked = userHasLiked
     }
