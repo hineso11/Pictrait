@@ -73,7 +73,7 @@ public class GetPhotos extends HttpServlet {
             }
             if (feedType.equals(FeedType.PROFILE.type)) {
 
-                getProfile(request, response);
+                getProfile(request, response, user);
             }
         } else {
 
@@ -130,7 +130,7 @@ public class GetPhotos extends HttpServlet {
     }
 
     // Procedure to return the photos associated with a profile to the user
-    private void getProfile (HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void getProfile (HttpServletRequest request, HttpServletResponse response, User currentUser) throws IOException {
 
         // Get the user id of the profile
         Long userId;
@@ -166,7 +166,7 @@ public class GetPhotos extends HttpServlet {
             JSONArray jsonArray = new JSONArray();
             for (Photo photo: photos) {
 
-                jsonArray.put(photo.toJson(user));
+                jsonArray.put(photo.toJson(currentUser));
             }
             JSONObject mainObject = new JSONObject();
             try {

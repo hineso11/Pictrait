@@ -134,8 +134,23 @@ public class User {
                 .count();
     }
 
+    private boolean isFollowing (User currentUser) {
+
+        Follower follower = ObjectifyService.ofy().load().type(Follower.class)
+                .filter(Constants.Follower.Datastore.FOLLOWER_ID, currentUser.getUserId())
+                .filter(Constants.Follower.Datastore.SUBJECT_ID, userId)
+                .first().now();
+
+        if (follower == null) {
+            return false;
+        } else {
+
+            return true;
+        }
+    }
+
     // Function to return a json representation of this object
-    public JSONObject toJson () {
+    public JSONObject toJson (User currentUser) {
 
         // Send the updated user object with fields updated in the response
         JSONObject jsonObject = new JSONObject();
@@ -145,7 +160,8 @@ public class User {
                     .put(Constants.User.Datastore.USERNAME, username)
                     .put(Constants.User.Datastore.FULL_NAME, fullName)
                     .put(Constants.User.FOLLOWER_COUNT, followerCount())
-                    .put(Constants.User.FOLLOWING_COUNT, followingCount());
+                    .put(Constants.User.FOLLOWING_COUNT, followingCount())
+                    .put(Constants.User.IS_FOLLOWING, isFollowing(currentUser));
         } catch (JSONException e) {
             e.printStackTrace();
         }

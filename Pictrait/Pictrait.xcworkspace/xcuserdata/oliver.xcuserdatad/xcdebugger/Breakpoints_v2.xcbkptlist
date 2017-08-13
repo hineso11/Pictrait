@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pictrait/HTTPRequest.swift"
-            timestampString = "523881929.259457"
+            timestampString = "524253081.017366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pictrait/HTTPRequest.swift"
-            timestampString = "523879305.039824"
+            timestampString = "524253081.017366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pictrait/HTTPRequest.swift"
-            timestampString = "523879344.337825"
+            timestampString = "524253081.017366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pictrait/ProfileFunctions.swift"
-            timestampString = "523966102.824259"
+            timestampString = "524306051.465297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "searchUsers(searchString:callback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pictrait/ProfileFunctions.swift"
-            timestampString = "523966181.699124"
+            timestampString = "524306051.465297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "searchUsers(searchString:callback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -169,13 +169,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pictrait/ProfileFunctions.swift"
-            timestampString = "523966171.126945"
+            filePath = "Pictrait/ProfileViewController.swift"
+            timestampString = "524305624.208184"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "searchUsers(searchString:callback:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "followButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,14 +185,46 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pictrait/PhotoFunctions.swift"
-            timestampString = "524141073.661546"
+            filePath = "Pictrait/ProfileViewController.swift"
+            timestampString = "524306101.559429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "getNewsfeed(callback:)"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "followButtonClicked(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pictrait.ProfileViewController.followButtonClicked (Any) -&gt; ()"
+                  moduleName = "Pictrait"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/OneDrive/Documents/School/Sixth%20Form/Computer%20Science/NEA/Pictrait/Pictrait/Pictrait/ProfileViewController.swift"
+                  timestampString = "524306101.847589"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pictrait.ProfileViewController.(followButtonClicked (Any) -&gt; ()).(closure #1)"
+                  moduleName = "Pictrait"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/OneDrive/Documents/School/Sixth%20Form/Computer%20Science/NEA/Pictrait/Pictrait/Pictrait/ProfileViewController.swift"
+                  timestampString = "524306101.849128"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -201,14 +233,46 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pictrait/FeedCollectionViewController.swift"
-            timestampString = "524156715.200146"
+            filePath = "Pictrait/ProfileViewController.swift"
+            timestampString = "524306102.80673"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "refreshFeed()"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "followButtonClicked(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pictrait.ProfileViewController.followButtonClicked (Any) -&gt; ()"
+                  moduleName = "Pictrait"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/OneDrive/Documents/School/Sixth%20Form/Computer%20Science/NEA/Pictrait/Pictrait/Pictrait/ProfileViewController.swift"
+                  timestampString = "524306110.312026"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pictrait.ProfileViewController.(followButtonClicked (Any) -&gt; ()).(closure #1)"
+                  moduleName = "Pictrait"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/OneDrive/Documents/School/Sixth%20Form/Computer%20Science/NEA/Pictrait/Pictrait/Pictrait/ProfileViewController.swift"
+                  timestampString = "524306110.313841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

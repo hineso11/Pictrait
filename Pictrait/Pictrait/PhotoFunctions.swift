@@ -18,12 +18,16 @@ class PhotoFunctions {
     // Request paths
     private static let UPLOAD_PATH = "/photo/upload"
     private static let NEWSFEED_PATH = "/photo/feed"
+    private static let LIKE_PATH = "/photo/like"
     
     // Request Params
     private static let PHOTO_PARAM = "photo"
     private static let FEED_TYPE_PARAM = "feed_type"
+    private static let PHOTO_ID_REQUEST = "photo_id"
+    private static let USER_ID = "user_id"
     
     private static let NEWSFEED_TYPE = "newsfeed"
+    private static let PROFILE_TYPE = "profile"
     
     private static let IMAGE_TYPE = "image/jpeg" // content type for upload
     
@@ -31,7 +35,7 @@ class PhotoFunctions {
     private static let PHOTOS_ARRAY = "photos"
     private static let CREATED_AT = "createdAt"
     private static let DOWNLOAD_URL = "download_url"
-    private static let PHOTO_ID = "photoId"
+    private static let PHOTO_ID_RESPONSE = "photoId"
     private static let USERNAME = "username"
     private static let LIKES = "likes"
     private static let USER_HAS_LIKED = "userHasLiked"
@@ -58,6 +62,16 @@ class PhotoFunctions {
     func getNewsfeed (callback: @escaping ([Photo]?, AppError?) -> Void) {
         
         let params = [PhotoFunctions.FEED_TYPE_PARAM: PhotoFunctions.NEWSFEED_TYPE]
+        getFeed(callback: callback, params: params)
+    }
+    
+    func getProfile (user: User, callback: @escaping ([Photo]?, AppError?) -> Void) {
+        let params = [PhotoFunctions.FEED_TYPE_PARAM: PhotoFunctions.PROFILE_TYPE, PhotoFunctions.USER_ID: user.userId as Any]
+        getFeed(callback: callback, params: params)
+    }
+    
+    private func getFeed (callback: @escaping ([Photo]?, AppError?) -> Void, params: [String: Any]) {
+        
         let request = APIRequest(parameters: params, urlEnding: PhotoFunctions.NEWSFEED_PATH, shouldRefresh: true, method: .GET, callback: {
             response, error in
             
@@ -74,7 +88,7 @@ class PhotoFunctions {
                     formatter.dateFormat = "E MMM d HH:mm:ss zzz yyyy"
                     let createdAt = formatter.date(from: photoDictionary[PhotoFunctions.CREATED_AT] as! String)
                     let downloadUrl = URL(string: photoDictionary[PhotoFunctions.DOWNLOAD_URL] as! String)
-                    let photoId = photoDictionary[PhotoFunctions.PHOTO_ID] as! Int
+                    let photoId = photoDictionary[PhotoFunctions.PHOTO_ID_RESPONSE] as! Int
                     let username = photoDictionary[PhotoFunctions.USERNAME] as! String
                     let likes = photoDictionary[PhotoFunctions.LIKES] as! Int
                     let userHasLiked = photoDictionary[PhotoFunctions.USER_HAS_LIKED] as! Bool
@@ -82,7 +96,7 @@ class PhotoFunctions {
                     let photoObject = Photo(createdAt: createdAt!, downloadUrl: downloadUrl!, photoId: photoId, username: username, likes: likes, userHasLiked: userHasLiked)
                     photoObjArray.append(photoObject)
                 }
-
+                
                 callback(photoObjArray, nil)
             } else {
                 // There was an error, display it to the user
@@ -90,5 +104,26 @@ class PhotoFunctions {
             }
         })
         request.doGet()
+
+    }
+    
+    func likePhoto (photo: Photo, callback: @escaping (Bool, AppError?) -> Void) {
+        
+        photo.userHasLiked = true
+        photo.likes = photo.likes + 1
+        
+        let params = [PhotoFunctions.PHOTO_ID_REQUEST: photo.photoId]
+        let request = APIRequest(parameters: params, urlEnding: PhotoFunctions.LIKE_PATH, shouldRefresh: true, method: .POST, callback: {
+            response, error in
+            
+            
+            if (error == nil) {
+                
+                callback(true, nil)
+            } else {
+                callback(false, error)
+            }
+        })
+        request.doPost()
     }
 }

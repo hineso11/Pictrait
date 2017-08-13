@@ -24,15 +24,17 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     // MARK: Actions
     @IBAction func likeButtonClicked(_ sender: Any) {
         
-        
+        PhotoFunctions.sharedInstance.likePhoto(photo: photo!, callback: {
+            success, error in
+            
+        })
+        // Set the UI up for the update
+        setupUI(feedType: feedType!, photo: photo!)
     }
     
     // MARK: Methods
     
     func setupUI (feedType: FeedType, photo: Photo) {
-        
-        print(photo.createdAt)
-        print(photo.likes)
         
         self.feedType = feedType
         self.photo = photo
@@ -58,13 +60,15 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         
         // Alter the like button if necessary
         if (photo.userHasLiked) {
-            
-            likeButton.setTitle("Liked", for: .normal)
             likeButton.isEnabled = false
+            likeButton.setTitle("Liked", for: .normal)
+        } else {
+            
+            likeButton.isEnabled = true
+            likeButton.setTitle("Like", for: .normal)
         }
         
         // Start loading the image
-        
         imageView.sd_setShowActivityIndicatorView(true)
         imageView.sd_setImage(with: photo.downloadUrl, placeholderImage: #imageLiteral(resourceName: "DefaultImage"))
         

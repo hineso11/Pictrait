@@ -59,9 +59,9 @@ class HTTPRequest {
             // Add the parameters to the url
             for (name, value) in parameters! {
                 
-                 urlParams.append(URLQueryItem(name: name, value: value as? String))
+                urlParams.append(URLQueryItem(name: name, value: String(describing: value)))
+                
             }
-            
             operation = try HTTP.GET(constructUrl(items: urlParams))
             // Send request to central method
             makeRequest()
@@ -117,9 +117,20 @@ class HTTPRequest {
     // Method used to handle the error
     private func handleError (response: Response) {
         
-        // Find out what the error was specifically
-        let errorString = findError(data: response.data)
-        let error = AppError(statusCode: response.statusCode!, errorReason: errorString)
+        var error: AppError
+        
+        if (response.statusCode != nil) {
+            
+            // Find out what the error was specifically
+            let errorString = findError(data: response.data)
+            error = AppError(statusCode: response.statusCode!, errorReason: errorString)
+        } else {
+            
+            let errorString = response.error?.localizedDescription
+            print(errorString)
+            response.statusCode = 000
+            error = AppError(statusCode: 000, errorReason: APIRequest.GENERAL_ERROR)
+        }
         
         callback(nil, error, response.statusCode!)
     }
@@ -129,7 +140,7 @@ class HTTPRequest {
         
         // Get string
         let htmlString = String(bytes: data, encoding: .ascii)
-        
+        print(htmlString)
         // Find the error in the json
         do {
             let jsonArray = try JSONSerialization.jsonObject(with: data) as? [String: Any]

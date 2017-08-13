@@ -54,7 +54,7 @@ public class GetProfile extends HttpServlet {
             // Get the user by their id
             User user1 = ObjectifyService.ofy().load().type(User.class).id(userId).now();
             // Send the response
-            response.getWriter().write(user1.toJson().toString());
+            response.getWriter().write(user1.toJson(user).toString());
             response.setContentType(Constants.JSON_TYPE);
         }
     }

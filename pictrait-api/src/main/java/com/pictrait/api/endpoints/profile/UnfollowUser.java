@@ -62,8 +62,10 @@ public class UnfollowUser extends HttpServlet {
             // Delete the follower relationship
             ObjectifyService.ofy().delete().entity(follower);
 
-            // No response is needed because no object is to be returned
+            // Return empty json as no meaningful response necessary
             // Response code dictates success of operation
+            response.setContentType(Constants.JSON_TYPE);
+            response.getWriter().write("{}");
         }
     }
 

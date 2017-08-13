@@ -30,6 +30,18 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SearchCell")
     }
     
+    // Intercept embed action
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc = segue.destination as? ProfileViewController,
+            segue.identifier == "ShowProfile" {
+            
+            // Set the user object for the profile
+            let cell = sender as! UITableViewCell
+            vc.user = queriedUsers[(tableView.indexPath(for: cell)?.row)!]
+        }
+    }
+    
     // MARK: Search Bar Methods
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
@@ -74,14 +86,15 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "SearchCell")
         
-        cell.textLabel?.text = queriedUsers[indexPath.row].getFullName()
-        cell.detailTextLabel?.text = queriedUsers[indexPath.row].getUsername()
+        cell.textLabel?.text = queriedUsers[indexPath.row].fullName
+        cell.detailTextLabel?.text = queriedUsers[indexPath.row].username
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "ShowProfile", sender: tableView.cellForRow(at: indexPath))
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }

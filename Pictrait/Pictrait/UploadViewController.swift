@@ -39,8 +39,13 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             if (error == nil) {
                 // The request was successful, reset UI elements for future uploads
-                self.photoButton.setImage(#imageLiteral(resourceName: "DefaultImage"), for: .normal)
-                self.uploadButton.isHidden = true
+                
+                DispatchQueue.main.async {
+                    
+                    self.photoButton.setBackgroundImage(#imageLiteral(resourceName: "DefaultImage"), for: .normal)
+                    self.photoButton.setTitle("Click to choose photo", for: .normal)
+                    self.uploadButton.isHidden = true
+                }
                 
                 // Show an alert to inform upload has been successful
                 let alert = UIAlertController(title: "Upload Successful", message: "", preferredStyle: .alert)
@@ -68,7 +73,9 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             // set the image preview
-            photoButton.setImage(pickedImage, for: .normal)
+            photoButton.setBackgroundImage(pickedImage, for: .normal)
+            // remove the old title
+            photoButton.setTitle("", for: .normal)
             // retain image
             selectedImage = pickedImage
             // show the upload button
