@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3505EF5602EA411F7A5891B6 /* Pods_PictraitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9CDE57313D2067F5611693 /* Pods_PictraitUITests.framework */; };
 		64A9FA066470F94327008C9D /* Pods_PictraitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FA8EE8B4C65C8A327F0AD3 /* Pods_PictraitTests.framework */; };
+		A700DBD11F41BB93005C59AE /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A700DBD01F41BB93005C59AE /* MyProfileViewController.swift */; };
 		A71B20861F3B807C00AE383C /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B20851F3B807C00AE383C /* UploadViewController.swift */; };
 		A71B20891F3B960000AE383C /* PhotoFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B20881F3B960000AE383C /* PhotoFunctions.swift */; };
 		A721FCDC1F3F62C600E93564 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721FCDB1F3F62C600E93564 /* ProfileViewController.swift */; };
@@ -61,6 +62,7 @@
 		264DC1EFB5266125BE8A91DE /* Pods_Pictrait.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pictrait.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9CDE57313D2067F5611693 /* Pods_PictraitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictraitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA16648AE8E3464E9B33FB4 /* Pods-PictraitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictraitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictraitUITests/Pods-PictraitUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A700DBD01F41BB93005C59AE /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		A71B20851F3B807C00AE383C /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		A71B20881F3B960000AE383C /* PhotoFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFunctions.swift; sourceTree = "<group>"; };
 		A721FCDB1F3F62C600E93564 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				A7734BCE1F3650CD00ADB389 /* LoginViewController.swift */,
 				A7F8D8251F39BDA100517A52 /* SignUpViewController.swift */,
+				A700DBD01F41BB93005C59AE /* MyProfileViewController.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -225,7 +228,6 @@
 				A79644981F31D1ED004DFBFF /* API */,
 				A79644961F31D1C8004DFBFF /* General */,
 				A79644971F31D1D2004DFBFF /* UI */,
-				A7734BCC1F361D5600ADB389 /* Auth.swift */,
 			);
 			path = Pictrait;
 			sourceTree = "<group>";
@@ -287,6 +289,7 @@
 			children = (
 				A7EB5DBA1F3AFEFE003DB259 /* ProfileFunctions.swift */,
 				A7EB5DBD1F3AFFBD003DB259 /* User.swift */,
+				A7734BCC1F361D5600ADB389 /* Auth.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				A7CFC7E31F31DD40007C22DA /* APIRequest.swift in Sources */,
 				A7EB5DBB1F3AFEFE003DB259 /* ProfileFunctions.swift in Sources */,
 				A7734BCB1F35F6A300ADB389 /* HTTPRequest.swift in Sources */,
+				A700DBD11F41BB93005C59AE /* MyProfileViewController.swift in Sources */,
 				A7F547E41F31E2210077AF36 /* AppError.swift in Sources */,
 				A78C2B541F31CF1100A16F3F /* AppDelegate.swift in Sources */,
 				A7F43D1B1F3A19BD00188F1C /* SettingsTableViewController.swift in Sources */,

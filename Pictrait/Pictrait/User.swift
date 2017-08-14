@@ -10,6 +10,14 @@ import Foundation
 
 class User {
     
+    // MARK: Constants
+    static let USERNAME_PARAM = "username"
+    static let USER_ID_PARAM = "userId"
+    static let FULL_NAME_PARAM = "fullName"
+    static let FOLLOWERS_PARAM = "followers"
+    static let FOLLOWING_PARAM = "following"
+    static let IS_FOLLOWING_PARAM = "isFollowing"
+    
     // MARK: Variables
     var username: String
     var userId: Int
@@ -29,4 +37,10 @@ class User {
         self.isFollowing = isFollowing
     }
     
+    // MARK: Methods
+    func toJson () -> [String: Any] {
+        
+        return [User.USERNAME_PARAM: username, User.USER_ID_PARAM: userId, User.FULL_NAME_PARAM: fullName,
+                User.FOLLOWERS_PARAM: followers, User.FOLLOWING_PARAM: following, User.IS_FOLLOWING_PARAM: isFollowing]
+    }
 }

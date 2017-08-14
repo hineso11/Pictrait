@@ -47,34 +47,69 @@ public class GetProfile extends HttpServlet {
             // If the photo id was blank in params, set to null as exception handled in validation
             userId = null;
         }
+        // Get the username param if exists
+        String username = request.getParameter(Constants.Parameters.USERNAME);
 
         // Check the user id passes all necessary validation
-        if (validateFields(response, userId)) {
+        if (validateFields(response, userId, username)) {
 
-            // Get the user by their id
-            User user1 = ObjectifyService.ofy().load().type(User.class).id(userId).now();
-            // Send the response
-            response.getWriter().write(user1.toJson(user).toString());
+            User user1;
+            if (userId != null) {
+
+                // Get the user by their id
+                user1 = ObjectifyService.ofy().load().type(User.class).id(userId).now();
+                // Send the response
+                response.getWriter().write(user1.toJson(user).toString());
+            }
+            if (username != null) {
+
+                // Get the user by their username
+                user1 = ObjectifyService.ofy().load().type(User.class)
+                        .filter(Constants.User.Datastore.USERNAME, username)
+                        .first().now();
+                // Send the response
+                response.getWriter().write(user1.toJson(user).toString());
+            }
+
+
             response.setContentType(Constants.JSON_TYPE);
         }
     }
 
-    private boolean validateFields (HttpServletResponse response, Long userId) throws IOException {
+    private boolean validateFields (HttpServletResponse response, Long userId, String username) throws IOException {
 
-        // Check for null fields
-        if (userId == null) {
+        // Check for null fields, only username or id is required so one field can be null
+        if (userId == null && (username == null || username.isEmpty())) {
 
             Errors.NULL_FIELDS.sendError(response);
             return false;
         }
 
-        // Check the user exists
-        User user = ObjectifyService.ofy().load().type(User.class).id(userId).now();
-        if (user == null) {
+        // If the request if using user id
+        if (userId != null) {
 
-            Errors.USER_NOT_FOUND.sendError(response);
-            return false;
+            // Check the user exists
+            User user = ObjectifyService.ofy().load().type(User.class).id(userId).now();
+            if (user == null) {
+
+                Errors.USER_NOT_FOUND.sendError(response);
+                return false;
+            }
         }
+        // If the request is using username
+        if (username != null) {
+
+            // Check the user exists
+            User user = ObjectifyService.ofy().load().type(User.class)
+                    .filter(Constants.User.Datastore.USERNAME, username)
+                    .first().now();
+            if (user == null) {
+
+                Errors.USER_NOT_FOUND.sendError(response);
+                return false;
+            }
+        }
+
 
         return true;
     }

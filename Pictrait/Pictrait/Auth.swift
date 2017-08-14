@@ -23,6 +23,7 @@ class Auth {
     private static let REFRESH_TOKEN = "refresh_token"
     private static let USERNAME = "username"
     private static let PASSWORD = "password"
+    private static let CURRENT_USER = "currentUser"
     
     // Persistent data params
     private static let IS_LOGGED_IN = "isLoggedIn"
@@ -43,7 +44,7 @@ class Auth {
         UserDefaults.standard.set(username, forKey: Auth.USERNAME)
         UserDefaults.standard.set(password, forKey: Auth.PASSWORD)
         
-        let params = [Auth.USERNAME_PARAM: username as AnyObject, Auth.PASSWORD_PARAM: password as AnyObject]
+        let params = [Auth.USERNAME_PARAM: username as Any, Auth.PASSWORD_PARAM: password as Any]
         let request = APIRequest(parameters: params, urlEnding: Auth.LOGIN_PATH, shouldRefresh: true, method: .POST, callback: { response, error in
             
             if (error != nil) {
@@ -91,6 +92,7 @@ class Auth {
     // Method to reauth using the refresh token
     func reauth (callback: @escaping (Bool) -> Void) {
         
+        print("reauth")
         let refreshToken  = UserDefaults.standard.string(forKey: Auth.REFRESH_TOKEN)
         let params = [Auth.REFRESH_TOKEN: refreshToken as AnyObject]
         
@@ -157,6 +159,12 @@ class Auth {
     func getAuthToken () -> String? {
         
         return UserDefaults.standard.string(forKey: Auth.AUTH_TOKEN)
+    }
+    
+    // Function to get the logged in user's username
+    func getUsername () -> String {
+        
+        return UserDefaults.standard.string(forKey: Auth.USERNAME)!
     }
 }
 

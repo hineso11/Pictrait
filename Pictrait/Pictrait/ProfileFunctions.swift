@@ -17,9 +17,11 @@ class ProfileFunctions {
     private static let SEARCH_PATH = "/profile/search"
     private static let FOLLOW_PATH = "/profile/follow"
     private static let UNFOLLOW_PATH = "/profile/unfollow"
+    static let GET_PATH = "/profile/get"
     
     // Request Params
     private static let SEARCH_PARAM = "search_string"
+    private static let USERNAME_PARAM = "username"
     private static let SUBJECT_ID = "subject_id"
     
     // Response Params
@@ -32,6 +34,32 @@ class ProfileFunctions {
     private static let IS_FOLLOWING = "isFollowing"
     
     // MARK: Methods
+    
+    func getUser (username: String, callback: @escaping (User?, AppError?) -> Void) {
+        
+        let params = [ProfileFunctions.USERNAME_PARAM: username as Any]
+        let request = APIRequest(parameters: params, urlEnding: ProfileFunctions.GET_PATH, shouldRefresh: true, method: .GET, callback: {
+            response, error in
+            
+            if (error == nil) {
+                // There was no error getting the user object, continue
+                let username = response?[ProfileFunctions.USERNAME] as! String
+                let userId = response?[ProfileFunctions.USER_ID] as! Int
+                let fullName = response?[ProfileFunctions.FULL_NAME] as! String
+                let followers = response?[ProfileFunctions.FOLLOWERS] as! Int
+                let following = response?[ProfileFunctions.FOLLOWING] as! Int
+                let isFollowing = response?[ProfileFunctions.IS_FOLLOWING] as! Bool
+                
+                let userObject = User(username: username, userId: userId, fullName: fullName, followers: followers, following: following, isFollowing: isFollowing)
+                
+                callback(userObject, nil)
+            } else {
+                
+                callback(nil, error)
+            }
+        })
+        request.doGet()
+    }
     
     func followUser (user: User, callback: @escaping (Bool, AppError?) -> Void) {
         
