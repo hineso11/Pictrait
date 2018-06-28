@@ -34,15 +34,28 @@ Like, etc..
 
 Basic structure outlined in the following picture:
 
-
 ![alt text](https://raw.githubusercontent.com/hineso11/Pictrait/master/Images/Data%20Flow%20Diagram.jpg 
 "Stucture")
 
 ### Project Structure
 The project can broadly be divided into two main sections:
-- Back-end API
-   - Files relating to this portion of the project can be found under the *pictrait-api* 
-   directory
-- Front-end iOS Application
-    - Files relating to this portion of the project can be found under the *Pictrait* 
-   directory
+#### Back-end API
+Files relating to this portion of the project can be found under the *pictrait-api* directory.
+
+Project structure is outlined in the following image: 
+
+![alt text](https://raw.githubusercontent.com/hineso11/Pictrait/master/Images/High%20Level%20Overview.jpg 
+"Stucture")
+
+The relations between entities are outlined in the following database diagram:
+
+![alt text](https://raw.githubusercontent.com/hineso11/Pictrait/master/Images/Database%20Model.jpg 
+"Stucture")
+
+#### Front-end iOS Application
+Files relating to this portion of the project can be found under the *Pictrait* directory.
+
+Structure for the iOS application outlined below: 
+
+![alt text](https://raw.githubusercontent.com/hineso11/Pictrait/master/Images/iOS%20Class%20Structure.jpg 
+"Stucture")
