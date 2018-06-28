@@ -1,5 +1,4 @@
 # Pictrait
-#####Social media app built for the iOS platform, utilising the Google App Engine as a backend API
 
 I built this app as a project to see how social media apps, and more generally client-server
 applications, work. My attempt at replicating a simple photo-based social networking app is
@@ -33,6 +32,7 @@ Like, etc..
 #### Front-end iOS Application (Swift)
 - **Swift 3**- in conjunction with CocoaPods and with a build target of iOS 11.0
 
-Basic structure outlined in the following picture
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+Basic structure outlined in the following picture:
+
+
+![alt text](https://raw.githubusercontent.com/hineso11/Pictrait/master/Images/Data%20Flow%20Diagram.jpg "Logo Title Text 1")
