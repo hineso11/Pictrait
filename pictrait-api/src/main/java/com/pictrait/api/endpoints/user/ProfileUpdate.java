@@ -3,9 +3,6 @@ package com.pictrait.api.endpoints.user;
 import com.pictrait.api.constants.Constants;
 import com.pictrait.api.constants.Errors;
 import com.pictrait.api.datastore.User;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -50,6 +47,7 @@ public class ProfileUpdate extends HttpServlet {
             user.changeUsername(username);
             user.changeEmail(email);
             user.changeFullName(fullName);
+
 
             // Send the response
             response.setContentType(Constants.JSON_TYPE);

@@ -23,8 +23,7 @@ import java.util.Date;
 public class Photo {
 
     // MARK: Variables
-    @Id
-    private Long photoId;
+    @Id private Long photoId;
     @Index Long userId;
     @Index boolean photoAvailable;
     @Index Date createdAt;

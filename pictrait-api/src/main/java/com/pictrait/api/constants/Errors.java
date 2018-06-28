@@ -1,6 +1,5 @@
 package com.pictrait.api.constants;
 
-import com.sun.tools.internal.jxc.ap.Const;
 import org.json.JSONObject;
 
 import javax.servlet.http.HttpServletResponse;

@@ -70,31 +70,43 @@ public class User {
     // Function to change a user's username
     public void changeUsername (String username) {
 
-        // Change the username
-        this.username = username;
+        // If it is set
+        if (username != null && !username.isEmpty()) {
 
-        // Save the entity
-        ObjectifyService.ofy().save().entity(this).now();
+            // Change the username
+            this.username = username;
+
+            // Save the entity
+            ObjectifyService.ofy().save().entity(this).now();
+        }
     }
 
     // Function to change a user's username
     public void changeFullName (String fullName) {
 
-        // Change the username
-        this.fullName = fullName;
+        // If it is set
+        if (fullName != null && !fullName.isEmpty()) {
 
-        // Save the entity
-        ObjectifyService.ofy().save().entity(this).now();
+            // Change the username
+            this.fullName = fullName;
+
+            // Save the entity
+            ObjectifyService.ofy().save().entity(this).now();
+        }
     }
 
     // Function to change a user's username
     public void changeEmail (String email) {
 
-        // Change the username
-        this.email = email;
+        // If it is set
+        if (email != null && !email.isEmpty()) {
 
-        // Save the entity
-        ObjectifyService.ofy().save().entity(this).now();
+            // Change the username
+            this.email = email;
+
+            // Save the entity
+            ObjectifyService.ofy().save().entity(this).now();
+        }
     }
 
 

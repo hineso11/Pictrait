@@ -61,7 +61,8 @@ public class Search extends HttpServlet {
             JSONArray usersArray = new JSONArray();
             for (User user1: users) {
 
-                usersArray.put(user1.toJson(user));
+                usersArray.put(user1.toJson(user
+                ));
             }
 
             // Send the response in json

@@ -34,6 +34,7 @@ class Auth {
     private static let LOGIN_PATH = "/user/login"
     private static let SIGN_UP_PATH = "/user/signup"
     private static let AUTH_PATH = "/user/auth"
+    private static let UPDATE_PATH = "/user/update"
     
     // MARK: Methods
     
@@ -66,6 +67,10 @@ class Auth {
     
     // Method to sign up using username, password, email and full name
     func signUp (username: String, password: String, email: String, fullName: String, callback: @escaping (Bool, AppError?) -> Void) {
+        
+        // Store the username and password for later use
+        UserDefaults.standard.set(username, forKey: Auth.USERNAME)
+        UserDefaults.standard.set(password, forKey: Auth.PASSWORD)
         
         let params = [Auth.USERNAME_PARAM: username as AnyObject, Auth.PASSWORD_PARAM: password as AnyObject,
                       Auth.EMAIL_PARAM: email as AnyObject, Auth.FULL_NAME_PARAM: fullName as AnyObject]
@@ -124,6 +129,49 @@ class Auth {
             
             callback(success)
         })
+    }
+    
+    // Method to update the profile of the current user
+    func updateProfile (username: String?, fullName: String?, callback: @escaping (User?, AppError?) -> Void) {
+        
+        var params: [String: Any] = [:]
+        // Check and only add params that are set
+        if (username != nil) {
+            
+            params[Auth.USERNAME_PARAM] = username
+        }
+        if (fullName != nil) {
+            
+            params[Auth.FULL_NAME_PARAM] = fullName
+        }
+        let request = APIRequest(parameters: params, urlEnding: Auth.UPDATE_PATH, shouldRefresh: true, method: .POST, callback: {
+            response, error in
+            
+            if (error == nil) {
+                // There was no error getting the user object, continue
+                // Set the updated username for future use if set
+                if (username != nil) {
+                    
+                    UserDefaults.standard.set(username, forKey: Auth.USERNAME)
+                }
+                
+                // Return new user object
+                let username = response?[ProfileFunctions.USERNAME] as! String
+                let userId = response?[ProfileFunctions.USER_ID] as! Int
+                let fullName = response?[ProfileFunctions.FULL_NAME] as! String
+                let followers = response?[ProfileFunctions.FOLLOWERS] as! Int
+                let following = response?[ProfileFunctions.FOLLOWING] as! Int
+                let isFollowing = response?[ProfileFunctions.IS_FOLLOWING] as! Bool
+                
+                let userObject = User(username: username, userId: userId, fullName: fullName, followers: followers, following: following, isFollowing: isFollowing)
+                
+                callback(userObject, nil)
+            } else {
+                
+                callback(nil, error)
+            }
+        })
+        request.doPost()
     }
     
     // Method to store the auth information

@@ -25,13 +25,13 @@ class ProfileFunctions {
     private static let SUBJECT_ID = "subject_id"
     
     // Response Params
-    private static let USERS_ARRAY = "users"
-    private static let USERNAME = "username"
-    private static let USER_ID = "userId"
-    private static let FULL_NAME = "fullName"
-    private static let FOLLOWERS = "followers"
-    private static let FOLLOWING = "following"
-    private static let IS_FOLLOWING = "isFollowing"
+    static let USERS_ARRAY = "users"
+    static let USERNAME = "username"
+    static let USER_ID = "userId"
+    static let FULL_NAME = "fullName"
+    static let FOLLOWERS = "followers"
+    static let FOLLOWING = "following"
+    static let IS_FOLLOWING = "isFollowing"
     
     // MARK: Methods
     
