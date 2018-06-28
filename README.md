@@ -45,7 +45,7 @@ Basic dataflow outlined in the following picture:
 ### Project Structure
 The project can broadly be divided into two main sections:
 #### Back-end API
-Files relating to this portion of the project can be found under the *pictrait-api* directory.
+- Files relating to this portion of the project can be found under the *pictrait-api* directory.
 
 The division and organisation of the backend API is outlined in the following diagram: 
 
@@ -58,7 +58,7 @@ The relations between entities in the Cloud Datastore are outlined in the follow
 "Database diagram")
 
 #### Front-end iOS Application
-Files relating to this portion of the project can be found under the *Pictrait* directory.
+- Files relating to this portion of the project can be found under the *Pictrait* directory.
 
 Structure for the iOS application outlined below: 
 
