@@ -16,8 +16,8 @@
         <entry file="file://$PROJECT_DIR$/../README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="728">
-                <caret line="51" column="98" selection-start-line="51" selection-start-column="98" selection-end-line="51" selection-end-column="98" />
+              <first_editor relative-caret-position="696">
+                <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
               </first_editor>
               <second_editor />
             </state>
@@ -177,12 +177,12 @@
       <workItem from="1506789898858" duration="663000" />
       <workItem from="1530022288919" duration="21000" />
       <workItem from="1530186011572" duration="834000" />
-      <workItem from="1530186923948" duration="3204000" />
+      <workItem from="1530186923948" duration="3390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5068000" />
+    <option name="totallyTimeSpent" value="5254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1326" y="23" width="1682" height="1599" extended-state="0" />
@@ -288,8 +288,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="728">
-            <caret line="51" column="98" selection-start-line="51" selection-start-column="98" selection-end-line="51" selection-end-column="98" />
+          <first_editor relative-caret-position="696">
+            <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
           </first_editor>
           <second_editor />
         </state>
