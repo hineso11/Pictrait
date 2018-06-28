@@ -35,4 +35,14 @@ Like, etc..
 Basic structure outlined in the following picture:
 
 
-![alt text](https://raw.githubusercontent.com/hineso11/Pictrait/master/Images/Data%20Flow%20Diagram.jpg "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/hineso11/Pictrait/master/Images/Data%20Flow%20Diagram.jpg 
+"Stucture")
+
+### Project Structure
+The project can broadly be divided into two main sections:
+- Back-end API
+   - Files relating to this portion of the project can be found under the *pictrait-api* 
+   directory
+- Front-end iOS Application
+    - Files relating to this portion of the project can be found under the *Pictrait* 
+   directory
