@@ -21,7 +21,7 @@ public class AuthenticationToken {
     // MARK: Constants
     private static final String AUDIENCE = "AppUser";
     private static final String ISSUER = "PictraitAPI";
-    private static final String SIGNING_KEY = "oJArErxUc/A3S+r/Xv6c1jDu8IzU3/0xi3852wjVATyEHPz3n0XVzXMgc0QI2MQlwMa/sRpiQzwCAr2UKhVk8A==";
+    private static final String SIGNING_KEY = "A_SIGNING_KEY_MORE_SECURE_THAN_THIS";
     private static final int REFRESH_TOKEN_DAYS = 3;
     private static final int AUTH_TOKEN_HOURS = 2;
     private static final String TOKEN_TYPE = "type";
